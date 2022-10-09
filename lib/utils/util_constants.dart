@@ -6,6 +6,7 @@ const String strLoginCaps = 'LOG IN';
 const String strByContining = 'By continuing, you agree to Farm Fresh Link';
 const String strDontAccount = 'Don\'t have an account?';
 const String strSignup = 'Sign up';
+const String strSignupCaps = 'SIGN UP';
 const String strFooter1 = '© 2022 Farm Fresh Link. All Rights Reserved.';
 const String strFooter2 = 'App Powered By K Business Solutions Inc.';
 const String strTerms = 'Terms & Conditions';
