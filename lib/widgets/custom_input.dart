@@ -63,7 +63,7 @@ class _CustomInputState extends State<CustomInput> {
                       fontWeight: FontWeight.w500),
                 ),
               )
-            : SizedBox(),
+            : const SizedBox(),
         Container(
           height: widget.height,
           margin: widget.margin,
@@ -111,9 +111,12 @@ class _CustomInputState extends State<CustomInput> {
         focusedBorder: UnderlineInputBorder(
           borderSide: BorderSide(color: widget.underlineColor, width: 2),
         ),
-        enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: widget.borderColor, width: 1),
-            borderRadius: const BorderRadius.all(Radius.circular(2))),
+        enabledBorder: const UnderlineInputBorder(
+          borderSide: BorderSide(color: colorTransparent, width: 2),
+        ),
+        // enabledBorder: OutlineInputBorder(
+        //     borderSide: BorderSide(color: widget.borderColor, width: 1),
+        //     borderRadius: const BorderRadius.all(Radius.circular(2))),
         labelStyle: TextStyle(
             color: widget.labelColor,
             fontSize: 15,
@@ -139,9 +142,12 @@ class _CustomInputState extends State<CustomInput> {
         focusedBorder: UnderlineInputBorder(
           borderSide: BorderSide(color: widget.underlineColor, width: 2),
         ),
-        enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: widget.borderColor, width: 1),
-            borderRadius: const BorderRadius.all(Radius.circular(2))),
+        enabledBorder: const UnderlineInputBorder(
+          borderSide: BorderSide(color: colorTransparent, width: 2),
+        ),
+        // enabledBorder: OutlineInputBorder(
+        //     borderSide: BorderSide(color: widget.borderColor, width: 1),
+        //     borderRadius: const BorderRadius.all(Radius.circular(2))),
         labelStyle: TextStyle(
             color: widget.labelColor,
             fontSize: 15,
@@ -167,9 +173,12 @@ class _CustomInputState extends State<CustomInput> {
         focusedBorder: UnderlineInputBorder(
           borderSide: BorderSide(color: widget.underlineColor, width: 2),
         ),
-        enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: widget.borderColor, width: 1),
-            borderRadius: const BorderRadius.all(Radius.circular(2))),
+        enabledBorder: const UnderlineInputBorder(
+          borderSide: BorderSide(color: colorTransparent, width: 2),
+        ),
+        // enabledBorder: OutlineInputBorder(
+        //     borderSide: BorderSide(color: widget.borderColor, width: 1),
+        //     borderRadius: const BorderRadius.all(Radius.circular(2))),
         labelStyle: TextStyle(
             color: widget.labelColor,
             fontSize: 15,
@@ -187,16 +196,19 @@ class _CustomInputState extends State<CustomInput> {
             ? FloatingLabelBehavior.auto
             : FloatingLabelBehavior.never,
         contentPadding:
-            const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+            const EdgeInsets.only(left: 12, right: 12, top: 12, bottom: 12),
         disabledBorder: OutlineInputBorder(
             borderSide: BorderSide(color: widget.borderColor, width: 1),
             borderRadius: const BorderRadius.all(Radius.circular(2))),
         focusedBorder: UnderlineInputBorder(
           borderSide: BorderSide(color: widget.underlineColor, width: 2),
         ),
-        enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: widget.borderColor, width: 1),
-            borderRadius: const BorderRadius.all(Radius.circular(2))),
+        enabledBorder: const UnderlineInputBorder(
+          borderSide: BorderSide(color: colorTransparent, width: 2),
+        ),
+        // enabledBorder: OutlineInputBorder(
+        //     borderSide: BorderSide(color: widget.borderColor, width: 1),
+        //     borderRadius: const BorderRadius.all(Radius.circular(2))),
         labelStyle: TextStyle(
             color: widget.labelColor,
             fontSize: 15,

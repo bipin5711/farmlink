@@ -38,7 +38,7 @@ class _LoginState extends State<Login> {
                     decoration: const BoxDecoration(
                         image: DecorationImage(
                             alignment: Alignment.center,
-                            image: AssetImage(splashBackground),
+                            image: AssetImage(lightBackground),
                             fit: BoxFit.cover)),
                     child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -49,14 +49,25 @@ class _LoginState extends State<Login> {
                               // ignore: prefer_const_literals_to_create_immutables
                               children: [
                                 SizedBox(
-                                  height:
-                                      MediaQuery.of(context).size.height * 0.15,
+                                  height: MediaQuery.of(context).size.height *
+                                      0.075,
+                                ),
+                                Image.asset(
+                                  logo,
+                                  width: 220,
+                                  height: 220,
+                                  fit: BoxFit.cover,
+                                ),
+                                SizedBox(
+                                  height: 18,
                                 ),
                                 const Text(
                                   strWelcome,
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
-                                      color: colorPrimary, fontSize: 36),
+                                      color: colorTitleGreen,
+                                      fontSize: 32,
+                                      fontWeight: FontWeight.w800),
                                 ),
                                 const SizedBox(
                                   height: 16,
@@ -65,7 +76,7 @@ class _LoginState extends State<Login> {
                                   padding:
                                       const EdgeInsets.symmetric(vertical: 4),
                                   child: CustomInput(
-                                    height: 54,
+                                    height: 52,
                                     textController: emailController,
                                     labelText: strEmail,
                                     fillColor: colorInputBackground,
@@ -73,14 +84,12 @@ class _LoginState extends State<Login> {
                                     underlineColor: colorInputUnderline,
                                   ),
                                 ),
-                                const SizedBox(
-                                  height: 4,
-                                ),
+                                const SizedBox(height: 6),
                                 Padding(
                                   padding:
                                       const EdgeInsets.symmetric(vertical: 4),
                                   child: CustomInput(
-                                    height: 54,
+                                    height: 52,
                                     textController: passwordController,
                                     labelText: strPassword,
                                     obscureText: obscureText,
@@ -100,7 +109,7 @@ class _LoginState extends State<Login> {
                                   ),
                                 ),
                                 const SizedBox(
-                                  height: 6,
+                                  height: 4,
                                 ),
                                 const SizedBox(
                                   width: double.infinity,
@@ -132,8 +141,7 @@ class _LoginState extends State<Login> {
                                     strByContining,
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
-                                        color: colorTextSecondary,
-                                        fontSize: 13),
+                                        color: colorTextMain, fontSize: 13),
                                   ),
                                 ),
                                 RichText(
@@ -141,7 +149,7 @@ class _LoginState extends State<Login> {
                                     TextSpan(
                                         text: strTerms,
                                         style: const TextStyle(
-                                          color: colorPrimary,
+                                          color: colorLinkGreen,
                                           decoration: TextDecoration.underline,
                                           fontSize: 13,
                                         ),
@@ -153,12 +161,12 @@ class _LoginState extends State<Login> {
                                     const TextSpan(
                                         text: ' ' + strAnd + ' ',
                                         style: TextStyle(
-                                            color: colorTextSecondary,
+                                            color: colorTextMain,
                                             fontSize: 13)),
                                     TextSpan(
                                         text: strPrivacy,
                                         style: const TextStyle(
-                                            color: colorPrimary,
+                                            color: colorLinkGreen,
                                             decoration:
                                                 TextDecoration.underline,
                                             fontSize: 13),
@@ -181,8 +189,9 @@ class _LoginState extends State<Login> {
                                       TextSpan(
                                           text: strSignup,
                                           style: const TextStyle(
-                                            color: colorPrimary,
+                                            color: colorInputUnderline,
                                             fontSize: 15,
+                                            fontWeight: FontWeight.w600
                                           ),
                                           recognizer: TapGestureRecognizer()
                                             ..onTap = () {
@@ -191,15 +200,6 @@ class _LoginState extends State<Login> {
                                             }),
                                     ]),
                                   ),
-                                ),
-
-                                SizedBox(
-                                  height: MediaQuery.of(context).size.height *
-                                      0.075,
-                                ),
-                                SizedBox(
-                                  height: MediaQuery.of(context).size.height *
-                                      0.045,
                                 ),
                               ]),
                           Padding(
