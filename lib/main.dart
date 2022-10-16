@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-      statusBarColor: colorLight,
+      statusBarColor: colorBackgroundDark,
       statusBarBrightness: Brightness.dark,
     ));
     return GestureDetector(
