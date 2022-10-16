@@ -22,6 +22,9 @@ class _LoginState extends State<Login> {
   handleLogin() {
     // Navigator.pushNamed(context, routeDashboardScreen);
   }
+  handleSignup() {
+    Navigator.pushNamed(context, routeSignupScreen);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -155,8 +158,7 @@ class _LoginState extends State<Login> {
                                         ),
                                         recognizer: TapGestureRecognizer()
                                           ..onTap = () {
-                                            Navigator.pushNamed(
-                                                context, routeSignupScreen);
+                                            handleSignup();
                                           }),
                                     const TextSpan(
                                         text: ' ' + strAnd + ' ',
@@ -172,8 +174,7 @@ class _LoginState extends State<Login> {
                                             fontSize: 13),
                                         recognizer: TapGestureRecognizer()
                                           ..onTap = () {
-                                            Navigator.pushNamed(
-                                                context, routeSignupScreen);
+                                            handleSignup();
                                           }),
                                   ]),
                                 ),
@@ -189,14 +190,12 @@ class _LoginState extends State<Login> {
                                       TextSpan(
                                           text: strSignup,
                                           style: const TextStyle(
-                                            color: colorInputUnderline,
-                                            fontSize: 15,
-                                            fontWeight: FontWeight.w600
-                                          ),
+                                              color: colorInputUnderline,
+                                              fontSize: 15,
+                                              fontWeight: FontWeight.w600),
                                           recognizer: TapGestureRecognizer()
                                             ..onTap = () {
-                                              Navigator.pushNamed(
-                                                  context, routeSignupScreen);
+                                              handleSignup();
                                             }),
                                     ]),
                                   ),

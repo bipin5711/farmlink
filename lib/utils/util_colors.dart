@@ -21,3 +21,4 @@ const Color colorLinkGreen = Color(0xff0f7f40);
 
 //card background
 const Color colorBackgroundLight = Color(0xffD9D9D9);
+const Color colorBackgroundDark = Color(0xff163e2b);

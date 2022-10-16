@@ -33,7 +33,7 @@ class _SignupState extends State<Signup> {
   }
 
   handleSignup() {
-    Navigator.pushNamed(context, routeSignupScreen);
+    Navigator.pushNamed(context, routeVerificationOtpScreen);
   }
 
   @override

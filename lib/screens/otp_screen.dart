@@ -1,22 +1,26 @@
 import 'package:farmlink/utils/util_colors.dart';
 import 'package:farmlink/utils/util_constants.dart';
 import 'package:farmlink/utils/util_images.dart';
+import 'package:farmlink/utils/util_routes.dart';
 import 'package:farmlink/widgets/custom_button.dart';
 import 'package:farmlink/widgets/ui-widgets/footer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
-class Otp extends StatefulWidget {
+class OtpVerification extends StatefulWidget {
   @override
-  _OtpState createState() => _OtpState();
+  _OtpVerificationState createState() => _OtpVerificationState();
 }
 
-class _OtpState extends State<Otp> {
-  TextEditingController _textEditingController = TextEditingController();
-  GlobalKey<ScaffoldState> _key = GlobalKey<ScaffoldState>();
+class _OtpVerificationState extends State<OtpVerification> {
+  final TextEditingController _textEditingController = TextEditingController();
+  final GlobalKey<ScaffoldState> _key = GlobalKey<ScaffoldState>();
   String token = '';
   String mobile = '';
+  verifyOtp() {
+    Navigator.pushNamed(context, routeWelcomeScreen);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -123,7 +127,7 @@ class _OtpState extends State<Otp> {
                         SizedBox(
                           width: double.infinity,
                           child: CustomButton(
-                            onPressed: () {},
+                            onPressed: verifyOtp,
                             buttonColor: colorSecondary,
                             text: strVerify,
                           ),

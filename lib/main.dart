@@ -2,6 +2,7 @@ import 'package:farmlink/screens/login_screen.dart';
 import 'package:farmlink/screens/otp_screen.dart';
 import 'package:farmlink/screens/signup_screen.dart';
 import 'package:farmlink/screens/splash_screen.dart';
+import 'package:farmlink/screens/welcome_screen.dart';
 import 'package:farmlink/utils/util_colors.dart';
 import 'package:farmlink/utils/util_routes.dart';
 import 'package:flutter/material.dart';
@@ -50,7 +51,9 @@ class MyApp extends StatelessWidget {
               routeSplashScreen: (BuildContext context) => const Splash(),
               routeLoginScreen: (BuildContext context) => const Login(),
               routeSignupScreen: (BuildContext context) => const Signup(),
-              routeVerificationOtpScreen: (BuildContext context) => Otp()
+              routeVerificationOtpScreen: (BuildContext context) =>
+                  OtpVerification(),
+              routeWelcomeScreen: (BuildContext context) => const Welcome(),
             }));
   }
 }
