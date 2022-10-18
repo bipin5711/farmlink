@@ -21,10 +21,12 @@ class CustomInput extends StatefulWidget {
   final bool floatLabel;
   final bool showLabel;
   final int maxLines;
+  final double borderRadius;
 
   CustomInput({
     required this.textController,
     this.height = 48,
+    this.borderRadius = 2,
     this.labelText = "",
     this.labelColor = colorInputSecondary,
     this.inputColor = colorInputPrimary,
@@ -107,7 +109,8 @@ class _CustomInputState extends State<CustomInput> {
             const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
         disabledBorder: OutlineInputBorder(
             borderSide: BorderSide(color: widget.borderColor, width: 1),
-            borderRadius: const BorderRadius.all(Radius.circular(2))),
+            borderRadius:
+                BorderRadius.all(Radius.circular(widget.borderRadius))),
         focusedBorder: UnderlineInputBorder(
           borderSide: BorderSide(color: widget.underlineColor, width: 2),
         ),
@@ -136,9 +139,13 @@ class _CustomInputState extends State<CustomInput> {
             : FloatingLabelBehavior.never,
         contentPadding:
             const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+        // border: OutlineInputBorder(
+           
+        //     borderRadius: BorderRadius.circular(widget.borderRadius)),
         disabledBorder: OutlineInputBorder(
             borderSide: BorderSide(color: widget.borderColor, width: 1),
-            borderRadius: const BorderRadius.all(Radius.circular(2))),
+            borderRadius:
+                BorderRadius.all(Radius.circular(widget.borderRadius))),
         focusedBorder: UnderlineInputBorder(
           borderSide: BorderSide(color: widget.underlineColor, width: 2),
         ),
@@ -169,7 +176,8 @@ class _CustomInputState extends State<CustomInput> {
             const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
         disabledBorder: OutlineInputBorder(
             borderSide: BorderSide(color: widget.borderColor, width: 1),
-            borderRadius: const BorderRadius.all(Radius.circular(2))),
+            borderRadius:
+                BorderRadius.all(Radius.circular(widget.borderRadius))),
         focusedBorder: UnderlineInputBorder(
           borderSide: BorderSide(color: widget.underlineColor, width: 2),
         ),
@@ -199,7 +207,8 @@ class _CustomInputState extends State<CustomInput> {
             const EdgeInsets.only(left: 12, right: 12, top: 12, bottom: 12),
         disabledBorder: OutlineInputBorder(
             borderSide: BorderSide(color: widget.borderColor, width: 1),
-            borderRadius: const BorderRadius.all(Radius.circular(2))),
+            borderRadius:
+                BorderRadius.all(Radius.circular(widget.borderRadius))),
         focusedBorder: UnderlineInputBorder(
           borderSide: BorderSide(color: widget.underlineColor, width: 2),
         ),

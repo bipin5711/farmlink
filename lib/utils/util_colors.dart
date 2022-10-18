@@ -6,6 +6,7 @@ const Color colorLight = Color(0xffFFFFFF);
 const Color colorDark = Color(0xff000000);
 const Color colorPrimary = Color(0xff41B540);
 const Color colorSecondary = Color(0xffBF1E2E);
+const Color colorGreenDark = Color(0xff173F2B);
 //input
 const Color colorInputPrimary = Color(0xff35463F);
 const Color colorInputSecondary = Color(0xff7C9C8E);
@@ -18,7 +19,12 @@ const Color colorTextMain = Color(0xff495A54);
 const Color colorTextFooter = Color(0xffF6F9D6);
 const Color colorTitleGreen = Color(0xff49B848);
 const Color colorLinkGreen = Color(0xff0f7f40);
+const Color colorDark2 = Color(0xff151515);
 
 //card background
 const Color colorBackgroundLight = Color(0xffD9D9D9);
 const Color colorBackgroundDark = Color(0xff163e2b);
+const Color colorBackgroundGrey = Color(0xffF4FAF7);
+//switch
+const Color colorSwitchBackground = Color(0xff08321E);
+const Color colorSwitchBackground2 = Color(0xff807D7D);

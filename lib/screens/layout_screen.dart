@@ -94,7 +94,7 @@ class _LayoutState extends State<Layout> {
             onTap: () {
               FocusScope.of(context).requestFocus(FocusNode());
             },
-            child: getBody(currentIndex),
+            child: SafeArea(child: getBody(currentIndex)),
           ),
         ));
   }
