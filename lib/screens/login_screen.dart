@@ -20,7 +20,7 @@ class _LoginState extends State<Login> {
   TextEditingController passwordController = TextEditingController();
   bool obscureText = true;
   handleLogin() {
-    // Navigator.pushNamed(context, routeDashboardScreen);
+    Navigator.pushNamed(context, routeLayoutScreen);
   }
   handleSignup() {
     Navigator.pushNamed(context, routeSignupScreen);

@@ -1,6 +1,7 @@
 import 'package:farmlink/utils/util_colors.dart';
 import 'package:farmlink/utils/util_constants.dart';
 import 'package:farmlink/utils/util_images.dart';
+import 'package:farmlink/utils/util_routes.dart';
 import 'package:farmlink/widgets/custom_button.dart';
 import 'package:farmlink/widgets/ui-widgets/footer.dart';
 import 'package:flutter/material.dart';
@@ -13,6 +14,10 @@ class Welcome extends StatefulWidget {
 }
 
 class _WelcomeState extends State<Welcome> {
+  handleFarmer() {
+    Navigator.pushNamed(context, routeLayoutScreen);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -82,40 +87,48 @@ class _WelcomeState extends State<Welcome> {
                             const SizedBox(
                               height: 4,
                             ),
-                            Container(
-                              margin:
-                                  const EdgeInsets.only(top: 40, bottom: 12),
-                              width: MediaQuery.of(context).size.width * 0.4,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(4),
-                                  color: colorBackgroundDark),
-                              padding: const EdgeInsets.symmetric(vertical: 20),
-                              child: const Text(
-                                strFarmer,
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  color: colorLight,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 18,
+                            InkWell(
+                              onTap: handleFarmer,
+                              child: Container(
+                                margin:
+                                    const EdgeInsets.only(top: 40, bottom: 12),
+                                width: MediaQuery.of(context).size.width * 0.4,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(4),
+                                    color: colorBackgroundDark),
+                                padding:
+                                    const EdgeInsets.symmetric(vertical: 20),
+                                child: const Text(
+                                  strFarmer,
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    color: colorLight,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 18,
+                                  ),
                                 ),
                               ),
                             ),
 
-                            Container(
-                              margin:
-                                  const EdgeInsets.only(bottom: 130, top: 12),
-                              width: MediaQuery.of(context).size.width * 0.4,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(4),
-                                  color: colorSecondary),
-                              padding: const EdgeInsets.symmetric(vertical: 20),
-                              child: const Text(
-                                strButcher,
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  color: colorLight,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 18,
+                            InkWell(
+                              onTap: handleFarmer,
+                              child: Container(
+                                margin:
+                                    const EdgeInsets.only(bottom: 130, top: 12),
+                                width: MediaQuery.of(context).size.width * 0.4,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(4),
+                                    color: colorSecondary),
+                                padding:
+                                    const EdgeInsets.symmetric(vertical: 20),
+                                child: const Text(
+                                  strButcher,
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    color: colorLight,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 18,
+                                  ),
                                 ),
                               ),
                             )

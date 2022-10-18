@@ -1,5 +1,11 @@
+import 'package:farmlink/screens/cart_screen.dart';
+import 'package:farmlink/screens/favorite_screen.dart';
+import 'package:farmlink/screens/home_screen.dart';
+import 'package:farmlink/screens/layout_screen.dart';
 import 'package:farmlink/screens/login_screen.dart';
+import 'package:farmlink/screens/message_screen.dart';
 import 'package:farmlink/screens/otp_screen.dart';
+import 'package:farmlink/screens/profile_screen.dart';
 import 'package:farmlink/screens/signup_screen.dart';
 import 'package:farmlink/screens/splash_screen.dart';
 import 'package:farmlink/screens/welcome_screen.dart';
@@ -54,6 +60,12 @@ class MyApp extends StatelessWidget {
               routeVerificationOtpScreen: (BuildContext context) =>
                   OtpVerification(),
               routeWelcomeScreen: (BuildContext context) => const Welcome(),
+              routeLayoutScreen: (BuildContext context) => Layout(),
+              routeHomeScreen: (BuildContext context) => const Home(),
+              routeFavoriteScreen: (BuildContext context) => const Favorite(),
+              routeCartScreen: (BuildContext context) => const Cart(),
+              routeProfileScreen: (BuildContext context) => const Profile(),
+              routeMessageScreen: (BuildContext context) => const Message()
             }));
   }
 }

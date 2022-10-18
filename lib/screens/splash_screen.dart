@@ -50,19 +50,19 @@ class _SplashState extends State<Splash> {
           decoration: const BoxDecoration(
               image: DecorationImage(
                   alignment: Alignment.center,
-                  image: AssetImage(lightBackground),
+                  image: AssetImage(lightBgCow),
                   fit: BoxFit.cover)),
           child: Stack(
             children: [
-              Positioned(
-                  top: 0,
-                  left: 0,
-                  right: 0,
-                  child: Image.asset(
-                    bg1,
-                    fit: BoxFit.cover,
-                    height: MediaQuery.of(context).size.height * 0.46,
-                  )),
+              // Positioned(
+              //     top: 0,
+              //     left: 0,
+              //     right: 0,
+              //     child: Image.asset(
+              //       bg1,
+              //       fit: BoxFit.cover,
+              //       height: MediaQuery.of(context).size.height * 0.46,
+              //     )),
               Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 mainAxisSize: MainAxisSize.max,
