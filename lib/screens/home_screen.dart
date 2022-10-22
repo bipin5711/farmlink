@@ -4,6 +4,7 @@ import 'package:farmlink/utils/util_colors.dart';
 import 'package:farmlink/utils/util_constants.dart';
 import 'package:farmlink/utils/util_helpers.dart';
 import 'package:farmlink/utils/util_images.dart';
+import 'package:farmlink/widgets/custom_checkbox.dart';
 import 'package:farmlink/widgets/ui-widgets/header.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_switch/flutter_switch.dart';
@@ -18,6 +19,7 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   bool mapSwitch = false;
+  bool isFilter = false;
   Completer<GoogleMapController> _controller = Completer();
 
   // static final CameraPosition _kGooglePlex = CameraPosition(
@@ -33,9 +35,19 @@ class _HomeState extends State<Home> {
 
   final LatLng _center = const LatLng(45.521563, -122.677433);
   late GoogleMapController mapController;
+  List<String> selectedFilters = [];
 
   void _onMapCreated(GoogleMapController controller) {
     mapController = controller;
+  }
+
+  toggleCheckbox(value) {
+    if (selectedFilters.contains(value)) {
+      selectedFilters.remove(value);
+    } else {
+      selectedFilters.add(value);
+    }
+    setState(() {});
   }
 
   navigateToDetail() {}
@@ -45,7 +57,6 @@ class _HomeState extends State<Home> {
         builder: (BuildContext context, BoxConstraints constraints) {
       return SingleChildScrollView(
         child: Container(
-          
           // width: double.infinity,
           decoration: const BoxDecoration(
               color: colorInputBackground,
@@ -65,90 +76,127 @@ class _HomeState extends State<Home> {
                   children: [
                     Container(
                       padding: const EdgeInsets.symmetric(
-                          horizontal: 20, vertical: 12),
+                          horizontal: 20, vertical: 6),
                       width: double.infinity,
                       color: colorBackgroundGrey,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Row(
-                            children: [
-                              const Text(
-                                strMapView,
-                                style: TextStyle(
-                                    color: colorDark2,
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w500),
-                              ),
-                              const SizedBox(
-                                width: 8,
-                              ),
-                              FlutterSwitch(
-                                width: 32.0,
-                                height: 18.0,
-                                activeColor: colorSwitchBackground,
-                                inactiveColor: colorSwitchBackground2,
-                                // valueFontSize: 35.0,
-                                toggleSize: 15.0,
-                                value: mapSwitch,
-                                borderRadius: 20.0,
-                                padding: 0,
-                                // showOnOff: true,
-                                onToggle: (val) {
-                                  setState(() {
-                                    mapSwitch = val;
-                                  });
-                                },
-                              )
-                            ],
-                          ),
+                          isFilter
+                              ? const Text(
+                                  strFilter,
+                                  style: TextStyle(
+                                      color: colorDark2,
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w500),
+                                )
+                              : Row(
+                                  children: [
+                                    const Text(
+                                      strMapView,
+                                      style: TextStyle(
+                                          color: colorDark2,
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.w500),
+                                    ),
+                                    const SizedBox(
+                                      width: 8,
+                                    ),
+                                    FlutterSwitch(
+                                      width: 32.0,
+                                      height: 18.0,
+                                      activeColor: colorSwitchBackground,
+                                      inactiveColor: colorSwitchBackground2,
+                                      // valueFontSize: 35.0,
+                                      toggleSize: 15.0,
+                                      value: mapSwitch,
+                                      borderRadius: 20.0,
+                                      padding: 0,
+                                      // showOnOff: true,
+                                      onToggle: (val) {
+                                        setState(() {
+                                          mapSwitch = val;
+                                        });
+                                      },
+                                    )
+                                  ],
+                                ),
                           Row(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                              const Text(
-                                strFilter,
-                                style: TextStyle(
-                                    color: colorDark2,
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w500),
+                              isFilter == false
+                                  ? const Text(
+                                      strFilter,
+                                      style: TextStyle(
+                                          color: colorDark2,
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.w500),
+                                    )
+                                  : const SizedBox(),
+                              SizedBox(
+                                width: isFilter == false ? 8 : 0,
                               ),
-                              const SizedBox(
-                                width: 8,
-                              ),
-                              Image.asset(
-                                filter,
+                              InkWell(
+                                onTap: () {
+                                  setState(() {
+                                    isFilter = !isFilter;
+                                  });
+                                },
+                                child: Image.asset(
+                                  filter,
+                                ),
                               )
                             ],
                           )
                         ],
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 6.0),
-                      child: mapSwitch == true
-                          ? Container(
-                              height: MediaQuery.of(context).size.height * 0.53,
-                              width: double.infinity,
-                              child: GoogleMap(
-                                onMapCreated: _onMapCreated,
-                                initialCameraPosition: CameraPosition(
-                                  target: _center,
-                                  zoom: 12,
-                                ),
-                                // mapType: MapType.hybrid,
-                                // initialCameraPosition: _kGooglePlex,
-                                // onMapCreated: (GoogleMapController controller) {
-                                //   _controller.complete(controller);
-                                // },
+                    mapSwitch == true
+                        ? Container(
+                            height: MediaQuery.of(context).size.height * 0.53,
+                            width: double.infinity,
+                            child: GoogleMap(
+                              onMapCreated: _onMapCreated,
+                              initialCameraPosition: CameraPosition(
+                                target: _center,
+                                zoom: 12,
                               ),
-                            )
-                          : Column(
-                              children: List.generate(
-                                  homeData.length,
-                                  (index) => InkWell(
-                                      onTap: () => navigateToDetail(),
-                                      child: CardItem(homeData, index)))),
-                    )
+                              // mapType: MapType.hybrid,
+                              // initialCameraPosition: _kGooglePlex,
+                              // onMapCreated: (GoogleMapController controller) {
+                              //   _controller.complete(controller);
+                              // },
+                            ),
+                          )
+                        : isFilter
+                            ? Column(
+                                children: [
+                                  Container(
+                                    height: 1.5,
+                                    color: colorDivider,
+                                    width: double.infinity,
+                                  ),
+                                  Container(
+                                    color: colorBackgroundGrey,
+                                    padding: EdgeInsets.only(
+                                        right: 20, left: 20, bottom: 12),
+                                    child: Column(
+                                        children: List.generate(
+                                            filterData.length,
+                                            (index) => FilterSection(
+                                                filterData, index))),
+                                  ),
+                                ],
+                              )
+                            : Container(
+                                padding: EdgeInsets.only(top: 6),
+                                child: Column(
+                                    children: List.generate(
+                                        homeData.length,
+                                        (index) => InkWell(
+                                            onTap: () => navigateToDetail(),
+                                            child: CardItem(homeData, index)))),
+                              )
                   ],
                 ),
               )
@@ -157,6 +205,103 @@ class _HomeState extends State<Home> {
         ),
       );
     });
+  }
+
+  Widget FilterSection(filterData, index) {
+    return Container(
+      width: double.infinity,
+      padding: EdgeInsets.symmetric(vertical: 4),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          index != 0
+              ? Container(
+                  height: 1.5,
+                  color: colorDivider,
+                  width: double.infinity,
+                  margin: EdgeInsets.only(bottom: 8, top: 4),
+                )
+              : SizedBox(
+                  height: 4,
+                ),
+          Text(
+            filterData[index]['title'],
+            style: TextStyle(
+                fontSize: 14, fontWeight: FontWeight.w600, color: colorDark2),
+          ),
+          filterData[index]['title'] == strLivestock
+              ? Column(
+                  //  {'name': strBeef, 'image': cow},
+                  //     {'name': strPork, 'image': pig},
+                  //     {'name': strFowl, 'image': hen},
+                  //     {'name': strSheep, 'image': sheep},
+                  //     {'name': strGoat, 'image': goat},
+                  //     {'name': strPoultry, 'image': duck},
+                  //     {'name': strRabbit, 'image': rabbit},
+                  //     {'name': strWildExotic, 'image': deer},
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(top: 6.0),
+                      child: Row(
+                        children: [
+                          Expanded(child: FilterCheckbox(strBeef, cow)),
+                          Expanded(child: FilterCheckbox(strPork, pig)),
+                          Expanded(child: FilterCheckbox(strFowl, hen))
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 1.0),
+                      child: Row(
+                        children: [
+                          Expanded(child: FilterCheckbox(strSheep, sheep)),
+                          Expanded(child: FilterCheckbox(strGoat, goat)),
+                          Expanded(child: FilterCheckbox(strPoultry, duck))
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 1.0),
+                      child: Row(
+                        children: [
+                          Expanded(child: FilterCheckbox(strRabbit, rabbit)),
+                          Expanded(child: FilterCheckbox(strWildExotic, deer)),
+                          SizedBox()
+                        ],
+                      ),
+                    )
+                  ],
+                )
+              : Container()
+        ],
+      ),
+    );
+  }
+
+  Widget FilterCheckbox(title, image) {
+    print(title);
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        CustomCheckbox(
+            toggle: () {
+              toggleCheckbox(title);
+            },
+            selected: selectedFilters.contains(title),
+            borderColor: colorCheckboxBorder,
+            size: 'small'),
+        Padding(
+          padding: const EdgeInsets.only(left: 7, right: 6),
+          child: Text(title,
+              style: const TextStyle(
+                  color: colorDark2,
+                  fontSize: 15,
+                  fontWeight: FontWeight.w400)),
+        ),
+        Image.asset(image)
+      ],
+    );
   }
 
   Widget CardItem(homeData, index) {

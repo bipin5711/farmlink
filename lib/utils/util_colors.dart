@@ -28,3 +28,6 @@ const Color colorBackgroundGrey = Color(0xffF4FAF7);
 //switch
 const Color colorSwitchBackground = Color(0xff08321E);
 const Color colorSwitchBackground2 = Color(0xff807D7D);
+//border
+const Color colorDivider = Color(0xffDCDFDD);
+const Color colorCheckboxBorder = Color(0xffB7B6B7);

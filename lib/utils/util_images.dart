@@ -45,3 +45,4 @@ const String soap = "$imageRoute/soap.png";
 const String vegetables = "$imageRoute/vegetables.png";
 const String star = "$imageRoute/star-filled.png";
 const String starUnfilled = "$imageRoute/star-unfilled.png";
+const String check = "$imageRoute/check.png";

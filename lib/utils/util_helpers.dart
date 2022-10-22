@@ -1,4 +1,5 @@
 import 'package:farmlink/models/bottom_navigation.dart';
+import 'package:farmlink/utils/util_constants.dart';
 import 'package:farmlink/utils/util_images.dart';
 
 List<BottomNavigation> bottomNavigationData = [
@@ -36,7 +37,7 @@ List homeData = [
     'rating': 3,
     'image': house,
     'distance': '7.3 mi',
-    'types': [cow, pig, hen, sheep ]
+    'types': [cow, pig, hen, sheep]
   },
   {
     'name': '8960234',
@@ -70,4 +71,48 @@ List homeData = [
     'distance': '7.3 mi',
     'types': [sheep, pig, duck]
   },
+];
+
+List filterData = [
+  {
+    'title': strLivestock,
+  
+  },
+  {
+    'title': strTypeMeat,
+    'list': [
+      {'name': strHalal, 'image': halal},
+      {'name': strKosher, 'image': rectangle},
+      {
+        'name': strGrassFed,
+      },
+      {
+        'name': strGrainFed,
+      },
+      {
+        'name': strHormoneFree,
+      },
+      {
+        'name': strCustomFeedProgram,
+      },
+      {
+        'name': strGMOFree,
+      },
+    ]
+  },
+  {
+    'title': strProduce,
+    'list': [
+      {'name': strBulkVegetables, 'image': vegetables},
+      {'name': strRetail, 'image': retail},
+    ]
+  },
+  {
+    'title': strMiscellaneous,
+    'list': [
+      {'name': strHoney, 'image': honey},
+      {'name': strSoaps, 'image': soap},
+      {'name': strEggs, 'image': eggs},
+    ]
+  }
 ];
