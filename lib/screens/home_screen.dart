@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:farmlink/utils/util_colors.dart';
 import 'package:farmlink/utils/util_constants.dart';
 import 'package:farmlink/utils/util_helpers.dart';
@@ -5,6 +7,7 @@ import 'package:farmlink/utils/util_images.dart';
 import 'package:farmlink/widgets/ui-widgets/header.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_switch/flutter_switch.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -15,97 +18,145 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   bool mapSwitch = false;
+  Completer<GoogleMapController> _controller = Completer();
+
+  // static final CameraPosition _kGooglePlex = CameraPosition(
+  //   target: LatLng(37.42796133580664, -122.085749655962),
+  //   zoom: 14.4746,
+  // );
+
+  // static final CameraPosition _kLake = CameraPosition(
+  //     bearing: 192.8334901395799,
+  //     target: LatLng(37.43296265331129, -122.08832357078792),
+  //     tilt: 59.440717697143555,
+  //     zoom: 19.151926040649414);
+
+  final LatLng _center = const LatLng(45.521563, -122.677433);
+  late GoogleMapController mapController;
+
+  void _onMapCreated(GoogleMapController controller) {
+    mapController = controller;
+  }
+
+  navigateToDetail() {}
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      decoration: const BoxDecoration(
-          color: colorInputBackground,
-          image: DecorationImage(
-              alignment: Alignment.center,
-              image: AssetImage(bgHomeGreen2),
-              fit: BoxFit.cover)),
-      child: Column(
-        children: [
-          const Header(),
-          Expanded(
-            child: Container(
-              // padding: EdgeInsets.symmetric(horizontal: 20),
-              color: colorBackgroundLight,
-              child: Column(
-                children: [
-                  Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-                    width: double.infinity,
-                    color: colorBackgroundGrey,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Row(
-                          children: [
-                            const Text(
-                              strMapView,
-                              style: TextStyle(
-                                  color: colorDark2,
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w500),
-                            ),
-                            const SizedBox(
-                              width: 8,
-                            ),
-                            FlutterSwitch(
-                              width: 32.0,
-                              height: 18.0,
-                              activeColor: colorSwitchBackground,
-                              inactiveColor: colorSwitchBackground2,
-                              // valueFontSize: 35.0,
-                              toggleSize: 15.0,
-                              value: mapSwitch,
-                              borderRadius: 20.0,
-                              padding: 0,
-                              // showOnOff: true,
-                              onToggle: (val) {
-                                setState(() {
-                                  mapSwitch = val;
-                                });
-                              },
-                            )
-                          ],
-                        ),
-                        Row(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            const Text(
-                              strFilter,
-                              style: TextStyle(
-                                  color: colorDark2,
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w500),
-                            ),
-                            const SizedBox(
-                              width: 8,
-                            ),
-                            Image.asset(
-                              filter,
-                            )
-                          ],
-                        )
-                      ],
+    return LayoutBuilder(
+        builder: (BuildContext context, BoxConstraints constraints) {
+      return SingleChildScrollView(
+        child: Container(
+          
+          // width: double.infinity,
+          decoration: const BoxDecoration(
+              color: colorInputBackground,
+              image: DecorationImage(
+                  alignment: Alignment.center,
+                  image: AssetImage(bgHomeGreen2),
+                  fit: BoxFit.cover)),
+          child: Column(
+            children: [
+              const Header(),
+              Container(
+                width: double.infinity,
+                // padding: EdgeInsets.symmetric(horizontal: 20),
+                color: colorBackgroundLight,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 20, vertical: 12),
+                      width: double.infinity,
+                      color: colorBackgroundGrey,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Row(
+                            children: [
+                              const Text(
+                                strMapView,
+                                style: TextStyle(
+                                    color: colorDark2,
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w500),
+                              ),
+                              const SizedBox(
+                                width: 8,
+                              ),
+                              FlutterSwitch(
+                                width: 32.0,
+                                height: 18.0,
+                                activeColor: colorSwitchBackground,
+                                inactiveColor: colorSwitchBackground2,
+                                // valueFontSize: 35.0,
+                                toggleSize: 15.0,
+                                value: mapSwitch,
+                                borderRadius: 20.0,
+                                padding: 0,
+                                // showOnOff: true,
+                                onToggle: (val) {
+                                  setState(() {
+                                    mapSwitch = val;
+                                  });
+                                },
+                              )
+                            ],
+                          ),
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              const Text(
+                                strFilter,
+                                style: TextStyle(
+                                    color: colorDark2,
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w500),
+                              ),
+                              const SizedBox(
+                                width: 8,
+                              ),
+                              Image.asset(
+                                filter,
+                              )
+                            ],
+                          )
+                        ],
+                      ),
                     ),
-                  ),
-                  const SizedBox(
-                    height: 6,
-                  ),
-                  Column(
-                      children: List.generate(homeData.length,
-                          (index) => CardItem(homeData, index))),
-                ],
-              ),
-            ),
-          )
-        ],
-      ),
-    );
+                    Padding(
+                      padding: const EdgeInsets.only(top: 6.0),
+                      child: mapSwitch == true
+                          ? Container(
+                              height: MediaQuery.of(context).size.height * 0.53,
+                              width: double.infinity,
+                              child: GoogleMap(
+                                onMapCreated: _onMapCreated,
+                                initialCameraPosition: CameraPosition(
+                                  target: _center,
+                                  zoom: 12,
+                                ),
+                                // mapType: MapType.hybrid,
+                                // initialCameraPosition: _kGooglePlex,
+                                // onMapCreated: (GoogleMapController controller) {
+                                //   _controller.complete(controller);
+                                // },
+                              ),
+                            )
+                          : Column(
+                              children: List.generate(
+                                  homeData.length,
+                                  (index) => InkWell(
+                                      onTap: () => navigateToDetail(),
+                                      child: CardItem(homeData, index)))),
+                    )
+                  ],
+                ),
+              )
+            ],
+          ),
+        ),
+      );
+    });
   }
 
   Widget CardItem(homeData, index) {
@@ -129,25 +180,107 @@ class _HomeState extends State<Home> {
                 const SizedBox(
                   width: 18,
                 ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Text(
-                      strRiverlandsRanch,
-                      style: TextStyle(
-                          color: colorDark2,
-                          fontSize: 15,
-                          fontWeight: FontWeight.w600),
-                    ),
-                    const Text(
-                      strRiverlandsRanch,
-                      style: TextStyle(
-                          color: colorDark2,
-                          fontSize: 13,
-                          fontWeight: FontWeight.w400),
-                    ),
-                    Row()
-                  ],
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text(
+                        strRiverlandsRanch,
+                        style: TextStyle(
+                            color: colorDark2,
+                            fontSize: 15,
+                            fontWeight: FontWeight.w600),
+                      ),
+                      const Text(
+                        strRiverlandsRanch,
+                        style: TextStyle(
+                            color: colorDark2,
+                            fontSize: 13,
+                            fontWeight: FontWeight.w400),
+                      ),
+                      const SizedBox(
+                        height: 6,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: List.generate(
+                                homeData[index]['types'].length,
+                                (starIndex) => Padding(
+                                    padding: const EdgeInsets.only(right: 3.0),
+                                    child: Image.asset(
+                                      homeData[index]['types'][starIndex],
+                                      height: 28,
+                                      width: 28,
+                                    ))),
+                          ),
+                          Row(
+                            children: [
+                              Image.asset(
+                                halal,
+                                height: 24,
+                                width: 24,
+                              ),
+                              Image.asset(
+                                rectangle,
+                                height: 24,
+                                width: 24,
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: List.generate(
+                                5,
+                                (starIndex) => Padding(
+                                      padding:
+                                          const EdgeInsets.only(right: 3.0),
+                                      child: Image.asset(
+                                        starIndex < homeData[index]['rating']
+                                            ? star
+                                            : starUnfilled,
+                                        height: 16,
+                                        width: 16,
+                                      ),
+                                    )),
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            children: [
+                              const Text(
+                                '6.5 mi.',
+                                style: TextStyle(
+                                    fontSize: 13,
+                                    color: colorDark,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                              const SizedBox(
+                                height: 4,
+                              ),
+                              const Text(
+                                strViewDirections,
+                                style: TextStyle(
+                                    decoration: TextDecoration.underline,
+                                    fontSize: 10,
+                                    color: colorDark,
+                                    fontWeight: FontWeight.bold),
+                              )
+                            ],
+                          )
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
               ],
             ),
@@ -162,14 +295,14 @@ class _HomeState extends State<Home> {
                 child: Container(
                   decoration: BoxDecoration(
                     color: colorGreenDark,
-                    borderRadius:
-                        const BorderRadius.only(bottomLeft: const Radius.circular(8)),
+                    borderRadius: const BorderRadius.only(
+                        bottomLeft: const Radius.circular(8)),
                     border: Border.all(color: colorGreenDark, width: 1),
                   ),
                   padding: const EdgeInsets.symmetric(vertical: 6),
                   child: const Text(strViewProfile,
                       textAlign: TextAlign.center,
-                      style:  TextStyle(
+                      style: TextStyle(
                           color: colorLight,
                           fontSize: 14,
                           fontWeight: FontWeight.w400)),
@@ -179,13 +312,13 @@ class _HomeState extends State<Home> {
                 child: Container(
                   decoration: BoxDecoration(
                       color: colorTransparent,
-                      borderRadius:
-                          const BorderRadius.only(bottomRight: const Radius.circular(8)),
+                      borderRadius: const BorderRadius.only(
+                          bottomRight: const Radius.circular(8)),
                       border: Border.all(color: colorGreenDark, width: 1)),
                   padding: const EdgeInsets.symmetric(vertical: 6),
                   child: const Text(strViewInventory,
                       textAlign: TextAlign.center,
-                      style:  TextStyle(
+                      style: TextStyle(
                           color: colorGreenDark,
                           fontSize: 14,
                           fontWeight: FontWeight.w400)),

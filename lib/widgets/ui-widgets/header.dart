@@ -17,8 +17,8 @@ class _HeaderState extends State<Header> {
   @override
   Widget build(BuildContext context) {
     return Container(
-
-      padding: const EdgeInsets.only(top: 24,left: 20,right: 20),
+      width: double.infinity,
+      padding: const EdgeInsets.only(top: 24, left: 20, right: 20),
       child: Column(
         children: [
           Row(

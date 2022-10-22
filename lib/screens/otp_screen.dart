@@ -30,7 +30,7 @@ class _OtpVerificationState extends State<OtpVerification> {
           decoration: const BoxDecoration(
               image: DecorationImage(
                   alignment: Alignment.center,
-                  image: AssetImage(greenBackground),
+                  image: AssetImage(darkBgNoCow),
                   fit: BoxFit.cover)),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,

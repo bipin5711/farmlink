@@ -43,3 +43,5 @@ const String search = "$imageRoute/search.png";
 const String sheep = "$imageRoute/sheep2.png";
 const String soap = "$imageRoute/soap.png";
 const String vegetables = "$imageRoute/vegetables.png";
+const String star = "$imageRoute/star-filled.png";
+const String starUnfilled = "$imageRoute/star-unfilled.png";

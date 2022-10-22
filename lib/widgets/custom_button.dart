@@ -24,17 +24,18 @@ class CustomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // ignore: deprecated_member_use
-    return FlatButton(
-        shape: RoundedRectangleBorder(
-            side: BorderSide(
-              color: borderColor,
-            ),
-            borderRadius: BorderRadius.circular(borderRadius)),
-        splashColor: colorLight,
-        padding: EdgeInsets.symmetric(
-            vertical: verticalPadding, horizontal: horizontalPadding),
+    return ElevatedButton(
+        style: ButtonStyle(
+            backgroundColor: MaterialStateProperty.all<Color>(buttonColor),
+            padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.symmetric(
+                vertical: verticalPadding, horizontal: horizontalPadding))),
+        // shape: RoundedRectangleBorder(
+        //     side: BorderSide(
+        //       color: borderColor,
+        //     ),
+        //     borderRadius: BorderRadius.circular(borderRadius)),
+        // splashColor: colorLight,
         onPressed: onPressed,
-        color: buttonColor,
         child: Text(text,
             style: TextStyle(
                 color: textColor, fontSize: 18, fontWeight: FontWeight.w600)));

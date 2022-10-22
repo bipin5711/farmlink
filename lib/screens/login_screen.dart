@@ -41,7 +41,7 @@ class _LoginState extends State<Login> {
                     decoration: const BoxDecoration(
                         image: DecorationImage(
                             alignment: Alignment.center,
-                            image: AssetImage(lightBackground),
+                            image: AssetImage(lightBgNoCow),
                             fit: BoxFit.cover)),
                     child: Stack(
                       children: [

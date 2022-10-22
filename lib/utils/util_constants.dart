@@ -6,12 +6,11 @@ const String strLoginCaps = 'LOG IN';
 const String strByContining = 'By continuing, you agree to Farm Fresh Link';
 const String strDontAccount = 'Don\'t have an account?';
 const String strSignup = 'Sign up';
-const String strSignupCaps = 'SIGN UP';
 const String strFooter1 = '© 2022 Farm Fresh Link. All Rights Reserved.';
 const String strFooter2 = 'App Powered By K Business Solutions Inc.';
 const String strTerms = 'Terms & Conditions';
 const String strPrivacy = 'Privacy Policy';
-const String strSignupToContinueCaps = 'SIGN UP TO CONTINUE';
+const String strSignupToContinueCaps = 'Sign Up to Continue';
 const String strFullname = 'Full Name';
 const String strRePassword = 'Re-enter Password';
 const String strPhoneNumber = 'Phone Number';
@@ -88,7 +87,8 @@ const String strEggs = 'Eggs';
 const String strApply = 'Apply';
 
 // Flow 3
-const String strLiketoPurchase = 'Hello I would like to purchase 5 goats. Let me know the ';
+const String strLiketoPurchase =
+    'Hello I would like to purchase 5 goats. Let me know the ';
 const String strYourTotal = 'Hello, your total is \$700';
 const String strSendOffer = 'Send Offer';
 const String strYourBasket = 'Your Basket';
@@ -105,7 +105,8 @@ const String strJobComplete = 'Job Complete';
 // Flow 4
 const String strCustomerReviews = 'Customer Reviews';
 const String strDanyalGabaji = 'Danyal Gabaji';
-const String strWonderfulExperience = 'Had a wonderful experience and would order from them again.';
+const String strWonderfulExperience =
+    'Had a wonderful experience and would order from them again.';
 const String str27July = '27 July 2022';
 const String strSearchFavorites = 'Search favorites...';
 const String strSearchItems = 'Search for items at Riverlands Ranch...';
@@ -129,14 +130,17 @@ const String strShareExistingJob = 'Share existing job';
 const String strEnterOrderNumber = 'Enter Order Number';
 
 // Flow 6
-const String strRiverlands1836Butchers  = 'Riverlands Ranch & 1836 Butchers ';
-const String strOrderwillReady  = 'Hello, let me know when my order will be ready ';
+const String strRiverlands1836Butchers = 'Riverlands Ranch & 1836 Butchers ';
+const String strOrderwillReady =
+    'Hello, let me know when my order will be ready ';
 const String str = 'Your order has been accepted';
 const String strFindAnotherButcher = 'Find another Butcher';
 
 //Flow 7
-const String strChatEnded  = 'Your chat with Riverlands Ranch and 1836 Butchers has ended. ';
-const String strHowExperienceWithButchers = 'How was your experience with 1836 Butchers?';
+const String strChatEnded =
+    'Your chat with Riverlands Ranch and 1836 Butchers has ended. ';
+const String strHowExperienceWithButchers =
+    'How was your experience with 1836 Butchers?';
 const String strAdditonalComments = 'Additonal Comments...';
 const String strSubmit = 'Submit';
 
@@ -149,8 +153,9 @@ const String strGeneral = 'General';
 const String strLogout = 'Logout';
 const String strUsername = 'Username';
 const String strSaveChanges = 'Save Changes';
-const String strUpdateProfilePicture= 'Update New Profile Picture';
-const String strRecentPhotostook = 'Here are the recent photos you took, choose one.';
+const String strUpdateProfilePicture = 'Update New Profile Picture';
+const String strRecentPhotostook =
+    'Here are the recent photos you took, choose one.';
 const String strSetProfilePicture = 'Set as Profile Picture';
 const String strSearchOrder = 'Search Order...';
 const String strQty = 'Qty';

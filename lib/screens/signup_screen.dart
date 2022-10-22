@@ -235,7 +235,7 @@ class _SignupState extends State<Signup> {
                                             child: CustomButton(
                                               onPressed: handleSignup,
                                               buttonColor: colorSecondary,
-                                              text: strSignupCaps,
+                                              text: strSignup.toUpperCase(),
                                             ),
                                           ),
                                         ),

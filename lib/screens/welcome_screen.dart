@@ -27,7 +27,7 @@ class _WelcomeState extends State<Welcome> {
           decoration: const BoxDecoration(
               image: DecorationImage(
                   alignment: Alignment.center,
-                  image: AssetImage(greenBackground),
+                  image: AssetImage(darkBgNoCow),
                   fit: BoxFit.cover)),
           child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,

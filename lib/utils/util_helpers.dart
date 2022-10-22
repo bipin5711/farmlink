@@ -33,15 +33,15 @@ List homeData = [
   {
     'name': '8960234',
     'city': 'Santa Monica, CA',
-    'rating': '3',
+    'rating': 3,
     'image': house,
     'distance': '7.3 mi',
-    'types': [cow, pig, hen, goat]
+    'types': [cow, pig, hen, sheep ]
   },
   {
     'name': '8960234',
     'city': 'Santa Monica, CA',
-    'rating': '4',
+    'rating': 4,
     'image': house,
     'distance': '7.3 mi',
     'types': [deer, pig, sheep]
@@ -49,15 +49,15 @@ List homeData = [
   {
     'name': '8960234',
     'city': 'Santa Monica, CA',
-    'rating': '3',
+    'rating': 3,
     'image': house,
     'distance': '7.3 mi',
-    'types': [cow, pig, hen, goat]
+    'types': [cow, pig, hen]
   },
   {
     'name': '8960234',
     'city': 'Santa Monica, CA',
-    'rating': '5',
+    'rating': 5,
     'image': house,
     'distance': '7.3 mi',
     'types': [cow, deer, hen]
@@ -65,7 +65,7 @@ List homeData = [
   {
     'name': '8960234',
     'city': 'Santa Monica, CA',
-    'rating': '3',
+    'rating': 3,
     'image': house,
     'distance': '7.3 mi',
     'types': [sheep, pig, duck]
