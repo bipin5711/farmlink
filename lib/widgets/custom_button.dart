@@ -9,12 +9,14 @@ class CustomButton extends StatelessWidget {
   final double borderRadius;
   final double horizontalPadding;
   final double verticalPadding;
+  final double textSize;
   final Color borderColor;
 
   CustomButton(
       {required this.onPressed,
       this.text = '',
       this.textColor = colorLight,
+      this.textSize = 18,
       this.buttonColor = colorTransparent,
       this.borderRadius = 4.0,
       this.horizontalPadding = 6.0,
@@ -38,6 +40,8 @@ class CustomButton extends StatelessWidget {
         onPressed: onPressed,
         child: Text(text,
             style: TextStyle(
-                color: textColor, fontSize: 18, fontWeight: FontWeight.w600)));
+                color: textColor,
+                fontSize: textSize,
+                fontWeight: FontWeight.w600)));
   }
 }

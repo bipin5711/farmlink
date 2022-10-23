@@ -4,6 +4,7 @@ import 'package:farmlink/utils/util_colors.dart';
 import 'package:farmlink/utils/util_constants.dart';
 import 'package:farmlink/utils/util_helpers.dart';
 import 'package:farmlink/utils/util_images.dart';
+import 'package:farmlink/widgets/custom_button.dart';
 import 'package:farmlink/widgets/custom_checkbox.dart';
 import 'package:farmlink/widgets/ui-widgets/header.dart';
 import 'package:flutter/material.dart';
@@ -50,6 +51,7 @@ class _HomeState extends State<Home> {
     setState(() {});
   }
 
+  handleApply() {}
   navigateToDetail() {}
   @override
   Widget build(BuildContext context) {
@@ -178,18 +180,33 @@ class _HomeState extends State<Home> {
                                   ),
                                   Container(
                                     color: colorBackgroundGrey,
-                                    padding: EdgeInsets.only(
+                                    padding: const EdgeInsets.only(
                                         right: 20, left: 20, bottom: 12),
                                     child: Column(
-                                        children: List.generate(
-                                            filterData.length,
-                                            (index) => FilterSection(
-                                                filterData, index))),
+                                      children: [
+                                        Column(
+                                            children: List.generate(
+                                                filterData.length,
+                                                (index) => FilterSection(
+                                                    filterData, index))),
+                                        const SizedBox(
+                                          height: 10,
+                                        ),
+                                        CustomButton(
+                                          onPressed: handleApply,
+                                          buttonColor: colorGreenDark,
+                                          text: strApply,
+                                          verticalPadding: 0,
+                                          horizontalPadding: 64,
+                                          textSize: 16,
+                                        )
+                                      ],
+                                    ),
                                   ),
                                 ],
                               )
                             : Container(
-                                padding: EdgeInsets.only(top: 6),
+                                padding: const EdgeInsets.only(top: 6),
                                 child: Column(
                                     children: List.generate(
                                         homeData.length,
@@ -210,7 +227,7 @@ class _HomeState extends State<Home> {
   Widget FilterSection(filterData, index) {
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.symmetric(vertical: 4),
+      padding: const EdgeInsets.symmetric(vertical: 4),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.start,
@@ -220,26 +237,18 @@ class _HomeState extends State<Home> {
                   height: 1.5,
                   color: colorDivider,
                   width: double.infinity,
-                  margin: EdgeInsets.only(bottom: 8, top: 4),
+                  margin: const EdgeInsets.only(bottom: 12, top: 6),
                 )
-              : SizedBox(
+              : const SizedBox(
                   height: 4,
                 ),
           Text(
-            filterData[index]['title'],
-            style: TextStyle(
+            filterData[index],
+            style: const TextStyle(
                 fontSize: 14, fontWeight: FontWeight.w600, color: colorDark2),
           ),
-          filterData[index]['title'] == strLivestock
+          filterData[index] == strLivestock
               ? Column(
-                  //  {'name': strBeef, 'image': cow},
-                  //     {'name': strPork, 'image': pig},
-                  //     {'name': strFowl, 'image': hen},
-                  //     {'name': strSheep, 'image': sheep},
-                  //     {'name': strGoat, 'image': goat},
-                  //     {'name': strPoultry, 'image': duck},
-                  //     {'name': strRabbit, 'image': rabbit},
-                  //     {'name': strWildExotic, 'image': deer},
                   children: [
                     Padding(
                       padding: const EdgeInsets.only(top: 6.0),
@@ -265,15 +274,184 @@ class _HomeState extends State<Home> {
                       padding: const EdgeInsets.only(top: 1.0),
                       child: Row(
                         children: [
-                          Expanded(child: FilterCheckbox(strRabbit, rabbit)),
-                          Expanded(child: FilterCheckbox(strWildExotic, deer)),
-                          SizedBox()
+                          Expanded(
+                              flex: 1,
+                              child: FilterCheckbox(strRabbit, rabbit)),
+                          Expanded(
+                              flex: 2,
+                              child: FilterCheckbox(strWildExotic, deer)),
                         ],
                       ),
                     )
                   ],
                 )
-              : Container()
+              : filterData[index] == strTypeMeat
+                  ? Column(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(top: 6.0),
+                          child: Row(
+                            children: [
+                              Expanded(
+                                  flex: 1,
+                                  child: FilterCheckbox(strHalal, halal)),
+                              Expanded(
+                                  flex: 2,
+                                  child: FilterCheckbox(strKosher, rectangle)),
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 8.0),
+                          child: Row(
+                            children: [
+                              Expanded(
+                                  flex: 4,
+                                  child: FilterCheckbox(strGrassFed, null)),
+                              Expanded(
+                                  flex: 4,
+                                  child: FilterCheckbox(strGrainFed, null)),
+                              Expanded(
+                                  flex: 5,
+                                  child: FilterCheckbox(strHormoneFree, null))
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 8.0),
+                          child: Row(
+                            children: [
+                              Expanded(
+                                  flex: 4,
+                                  child: FilterCheckbox(
+                                      strCustomFeedProgram, null)),
+                              Expanded(
+                                  flex: 3,
+                                  child: FilterCheckbox(strGMOFree, null)),
+                            ],
+                          ),
+                        )
+                      ],
+                    )
+                  : filterData[index] == strDairy
+                      ? Column(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(top: 6.0),
+                              child: Column(
+                                children: [
+                                  Row(
+                                    children: [
+                                      Expanded(
+                                          child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          const Text(strCow,
+                                              style: TextStyle(
+                                                  color: colorDark2,
+                                                  fontSize: 15,
+                                                  fontWeight: FontWeight.w400)),
+                                          const SizedBox(
+                                            width: 2,
+                                          ),
+                                          Image.asset(cow),
+                                        ],
+                                      )),
+                                      Expanded(
+                                          child: Row(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.center,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          const Text(strGoat,
+                                              style: TextStyle(
+                                                  color: colorDark2,
+                                                  fontSize: 15,
+                                                  fontWeight: FontWeight.w400)),
+                                          const SizedBox(
+                                            width: 2,
+                                          ),
+                                          Image.asset(goat),
+                                        ],
+                                      )),
+                                    ],
+                                  ),
+                                  const SizedBox(
+                                    height: 4,
+                                  ),
+                                  Row(
+                                    children: [
+                                      Expanded(
+                                          child: Row(
+                                        children: [
+                                          FilterCheckbox(strMilk, null),
+                                          const SizedBox(
+                                            width: 8,
+                                          ),
+                                          FilterCheckbox(strCheese, null),
+                                        ],
+                                      )),
+                                      Expanded(
+                                          child: Row(
+                                        children: [
+                                          FilterCheckbox(strMilk, null),
+                                          const SizedBox(
+                                            width: 8,
+                                          ),
+                                          FilterCheckbox(strCheese, null),
+                                        ],
+                                      )),
+                                    ],
+                                  )
+                                ],
+                              ),
+                            ),
+                          ],
+                        )
+                      : filterData[index] == strProduce
+                          ? Column(
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.only(top: 6.0),
+                                  child: Row(
+                                    children: [
+                                      Expanded(
+                                          flex: 3,
+                                          child: FilterCheckbox(
+                                              strBulkVegetables, vegetables)),
+                                      Expanded(
+                                          flex: 2,
+                                          child: FilterCheckbox(
+                                              strRetail, retail)),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            )
+                          : filterData[index] == strMiscellaneous
+                              ? Column(
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.only(top: 6.0),
+                                      child: Row(
+                                        children: [
+                                          Expanded(
+                                              child: FilterCheckbox(
+                                                  strHoney, honey)),
+                                          Expanded(
+                                              child: FilterCheckbox(
+                                                  strSoaps, soap)),
+                                          Expanded(
+                                              child: FilterCheckbox(
+                                                  strEggs, eggs)),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                )
+                              : Container(),
         ],
       ),
     );
@@ -299,7 +477,7 @@ class _HomeState extends State<Home> {
                   fontSize: 15,
                   fontWeight: FontWeight.w400)),
         ),
-        Image.asset(image)
+        SizedBox(child: image != null ? Image.asset(image) : null)
       ],
     );
   }

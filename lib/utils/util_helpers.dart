@@ -74,45 +74,9 @@ List homeData = [
 ];
 
 List filterData = [
-  {
-    'title': strLivestock,
-  
-  },
-  {
-    'title': strTypeMeat,
-    'list': [
-      {'name': strHalal, 'image': halal},
-      {'name': strKosher, 'image': rectangle},
-      {
-        'name': strGrassFed,
-      },
-      {
-        'name': strGrainFed,
-      },
-      {
-        'name': strHormoneFree,
-      },
-      {
-        'name': strCustomFeedProgram,
-      },
-      {
-        'name': strGMOFree,
-      },
-    ]
-  },
-  {
-    'title': strProduce,
-    'list': [
-      {'name': strBulkVegetables, 'image': vegetables},
-      {'name': strRetail, 'image': retail},
-    ]
-  },
-  {
-    'title': strMiscellaneous,
-    'list': [
-      {'name': strHoney, 'image': honey},
-      {'name': strSoaps, 'image': soap},
-      {'name': strEggs, 'image': eggs},
-    ]
-  }
+  strLivestock,
+  strTypeMeat,
+  strDairy,
+  strProduce,
+  strMiscellaneous,
 ];

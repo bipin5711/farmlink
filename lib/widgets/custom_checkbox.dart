@@ -1,5 +1,4 @@
 import 'package:farmlink/utils/util_colors.dart';
-import 'package:farmlink/utils/util_images.dart';
 import 'package:flutter/material.dart';
 
 class CustomCheckbox extends StatelessWidget {
@@ -27,11 +26,11 @@ class CustomCheckbox extends StatelessWidget {
         height: size == 'small' ? 19 : 25,
         width: size == 'small' ? 19 : 25,
         child: selected
-            ? Image.asset(
-                check,
-                height: 8,
-                width: 8,
-                fit: BoxFit.contain,
+            ?
+            Icon(
+                Icons.check,
+                color: colorLight,
+                size: size == 'small' ? 16 : 22,
               )
             : null,
       ),
