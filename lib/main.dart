@@ -1,4 +1,5 @@
 import 'package:farmlink/screens/cart_screen.dart';
+import 'package:farmlink/screens/details_screen.dart';
 import 'package:farmlink/screens/favorite_screen.dart';
 import 'package:farmlink/screens/home_screen.dart';
 import 'package:farmlink/screens/layout_screen.dart';
@@ -65,7 +66,8 @@ class MyApp extends StatelessWidget {
               routeFavoriteScreen: (BuildContext context) => const Favorite(),
               routeCartScreen: (BuildContext context) => const Cart(),
               routeProfileScreen: (BuildContext context) => const Profile(),
-              routeMessageScreen: (BuildContext context) => const Message()
+              routeMessageScreen: (BuildContext context) => const Message(),
+              routeDetailScreen: (BuildContext context) => const Detail()
             }));
   }
 }

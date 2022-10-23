@@ -4,6 +4,7 @@ import 'package:farmlink/utils/util_colors.dart';
 import 'package:farmlink/utils/util_constants.dart';
 import 'package:farmlink/utils/util_helpers.dart';
 import 'package:farmlink/utils/util_images.dart';
+import 'package:farmlink/utils/util_routes.dart';
 import 'package:farmlink/widgets/custom_button.dart';
 import 'package:farmlink/widgets/custom_checkbox.dart';
 import 'package:farmlink/widgets/ui-widgets/header.dart';
@@ -52,7 +53,10 @@ class _HomeState extends State<Home> {
   }
 
   handleApply() {}
-  navigateToDetail() {}
+  navigateToDetail() {
+    Navigator.pushNamed(context, routeDetailScreen);
+  }
+
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
@@ -208,11 +212,8 @@ class _HomeState extends State<Home> {
                             : Container(
                                 padding: const EdgeInsets.only(top: 6),
                                 child: Column(
-                                    children: List.generate(
-                                        homeData.length,
-                                        (index) => InkWell(
-                                            onTap: () => navigateToDetail(),
-                                            child: CardItem(homeData, index)))),
+                                    children: List.generate(homeData.length,
+                                        (index) => CardItem(homeData, index))),
                               )
                   ],
                 ),
@@ -495,10 +496,14 @@ class _HomeState extends State<Home> {
             margin: const EdgeInsets.symmetric(horizontal: 18),
             child: Row(
               children: [
-                Image.asset(
-                  homeData[index]['image'],
-                  height: 90,
-                  width: 90,
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(7),
+                  child: Image.asset(
+                    homeData[index]['image'],
+                    height: 90,
+                    width: 90,
+                    fit: BoxFit.cover,
+                  ),
                 ),
                 const SizedBox(
                   width: 18,
@@ -615,20 +620,23 @@ class _HomeState extends State<Home> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Expanded(
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: colorGreenDark,
-                    borderRadius: const BorderRadius.only(
-                        bottomLeft: const Radius.circular(8)),
-                    border: Border.all(color: colorGreenDark, width: 1),
+                child: InkWell(
+                  onTap: () => navigateToDetail(),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: colorGreenDark,
+                      borderRadius: const BorderRadius.only(
+                          bottomLeft: const Radius.circular(8)),
+                      border: Border.all(color: colorGreenDark, width: 1),
+                    ),
+                    padding: const EdgeInsets.symmetric(vertical: 6),
+                    child: const Text(strViewProfile,
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            color: colorLight,
+                            fontSize: 14,
+                            fontWeight: FontWeight.w400)),
                   ),
-                  padding: const EdgeInsets.symmetric(vertical: 6),
-                  child: const Text(strViewProfile,
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                          color: colorLight,
-                          fontSize: 14,
-                          fontWeight: FontWeight.w400)),
                 ),
               ),
               Expanded(

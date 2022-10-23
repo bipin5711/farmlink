@@ -9,3 +9,4 @@ const String routeCartScreen = '/cart';
 const String routeFavoriteScreen = '/favorite';
 const String routeProfileScreen = '/profile';
 const String routeMessageScreen = '/message';
+const String routeDetailScreen = '/detail';

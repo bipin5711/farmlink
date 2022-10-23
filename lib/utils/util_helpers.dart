@@ -80,3 +80,12 @@ List filterData = [
   strProduce,
   strMiscellaneous,
 ];
+
+List paymentOptions = [
+  {'name': strCash, 'image': cash},
+  {'name': strZelle, 'image': zelle},
+  {'name': strCheck, 'image': cheque},
+  {'name': strBankTransfer, 'image': bankTransfer},
+  {'name': strCrypto, 'image': crypto},
+  {'name': strCreditCard, 'image': creditcard},
+];
