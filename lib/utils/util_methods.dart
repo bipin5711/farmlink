@@ -92,7 +92,6 @@ CustomerReviewDialog(context) async {
                               ),
                               const Text(
                                 strWonderfulExperience,
-                                textAlign: TextAlign.center,
                                 style: TextStyle(
                                   color: colorDark,
                                   fontWeight: FontWeight.w600,
