@@ -2,6 +2,7 @@ import 'package:farmlink/utils/util_colors.dart';
 import 'package:farmlink/utils/util_constants.dart';
 import 'package:farmlink/utils/util_helpers.dart';
 import 'package:farmlink/utils/util_images.dart';
+import 'package:farmlink/utils/util_methods.dart';
 import 'package:farmlink/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
@@ -17,6 +18,10 @@ class Detail extends StatefulWidget {
 
 class _DetailState extends State<Detail> {
   handleLink() {}
+  openCustomerReviewDialog(BuildContext context) async {
+    return CustomerReviewDialog(context);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,8 +51,8 @@ class _DetailState extends State<Detail> {
                     ),
                     Image.asset(
                       back,
-                      height: 24,
-                      width: 24,
+                      height: 30,
+                      width: 30,
                     ),
                     Container(
                         width: double.infinity,
@@ -138,15 +143,20 @@ class _DetailState extends State<Detail> {
                                                   ))),
                                         ),
                                         const SizedBox(
-                                          height: 2,
+                                          height: 4,
                                         ),
-                                        const Text(strSeeReviews,
-                                            style: TextStyle(
-                                                decoration:
-                                                    TextDecoration.underline,
-                                                fontSize: 12,
-                                                fontWeight: FontWeight.w400,
-                                                color: colorBackgroundDark)),
+                                        InkWell(
+                                          onTap: () {
+                                            openCustomerReviewDialog(context);
+                                          },
+                                          child: const Text(strSeeReviews,
+                                              style: TextStyle(
+                                                  decoration:
+                                                      TextDecoration.underline,
+                                                  fontSize: 12,
+                                                  fontWeight: FontWeight.w400,
+                                                  color: colorBackgroundDark)),
+                                        ),
                                       ],
                                     ),
                                     Column(

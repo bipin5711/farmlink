@@ -60,4 +60,6 @@ const String logout = "$imageRoute/logout.png";
 const String meats = "$imageRoute/meats.png";
 const String orderhistory = "$imageRoute/order-history.png";
 const String send = "$imageRoute/send.png";
-
+const String starFilledDark = "$imageRoute/star-dark-filled.png";
+const String starOutlinedDark = "$imageRoute/star-dark-outlined.png";
+const String closeGrey = "$imageRoute/close-grey.png";
