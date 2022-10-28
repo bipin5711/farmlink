@@ -89,3 +89,14 @@ List paymentOptions = [
   {'name': strCrypto, 'image': crypto},
   {'name': strCreditCard, 'image': creditcard},
 ];
+
+List inventoryList = [
+  {'name': strBeef, 'image': beefInventory},
+  {'name': strPork, 'image': porkInventory},
+  {'name': strGoat, 'image': goatInventory},
+  {'name': strSheep, 'image': sheepInventory},
+  {'name': strPoultry, 'image': poultryInventory},
+  {'name': strFowl, 'image': fowlInventory},
+  {'name': strRabbit, 'image': rabbitInventory},
+  {'name': strWildExotic, 'image': wildInventory},
+];

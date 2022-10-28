@@ -54,6 +54,7 @@ const String strMapView = 'Map View';
 const String strFilter = 'Filter';
 const String strSearchCity = 'Search City';
 const String strViewProfile = 'View Profile';
+const String strInventory = 'Inventory';
 const String strViewInventory = 'View Inventory';
 const String strLivestock = 'Livestock';
 const String strClearAll = 'Clear all';
@@ -97,10 +98,12 @@ const String strPlus = '+';
 const String strOrderPlaced = 'Order Placed';
 const String strOrderAccepted = 'Your order has been accepted';
 const String strOrder = 'Order';
+const String strConnectwithFarmer = 'Connect with a Farmer';
 const String strConnectwithButcher = 'Connect with Butcher';
 const String strOrderDeclined = 'Your order has been declined';
 const String strFindAnotherFarm = 'Find another Farm';
 const String strJobComplete = 'Job Complete';
+const String strAfterWeek = 'After 1 week';
 
 // Flow 4
 const String strCustomerReviews = 'Customer Reviews';

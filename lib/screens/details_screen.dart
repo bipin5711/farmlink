@@ -4,10 +4,8 @@ import 'package:farmlink/utils/util_helpers.dart';
 import 'package:farmlink/utils/util_images.dart';
 import 'package:farmlink/utils/util_methods.dart';
 import 'package:farmlink/widgets/custom_button.dart';
+import 'package:farmlink/widgets/ui-widgets/header.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class Detail extends StatefulWidget {
   const Detail({Key? key}) : super(key: key);
@@ -49,10 +47,9 @@ class _DetailState extends State<Detail> {
                     const SizedBox(
                       height: 12,
                     ),
-                    Image.asset(
-                      back,
-                      height: 30,
-                      width: 30,
+                    const Header(
+                      isInnerPage: true,
+                      hideSearch: true,
                     ),
                     Container(
                         width: double.infinity,

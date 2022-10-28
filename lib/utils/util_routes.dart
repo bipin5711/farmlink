@@ -10,3 +10,5 @@ const String routeFavoriteScreen = '/favorite';
 const String routeProfileScreen = '/profile';
 const String routeMessageScreen = '/message';
 const String routeDetailScreen = '/detail';
+const String routeInventoryScreen = '/inventory';
+const String routeInventoryDetailScreen = '/inventory-detail';

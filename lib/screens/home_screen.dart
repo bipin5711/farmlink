@@ -57,6 +57,10 @@ class _HomeState extends State<Home> {
     Navigator.pushNamed(context, routeDetailScreen);
   }
 
+  navigateToInventory() {
+    Navigator.pushNamed(context, routeInventoryScreen);
+  }
+
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
@@ -72,7 +76,10 @@ class _HomeState extends State<Home> {
                   fit: BoxFit.cover)),
           child: Column(
             children: [
-              const Header(),
+              const Padding(
+                padding: EdgeInsets.only(top: 24, left: 20, right: 20),
+                child: Header(searchPlaceholder: strSearchCity),
+              ),
               Container(
                 width: double.infinity,
                 // padding: EdgeInsets.symmetric(horizontal: 20),
@@ -640,19 +647,22 @@ class _HomeState extends State<Home> {
                 ),
               ),
               Expanded(
-                child: Container(
-                  decoration: BoxDecoration(
-                      color: colorTransparent,
-                      borderRadius: const BorderRadius.only(
-                          bottomRight: const Radius.circular(8)),
-                      border: Border.all(color: colorGreenDark, width: 1)),
-                  padding: const EdgeInsets.symmetric(vertical: 6),
-                  child: const Text(strViewInventory,
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                          color: colorGreenDark,
-                          fontSize: 14,
-                          fontWeight: FontWeight.w400)),
+                child: InkWell(
+                  onTap: () => navigateToInventory(),
+                  child: Container(
+                    decoration: BoxDecoration(
+                        color: colorTransparent,
+                        borderRadius: const BorderRadius.only(
+                            bottomRight: const Radius.circular(8)),
+                        border: Border.all(color: colorGreenDark, width: 1)),
+                    padding: const EdgeInsets.symmetric(vertical: 6),
+                    child: const Text(strViewInventory,
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            color: colorGreenDark,
+                            fontSize: 14,
+                            fontWeight: FontWeight.w400)),
+                  ),
                 ),
               )
             ],

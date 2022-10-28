@@ -63,3 +63,13 @@ const String send = "$imageRoute/send.png";
 const String starFilledDark = "$imageRoute/star-dark-filled.png";
 const String starOutlinedDark = "$imageRoute/star-dark-outlined.png";
 const String closeGrey = "$imageRoute/close-grey.png";
+
+const String wildInventory = "$imageRoute/bison.png";
+const String poultryInventory = "$imageRoute/chicken.png";
+const String beefInventory = "$imageRoute/cow.png";
+const String fowlInventory = "$imageRoute/duck.png";
+const String porkInventory = "$imageRoute/pig.png";
+const String rabbitInventory = "$imageRoute/rabbit.png";
+const String sheepInventory = "$imageRoute/sheep.png";
+const String turkeyInventory = "$imageRoute/turkey.png";
+const String goatInventory = "$imageRoute/goat2.png";
