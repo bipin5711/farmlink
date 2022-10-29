@@ -77,5 +77,5 @@ const String turkeyInventory = "$imageRoute/turkey.png";
 const String goatInventory = "$imageRoute/goat2.png";
 const String bottom1 = "$imageRoute/bottom1.jpeg";
 const String bottom2 = "$imageRoute/bottom2.jpeg";
-const String bottom3 = "$imageRoute/bottom3.jpeg";
-const String bottom4 = "$imageRoute/bottom4.jpeg";
+const String bottom3 = "$imageRoute/bottom3.png";
+const String bottom4 = "$imageRoute/bottom4.png";

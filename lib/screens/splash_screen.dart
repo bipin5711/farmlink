@@ -63,6 +63,14 @@ class _SplashState extends State<Splash> {
                     fit: BoxFit.cover,
                     height: MediaQuery.of(context).size.height * 0.46,
                   )),
+                  Positioned(
+                  bottom: -124,
+                  left: 0,
+                  right: 0,
+                  child: Image.asset(
+                    bottom2,
+                    height: MediaQuery.of(context).size.height * 0.46,
+                  )),
               Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 mainAxisSize: MainAxisSize.max,
@@ -76,7 +84,7 @@ class _SplashState extends State<Splash> {
                     fit: BoxFit.cover,
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(bottom: 24.0),
+                    padding: const EdgeInsets.only(bottom: 16.0),
                     child: Center(child: Footer()),
                   ),
                 ],

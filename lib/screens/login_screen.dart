@@ -22,6 +22,7 @@ class _LoginState extends State<Login> {
   handleLogin() {
     Navigator.pushNamed(context, routeLayoutScreen);
   }
+
   handleSignup() {
     Navigator.pushNamed(context, routeSignupScreen);
   }
@@ -37,15 +38,14 @@ class _LoginState extends State<Login> {
                   FocusScope.of(context).requestFocus(FocusNode());
                 },
                 child: Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 16),
                     decoration: const BoxDecoration(
                         image: DecorationImage(
                             alignment: Alignment.center,
-                            image: AssetImage(lightBgNoCow),
+                            image: AssetImage(lightBackground),
                             fit: BoxFit.cover)),
                     child: Stack(
                       children: [
-                         Positioned(
+                        Positioned(
                             top: 0,
                             left: 0,
                             right: 0,
@@ -54,169 +54,186 @@ class _LoginState extends State<Login> {
                               fit: BoxFit.cover,
                               height: MediaQuery.of(context).size.height * 0.3,
                             )),
-                        Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Column(
-                                  // ignore: prefer_const_literals_to_create_immutables
-                                  children: [
-                                    SizedBox(
-                                      height: MediaQuery.of(context).size.height *
-                                          0.075,
-                                    ),
-                                    Image.asset(
-                                      logo,
-                                      width: 220,
-                                      height: 220,
-                                      fit: BoxFit.cover,
-                                    ),
-                                    SizedBox(
-                                      height: 18,
-                                    ),
-                                    const Text(
-                                      strWelcome,
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                          color: colorTitleGreen,
-                                          fontSize: 32,
-                                          fontWeight: FontWeight.w800),
-                                    ),
-                                    const SizedBox(
-                                      height: 16,
-                                    ),
-                                    Padding(
-                                      padding:
-                                          const EdgeInsets.symmetric(vertical: 4),
-                                      child: CustomInput(
-                                        height: 52,
-                                        textController: emailController,
-                                        labelText: strEmail,
-                                        fillColor: colorInputBackground,
-                                        floatLabel: true,
-                                        underlineColor: colorInputUnderline,
+                        Positioned(
+                            bottom: -242,
+                            left: -10,
+                            right: 0,
+                            child: Image.asset(
+                              bottom3,
+                              height: MediaQuery.of(context).size.height * 0.46,
+                            )),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 16),
+                          child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Column(
+                                    // ignore: prefer_const_literals_to_create_immutables
+                                    children: [
+                                      SizedBox(
+                                        height:
+                                            MediaQuery.of(context).size.height *
+                                                0.075,
                                       ),
-                                    ),
-                                    const SizedBox(height: 6),
-                                    Padding(
-                                      padding:
-                                          const EdgeInsets.symmetric(vertical: 4),
-                                      child: CustomInput(
-                                        height: 52,
-                                        textController: passwordController,
-                                        labelText: strPassword,
-                                        obscureText: obscureText,
-                                        fillColor: colorInputBackground,
-                                        floatLabel: true,
-                                        underlineColor: colorInputUnderline,
-                                        suffixIcon: InkWell(
-                                          onTap: () {
-                                            obscureText = !obscureText;
-                                          },
-                                          child: const Icon(
-                                            Icons.remove_red_eye,
-                                            color: colorInputPrimary,
-                                            size: 20,
+                                      Image.asset(
+                                        logo,
+                                        width: 220,
+                                        height: 220,
+                                        fit: BoxFit.cover,
+                                      ),
+                                      SizedBox(
+                                        height: 18,
+                                      ),
+                                      const Text(
+                                        strWelcome,
+                                        textAlign: TextAlign.center,
+                                        style: TextStyle(
+                                            color: colorTitleGreen,
+                                            fontSize: 32,
+                                            fontWeight: FontWeight.w800),
+                                      ),
+                                      const SizedBox(
+                                        height: 16,
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsets.symmetric(
+                                            vertical: 4),
+                                        child: CustomInput(
+                                          height: 52,
+                                          textController: emailController,
+                                          labelText: strEmail,
+                                          fillColor: colorInputBackground,
+                                          floatLabel: true,
+                                          underlineColor: colorInputUnderline,
+                                        ),
+                                      ),
+                                      const SizedBox(height: 6),
+                                      Padding(
+                                        padding: const EdgeInsets.symmetric(
+                                            vertical: 4),
+                                        child: CustomInput(
+                                          height: 52,
+                                          textController: passwordController,
+                                          labelText: strPassword,
+                                          obscureText: obscureText,
+                                          fillColor: colorInputBackground,
+                                          floatLabel: true,
+                                          underlineColor: colorInputUnderline,
+                                          suffixIcon: InkWell(
+                                            onTap: () {
+                                              obscureText = !obscureText;
+                                            },
+                                            child: const Icon(
+                                              Icons.remove_red_eye,
+                                              color: colorInputPrimary,
+                                              size: 20,
+                                            ),
                                           ),
                                         ),
                                       ),
-                                    ),
-                                    const SizedBox(
-                                      height: 4,
-                                    ),
-                                    const SizedBox(
-                                      width: double.infinity,
-                                      child: Text(
-                                        strForgotPassword,
-                                        textAlign: TextAlign.end,
-                                        style: TextStyle(
-                                            color: colorTextPrimary,
-                                            fontSize: 14,
-                                            fontWeight: FontWeight.w500),
+                                      const SizedBox(
+                                        height: 4,
                                       ),
-                                    ),
-                                    const SizedBox(
-                                      height: 16,
-                                    ),
-                                    SizedBox(
-                                      width: double.infinity,
-                                      child: CustomButton(
-                                        onPressed: handleLogin,
-                                        buttonColor: colorSecondary,
-                                        text: strLoginCaps,
+                                      const SizedBox(
+                                        width: double.infinity,
+                                        child: Text(
+                                          strForgotPassword,
+                                          textAlign: TextAlign.end,
+                                          style: TextStyle(
+                                              color: colorTextPrimary,
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.w500),
+                                        ),
                                       ),
-                                    ),
+                                      const SizedBox(
+                                        height: 16,
+                                      ),
+                                      SizedBox(
+                                        width: double.infinity,
+                                        child: CustomButton(
+                                          onPressed: handleLogin,
+                                          buttonColor: colorSecondary,
+                                          text: strLoginCaps,
+                                        ),
+                                      ),
 
-                                    // ignore: prefer_const_constructors
-                                    Padding(
-                                      padding: const EdgeInsets.only(top: 16.0),
-                                      child: const Text(
-                                        strByContining,
-                                        textAlign: TextAlign.center,
-                                        style: TextStyle(
-                                            color: colorTextMain, fontSize: 13),
+                                      // ignore: prefer_const_constructors
+                                      Padding(
+                                        padding:
+                                            const EdgeInsets.only(top: 16.0),
+                                        child: const Text(
+                                          strByContining,
+                                          textAlign: TextAlign.center,
+                                          style: TextStyle(
+                                              color: colorTextMain,
+                                              fontSize: 13),
+                                        ),
                                       ),
-                                    ),
-                                    RichText(
-                                      text: TextSpan(children: <TextSpan>[
-                                        TextSpan(
-                                            text: strTerms,
-                                            style: const TextStyle(
-                                              color: colorLinkGreen,
-                                              decoration: TextDecoration.underline,
-                                              fontSize: 13,
-                                            ),
-                                            recognizer: TapGestureRecognizer()
-                                              ..onTap = () {
-                                                handleSignup();
-                                              }),
-                                        const TextSpan(
-                                            text: ' ' + strAnd + ' ',
-                                            style: TextStyle(
-                                                color: colorTextMain,
-                                                fontSize: 13)),
-                                        TextSpan(
-                                            text: strPrivacy,
-                                            style: const TextStyle(
+                                      RichText(
+                                        text: TextSpan(children: <TextSpan>[
+                                          TextSpan(
+                                              text: strTerms,
+                                              style: const TextStyle(
                                                 color: colorLinkGreen,
                                                 decoration:
                                                     TextDecoration.underline,
-                                                fontSize: 13),
-                                            recognizer: TapGestureRecognizer()
-                                              ..onTap = () {
-                                                handleSignup();
-                                              }),
-                                      ]),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(top: 16),
-                                      child: RichText(
-                                        text: TextSpan(children: <TextSpan>[
+                                                fontSize: 13,
+                                              ),
+                                              recognizer: TapGestureRecognizer()
+                                                ..onTap = () {
+                                                  handleSignup();
+                                                }),
                                           const TextSpan(
-                                              text: strDontAccount + ' ',
+                                              text: ' ' + strAnd + ' ',
                                               style: TextStyle(
-                                                  color: colorTextSecondary,
-                                                  fontSize: 15)),
+                                                  color: colorTextMain,
+                                                  fontSize: 13)),
                                           TextSpan(
-                                              text: strSignup,
+                                              text: strPrivacy,
                                               style: const TextStyle(
-                                                  color: colorInputUnderline,
-                                                  fontSize: 15,
-                                                  fontWeight: FontWeight.w600),
+                                                  color: colorLinkGreen,
+                                                  decoration:
+                                                      TextDecoration.underline,
+                                                  fontSize: 13),
                                               recognizer: TapGestureRecognizer()
                                                 ..onTap = () {
                                                   handleSignup();
                                                 }),
                                         ]),
                                       ),
-                                    ),
-                                  ]),
-                              Padding(
-                                padding: const EdgeInsets.only(bottom: 24.0),
-                                child: Center(child: Footer()),
-                              )
-                            ]),
+                                      Padding(
+                                        padding: const EdgeInsets.only(top: 16),
+                                        child: RichText(
+                                          text: TextSpan(children: <TextSpan>[
+                                            const TextSpan(
+                                                text: strDontAccount + ' ',
+                                                style: TextStyle(
+                                                    color: colorTextSecondary,
+                                                    fontSize: 15)),
+                                            TextSpan(
+                                                text: strSignup,
+                                                style: const TextStyle(
+                                                    color: colorInputUnderline,
+                                                    fontSize: 15,
+                                                    fontWeight:
+                                                        FontWeight.w600),
+                                                recognizer:
+                                                    TapGestureRecognizer()
+                                                      ..onTap = () {
+                                                        handleSignup();
+                                                      }),
+                                          ]),
+                                        ),
+                                      ),
+                                    ]),
+                                Padding(
+                                  padding: const EdgeInsets.only(bottom: 16.0),
+                                  child: Center(child: Footer()),
+                                )
+                              ]),
+                        ),
                       ],
                     )))));
   }

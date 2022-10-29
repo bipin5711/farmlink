@@ -16,12 +16,12 @@ class Footer extends StatelessWidget {
         Text(
           strFooter1,
           style: TextStyle(
-              fontSize: 11, color: textColor, fontWeight: FontWeight.w500),
+              fontSize: 10, color: textColor, fontWeight: FontWeight.w500),
         ),
         Text(
           strFooter2,
           style: TextStyle(
-              fontSize: 11, color: textColor, fontWeight: FontWeight.w500),
+              fontSize: 10, color: textColor, fontWeight: FontWeight.w500),
         ),
       ],
     );
