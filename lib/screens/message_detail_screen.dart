@@ -233,7 +233,7 @@ class _MessageDetailState extends State<MessageDetail> {
                   // width: double.infinity,
                   padding:
                       const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                       color: colorBackgroundDark,
                       borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(14),
