@@ -17,6 +17,10 @@ class Message extends StatefulWidget {
 }
 
 class _MessageState extends State<Message> {
+  handleMessageDetail() {
+    Navigator.pushNamed(context, routeMessageDetailScreen);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -70,65 +74,97 @@ class _MessageState extends State<Message> {
                             Column(
                                 children: List.generate(
                                     4,
-                                    (index) => Container(
-                                     padding: const EdgeInsets.all(18),
-                                          margin: const EdgeInsets.symmetric(
-                                              vertical: 8),
-                                          width: double.infinity,
+                                    (index) => InkWell(
+                                          onTap: handleMessageDetail,
+                                          child: Container(
+                                            padding: const EdgeInsets.all(18),
+                                            margin: const EdgeInsets.symmetric(
+                                                vertical: 8),
+                                            width: double.infinity,
                                             decoration: BoxDecoration(
-                                              color: colorLight,
-                                              borderRadius:
-                                                  BorderRadius.circular(16)),
-                                          height: 100,
-                                          child: Row(
-                                            children: [
-                                              Image.asset(
-                                                placeholder,
-                                                height: 54,
-                                                width: 54,
-                                              ),
-                                              const SizedBox(
-                                                width: 16,
-                                              ),
-                                              Expanded(
-                                                child: Column(
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment.center,
-                                                  crossAxisAlignment:
-                                                      CrossAxisAlignment.start,
-                                                  // ignore: prefer_const_literals_to_create_immutables
+                                                color: colorLight,
+                                                borderRadius:
+                                                    BorderRadius.circular(16)),
+                                            height: 100,
+                                            child: Row(
+                                              children: [
+                                                Stack(
                                                   children: [
-                                                    const Text(
-                                                      strRiverlandsRanch,
-                                                      style: TextStyle(
-                                                          color: colorDark2,
-                                                          fontFamily:
-                                                              'NunitoSans',
-                                                          fontSize: 16,
-                                                          fontWeight:
-                                                              FontWeight.w600),
+                                                    Image.asset(
+                                                      placeholder,
+                                                      height: 54,
+                                                      width: 54,
                                                     ),
-                                                    const SizedBox(
-                                                      height: 4,
-                                                    ),
-                                                    const Text(
-                                                      strLiketoPurchase,
-                                                      // ignore: prefer_const_constructors
-                                                      style: TextStyle(
-                                                          color: colorDark2,
-                                                          fontSize: 14,
-                                                          fontFamily: 'NunitoSans',
-                                                          fontWeight:
-                                                              FontWeight.w300),
-                                                    )
+                                                    index == 0
+                                                        ? Positioned(
+                                                            bottom: 5,
+                                                            right: 5,
+                                                            child: Container(
+                                                              decoration: BoxDecoration(
+                                                                  color:
+                                                                      colorGreen,
+                                                                  border: Border
+                                                                      .all(
+                                                                          color:
+                                                                              colorLight),
+                                                                  borderRadius:
+                                                                      BorderRadius
+                                                                          .circular(
+                                                                              12)),
+                                                              height: 10,
+                                                              width: 10,
+                                                            ))
+                                                        : const SizedBox(),
                                                   ],
                                                 ),
-                                              ),
-                                              // ignore: prefer_const_constructors
-                                              SizedBox(
-                                                width: 4,
-                                              ),
-                                            ],
+                                                const SizedBox(
+                                                  width: 16,
+                                                ),
+                                                Expanded(
+                                                  child: Column(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .center,
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .start,
+                                                    // ignore: prefer_const_literals_to_create_immutables
+                                                    children: [
+                                                      const Text(
+                                                        strRiverlandsRanch,
+                                                        style: TextStyle(
+                                                            color: colorDark2,
+                                                            fontFamily:
+                                                                'NunitoSans',
+                                                            fontSize: 16,
+                                                            fontWeight:
+                                                                FontWeight
+                                                                    .w600),
+                                                      ),
+                                                      const SizedBox(
+                                                        height: 4,
+                                                      ),
+                                                      const Text(
+                                                        strLiketoPurchase,
+                                                        // ignore: prefer_const_constructors
+                                                        style: TextStyle(
+                                                            color: colorDark2,
+                                                            fontSize: 14,
+                                                            fontFamily:
+                                                                'NunitoSans',
+                                                            fontWeight:
+                                                                FontWeight
+                                                                    .w300),
+                                                      )
+                                                    ],
+                                                  ),
+                                                ),
+                                                // ignore: prefer_const_constructors
+                                                SizedBox(
+                                                  width: 4,
+                                                ),
+                                              ],
+                                            ),
                                           ),
                                         )))
                           ],

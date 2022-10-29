@@ -34,3 +34,6 @@ const Color colorSwitchBackground2 = Color(0xff807D7D);
 //border
 const Color colorDivider = Color(0xffDCDFDD);
 const Color colorCheckboxBorder = Color(0xffB7B6B7);
+
+// Messgae
+const Color colorGreen = Color(0xff36AAB9);

@@ -12,3 +12,4 @@ const String routeMessageScreen = '/message';
 const String routeDetailScreen = '/detail';
 const String routeInventoryScreen = '/inventory';
 const String routeInventoryDetailScreen = '/inventory-detail';
+const String routeMessageDetailScreen = '/message-detail';

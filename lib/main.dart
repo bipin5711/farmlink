@@ -6,6 +6,7 @@ import 'package:farmlink/screens/inventory_detail_screen.dart';
 import 'package:farmlink/screens/inventory_screen.dart';
 import 'package:farmlink/screens/layout_screen.dart';
 import 'package:farmlink/screens/login_screen.dart';
+import 'package:farmlink/screens/message_detail_screen.dart';
 import 'package:farmlink/screens/message_screen.dart';
 import 'package:farmlink/screens/otp_screen.dart';
 import 'package:farmlink/screens/profile_screen.dart';
@@ -72,7 +73,9 @@ class MyApp extends StatelessWidget {
               routeDetailScreen: (BuildContext context) => const Detail(),
               routeInventoryScreen: (BuildContext context) => const Inventory(),
               routeInventoryDetailScreen: (BuildContext context) =>
-                  const InventoryDetail()
+                  const InventoryDetail(),
+              routeMessageDetailScreen: (BuildContext context) =>
+                  const MessageDetail()
             }));
   }
 }
