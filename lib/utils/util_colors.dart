@@ -9,6 +9,7 @@ const Color colorSecondary = Color(0xffBF1E2E);
 const Color colorGreenDark = Color(0xff173F2B);
 //input
 const Color colorInputPrimary = Color(0xff35463F);
+const Color colorSearchPlaceholder = Color(0xff9CA6AE);
 const Color colorInputSecondary = Color(0xff7C9C8E);
 const Color colorInputUnderline = Color(0xff42B641);
 const Color colorInputBackground = Color(0xffcfe5dc);

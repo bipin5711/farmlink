@@ -17,9 +17,6 @@ class Favorite extends StatefulWidget {
 }
 
 class _FavoriteState extends State<Favorite> {
-  navigateToInventoryDetail() {
-    Navigator.pushNamed(context, routeInventoryDetailScreen);
-  }
 
   @override
   Widget build(BuildContext context) {
