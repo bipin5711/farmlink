@@ -40,8 +40,8 @@ class _HeaderState extends State<Header> {
                     children: [
                       Image.asset(
                         back,
-                        height: 24,
-                        width: 24,
+                        height: 28,
+                        width: 30,
                       ),
                       const SizedBox(
                         width: 12,
@@ -94,7 +94,7 @@ class _HeaderState extends State<Header> {
           widget.hideSearch == false
               ? Container(
                   padding: const EdgeInsets.symmetric(vertical: 4),
-                  margin: const EdgeInsets.symmetric(vertical: 16),
+                  margin: const EdgeInsets.symmetric(vertical: 14),
                   child: CustomInput(
                     height: 60,
                     textController: cityController,

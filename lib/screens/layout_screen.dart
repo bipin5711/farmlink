@@ -116,6 +116,7 @@ class _LayoutState extends State<Layout> {
                   padding: const EdgeInsets.all(6),
                   width: 50,
                   height: 50,
+                  alignment: Alignment.center,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(250),
                     color: currentIndex == index
@@ -126,7 +127,16 @@ class _LayoutState extends State<Layout> {
                       currentIndex == index
                           ? iconsList[index].activeImage
                           : iconsList[index].inactiveImage,
-                      height: MediaQuery.of(context).size.height * 0.05),
+                      height: currentIndex == 4 && index == 4
+                          ? MediaQuery.of(context).size.height * 0.04
+                          : currentIndex == 3 && index == 3
+                              ? MediaQuery.of(context).size.height * 0.05
+                              : currentIndex != 2 && index == 2
+                                  ? MediaQuery.of(context).size.height * 0.04
+                                  : currentIndex == 1 && index == 1
+                                      ? MediaQuery.of(context).size.height *
+                                          0.06
+                                      : MediaQuery.of(context).size.height * 0.05),
                 ),
               ],
             ),

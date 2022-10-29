@@ -75,9 +75,15 @@ class _HomeState extends State<Home> {
                 fit: BoxFit.cover)),
         child: Column(
           children: [
-            const Padding(
-              padding: EdgeInsets.only(top: 24, left: 20, right: 20),
-              child: Header(searchPlaceholder: strSearchCity),
+            Padding(
+              padding: const EdgeInsets.only(top: 32, left: 20, right: 20),
+              child: Header(
+                searchPlaceholder: strSearchCity,
+                hideSearch: mapSwitch,
+              ),
+            ),
+            SizedBox(
+              height: mapSwitch ? 42 : 8,
             ),
             Expanded(
               child: Container(
@@ -158,6 +164,7 @@ class _HomeState extends State<Home> {
                                 },
                                 child: Image.asset(
                                   filter,
+                                  height: 26,
                                 ),
                               )
                             ],

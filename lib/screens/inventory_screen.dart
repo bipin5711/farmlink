@@ -44,7 +44,7 @@ class _InventoryState extends State<Inventory> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const SizedBox(
-                    height: 12,
+                    height: 24,
                   ),
                   const Padding(
                     padding: EdgeInsets.symmetric(horizontal: 20),
@@ -55,7 +55,7 @@ class _InventoryState extends State<Inventory> {
                     ),
                   ),
                   const SizedBox(
-                    height: 12,
+                    height: 6,
                   ),
                   Expanded(
                     child: Container(

@@ -44,7 +44,7 @@ class _FavoriteState extends State<Favorite> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const SizedBox(
-                    height: 12,
+                    height: 24,
                   ),
                   const Padding(
                     padding: EdgeInsets.symmetric(horizontal: 20),
@@ -55,7 +55,7 @@ class _FavoriteState extends State<Favorite> {
                     ),
                   ),
                   const SizedBox(
-                    height: 12,
+                    height: 0,
                   ),
                   Expanded(
                     child: Container(
