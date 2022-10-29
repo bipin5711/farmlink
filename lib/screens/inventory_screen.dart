@@ -31,96 +31,98 @@ class _InventoryState extends State<Inventory> {
           onTap: () {
             FocusScope.of(context).requestFocus(FocusNode());
           },
-          child: SingleChildScrollView(
-            child: Container(
-                width: double.infinity,
-                decoration: const BoxDecoration(
-                    color: colorInputBackground,
-                    image: DecorationImage(
-                        alignment: Alignment.center,
-                        image: AssetImage(bgHomeGreen2),
-                        fit: BoxFit.cover)),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const SizedBox(
-                      height: 12,
+          child: Container(
+              width: double.infinity,
+              decoration: const BoxDecoration(
+                  color: colorInputBackground,
+                  image: DecorationImage(
+                      alignment: Alignment.center,
+                      image: AssetImage(bgHomeGreen2),
+                      fit: BoxFit.cover)),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const SizedBox(
+                    height: 12,
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 20),
+                    child: Header(
+                      isInnerPage: true,
+                      title: strInventory,
+                      searchPlaceholder: strSearchItems,
                     ),
-                    const Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 20),
-                      child: Header(
-                        isInnerPage: true,
-                        title: strInventory,
-                        searchPlaceholder: strSearchItems,
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 12,
-                    ),
-                    Container(
+                  ),
+                  const SizedBox(
+                    height: 12,
+                  ),
+                  Expanded(
+                    child: Container(
                       width: double.infinity,
                       padding: const EdgeInsets.symmetric(horizontal: 20),
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(16),
                           color: colorBackgroundLight),
-                      child: Column(
-                        children: [
-                          const SizedBox(
-                            height: 14,
-                          ),
-                          GridView.count(
-                            primary: true,
-                            shrinkWrap: true,
-                            physics: const NeverScrollableScrollPhysics(),
-                            crossAxisCount: 2,
-                            children: List.generate(
-                                inventoryList.length,
-                                (index) => InkWell(
-                                      onTap: navigateToInventoryDetail,
-                                      child: Container(
-                                        margin: EdgeInsets.only(
-                                            top: 10,
-                                            bottom: 10,
-                                            right: index.isOdd ? 0 : 10,
-                                            left: index.isEven ? 0 : 10),
-                                        decoration: BoxDecoration(
-                                            color: colorLight,
-                                            borderRadius:
-                                                BorderRadius.circular(16)),
-                                        padding: const EdgeInsets.symmetric(
-                                            vertical: 8, horizontal: 12),
-                                        child: Column(
-                                          children: [
-                                            SizedBox(
-                                              width: double.infinity,
-                                              child: Text(
-                                                inventoryList[index]['name'],
-                                                textAlign: TextAlign.end,
-                                                style: const TextStyle(
-                                                    color: colorDark2,
-                                                    fontSize: 16,
-                                                    fontWeight:
-                                                        FontWeight.w700),
+                      child: SingleChildScrollView(
+                        child: Column(
+                          children: [
+                            const SizedBox(
+                              height: 14,
+                            ),
+                            GridView.count(
+                              primary: true,
+                              shrinkWrap: true,
+                              physics: const NeverScrollableScrollPhysics(),
+                              crossAxisCount: 2,
+                              children: List.generate(
+                                  inventoryList.length,
+                                  (index) => InkWell(
+                                        onTap: navigateToInventoryDetail,
+                                        child: Container(
+                                          margin: EdgeInsets.only(
+                                              top: 10,
+                                              bottom: 10,
+                                              right: index.isOdd ? 0 : 10,
+                                              left: index.isEven ? 0 : 10),
+                                          decoration: BoxDecoration(
+                                              color: colorLight,
+                                              borderRadius:
+                                                  BorderRadius.circular(16)),
+                                          padding: const EdgeInsets.symmetric(
+                                              vertical: 8, horizontal: 12),
+                                          child: Column(
+                                            children: [
+                                              SizedBox(
+                                                width: double.infinity,
+                                                child: Text(
+                                                  inventoryList[index]['name'],
+                                                  textAlign: TextAlign.end,
+                                                  style: const TextStyle(
+                                                      color: colorDark2,
+                                                      fontSize: 16,
+                                                      fontWeight:
+                                                          FontWeight.w700),
+                                                ),
                                               ),
-                                            ),
-                                            Image.asset(
-                                              inventoryList[index]['image'],
-                                              height: 120,
-                                              width: 120,
-                                              fit: BoxFit.contain,
-                                            )
-                                          ],
+                                              Image.asset(
+                                                inventoryList[index]['image'],
+                                                height: 120,
+                                                width: 120,
+                                                fit: BoxFit.contain,
+                                              )
+                                            ],
+                                          ),
                                         ),
-                                      ),
-                                    )),
-                          )
-                        ],
+                                      )),
+                            )
+                          ],
+                        ),
                       ),
-                    )
-                  ],
-                )),
-          ),
+                    ),
+                  )
+                ],
+              )),
         ),
       ),
     );

@@ -65,22 +65,22 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return LayoutBuilder(
         builder: (BuildContext context, BoxConstraints constraints) {
-      return SingleChildScrollView(
-        child: Container(
-          // width: double.infinity,
-          decoration: const BoxDecoration(
-              color: colorInputBackground,
-              image: DecorationImage(
-                  alignment: Alignment.center,
-                  image: AssetImage(bgHomeGreen2),
-                  fit: BoxFit.cover)),
-          child: Column(
-            children: [
-              const Padding(
-                padding: EdgeInsets.only(top: 24, left: 20, right: 20),
-                child: Header(searchPlaceholder: strSearchCity),
-              ),
-              Container(
+      return Container(
+        // width: double.infinity,
+        decoration: const BoxDecoration(
+            color: colorInputBackground,
+            image: DecorationImage(
+                alignment: Alignment.center,
+                image: AssetImage(bgHomeGreen2),
+                fit: BoxFit.cover)),
+        child: Column(
+          children: [
+            const Padding(
+              padding: EdgeInsets.only(top: 24, left: 20, right: 20),
+              child: Header(searchPlaceholder: strSearchCity),
+            ),
+            Expanded(
+              child: Container(
                 width: double.infinity,
                 // padding: EdgeInsets.symmetric(horizontal: 20),
                 color: colorBackgroundLight,
@@ -152,6 +152,7 @@ class _HomeState extends State<Home> {
                               InkWell(
                                 onTap: () {
                                   setState(() {
+                                    mapSwitch = false;
                                     isFilter = !isFilter;
                                   });
                                 },
@@ -165,68 +166,82 @@ class _HomeState extends State<Home> {
                       ),
                     ),
                     mapSwitch == true
-                        ? Container(
-                            height: MediaQuery.of(context).size.height * 0.53,
-                            width: double.infinity,
-                            child: GoogleMap(
-                              onMapCreated: _onMapCreated,
-                              initialCameraPosition: CameraPosition(
-                                target: _center,
-                                zoom: 12,
+                        ? Expanded(
+                            child: Container(
+                              width: double.infinity,
+                              child: GoogleMap(
+                                onMapCreated: _onMapCreated,
+                                initialCameraPosition: CameraPosition(
+                                  target: _center,
+                                  zoom: 12,
+                                ),
+                                // mapType: MapType.hybrid,
+                                // initialCameraPosition: _kGooglePlex,
+                                // onMapCreated: (GoogleMapController controller) {
+                                //   _controller.complete(controller);
+                                // },
                               ),
-                              // mapType: MapType.hybrid,
-                              // initialCameraPosition: _kGooglePlex,
-                              // onMapCreated: (GoogleMapController controller) {
-                              //   _controller.complete(controller);
-                              // },
                             ),
                           )
                         : isFilter
-                            ? Column(
-                                children: [
-                                  Container(
-                                    height: 1.5,
-                                    color: colorDivider,
-                                    width: double.infinity,
-                                  ),
-                                  Container(
-                                    color: colorBackgroundGrey,
-                                    padding: const EdgeInsets.only(
-                                        right: 20, left: 20, bottom: 12),
+                            ? Expanded(
+                                child: Container(
+                                  child: SingleChildScrollView(
                                     child: Column(
                                       children: [
-                                        Column(
-                                            children: List.generate(
-                                                filterData.length,
-                                                (index) => FilterSection(
-                                                    filterData, index))),
-                                        const SizedBox(
-                                          height: 10,
+                                        Container(
+                                          height: 1.5,
+                                          color: colorDivider,
+                                          width: double.infinity,
                                         ),
-                                        CustomButton(
-                                          onPressed: handleApply,
-                                          buttonColor: colorGreenDark,
-                                          text: strApply,
-                                          verticalPadding: 0,
-                                          horizontalPadding: 64,
-                                          textSize: 16,
-                                        )
+                                        Container(
+                                          width: double.infinity,
+                                          color: colorBackgroundGrey,
+                                          padding: const EdgeInsets.only(
+                                              right: 20, left: 20, bottom: 12),
+                                          child: Column(
+                                            children: [
+                                              Column(
+                                                  children: List.generate(
+                                                      filterData.length,
+                                                      (index) => FilterSection(
+                                                          filterData, index))),
+                                              const SizedBox(
+                                                height: 10,
+                                              ),
+                                              CustomButton(
+                                                onPressed: handleApply,
+                                                buttonColor: colorGreenDark,
+                                                text: strApply,
+                                                verticalPadding: 0,
+                                                horizontalPadding: 64,
+                                                textSize: 16,
+                                              )
+                                            ],
+                                          ),
+                                        ),
                                       ],
                                     ),
                                   ),
-                                ],
+                                ),
                               )
-                            : Container(
-                                padding: const EdgeInsets.only(top: 6),
-                                child: Column(
-                                    children: List.generate(homeData.length,
-                                        (index) => CardItem(homeData, index))),
+                            : Expanded(
+                                child: Container(
+                                  padding: const EdgeInsets.only(top: 6),
+                                  child: SingleChildScrollView(
+                                    child: Column(
+                                        children: List.generate(
+                                            homeData.length,
+                                            (index) =>
+                                                CardItem(homeData, index))),
+                                  ),
+                                ),
                               )
                   ],
                 ),
-              )
-            ],
-          ),
+              ),
+            )
+          ],
         ),
       );
     });

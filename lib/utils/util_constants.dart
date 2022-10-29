@@ -95,6 +95,7 @@ const String strSendOffer = 'Send Offer';
 const String strYourBasket = 'Your Basket';
 const String strAddItem = 'Add Item';
 const String strPlus = '+';
+const String strFavorites = 'Favorites';
 const String strOrderPlaced = 'Order Placed';
 const String strOrderAccepted = 'Your order has been accepted';
 const String strOrder = 'Order';

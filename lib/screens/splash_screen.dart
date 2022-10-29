@@ -50,19 +50,19 @@ class _SplashState extends State<Splash> {
           decoration: const BoxDecoration(
               image: DecorationImage(
                   alignment: Alignment.center,
-                  image: AssetImage(lightBgCow),
+                  image: AssetImage(lightBackground),
                   fit: BoxFit.cover)),
           child: Stack(
             children: [
-              // Positioned(
-              //     top: 0,
-              //     left: 0,
-              //     right: 0,
-              //     child: Image.asset(
-              //       bg1,
-              //       fit: BoxFit.cover,
-              //       height: MediaQuery.of(context).size.height * 0.46,
-              //     )),
+              Positioned(
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  child: Image.asset(
+                    bg1,
+                    fit: BoxFit.cover,
+                    height: MediaQuery.of(context).size.height * 0.46,
+                  )),
               Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 mainAxisSize: MainAxisSize.max,
@@ -70,7 +70,7 @@ class _SplashState extends State<Splash> {
                 children: [
                   SizedBox(),
                   Image.asset(
-                    logo,
+                    logo2,
                     width: 240,
                     height: 240,
                     fit: BoxFit.cover,
@@ -78,7 +78,7 @@ class _SplashState extends State<Splash> {
                   Padding(
                     padding: const EdgeInsets.only(bottom: 24.0),
                     child: Center(child: Footer()),
-                  )
+                  ),
                 ],
               ),
             ],
