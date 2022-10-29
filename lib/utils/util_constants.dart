@@ -52,7 +52,7 @@ const String strLinkWithFarmer = 'Link with a Farmer';
 const String strHi = 'Hi';
 const String strMapView = 'Map View';
 const String strFilter = 'Filter';
-const String strSearchCity = 'Search City';
+const String strSearchCity = 'Search City...';
 const String strViewProfile = 'View Profile';
 const String strInventory = 'Inventory';
 const String strViewInventory = 'View Inventory';
@@ -113,6 +113,7 @@ const String strWonderfulExperience =
     'Had a wonderful experience and would order from them again.';
 const String str27July = '27 July 2022';
 const String strSearchFavorites = 'Search favorites...';
+const String strSearchMessage = 'Search message...';
 const String strSearchItems = 'Search for items at Riverlands Ranch...';
 const String strInStock = 'In Stock';
 const String strAvailability = 'Availability';

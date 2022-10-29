@@ -38,13 +38,14 @@ CustomerReviewDialog(context) async {
                     strCustomerReviews,
                     textAlign: TextAlign.center,
                     style: TextStyle(
+                      fontFamily: 'NunitoSans',
                       color: colorBackgroundDark,
                       fontWeight: FontWeight.w800,
-                      fontSize: 27,
+                      fontSize: 28,
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 4,
                 ),
                 Row(
@@ -56,12 +57,12 @@ CustomerReviewDialog(context) async {
                           padding: const EdgeInsets.only(right: 3.0),
                           child: Image.asset(
                             starIndex < 4 ? star : starUnfilled,
-                            height: 20,
-                            width: 20,
+                            height: 22,
+                            width: 22,
                           ))),
                 ),
-                SizedBox(
-                  height: 36,
+                const SizedBox(
+                  height: 32,
                 ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -72,7 +73,7 @@ CustomerReviewDialog(context) async {
                           decoration: BoxDecoration(
                               color: colorBackgroundCard,
                               borderRadius: BorderRadius.circular(16)),
-                          margin: const EdgeInsets.symmetric(vertical: 6),
+                          margin: const EdgeInsets.symmetric(vertical: 8),
                           padding: const EdgeInsets.symmetric(
                               vertical: 8, horizontal: 12),
                           child: Column(
@@ -82,6 +83,7 @@ CustomerReviewDialog(context) async {
                                 strDanyalGabaji,
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
+                                  fontFamily: 'NunitoSans',
                                   color: colorDark,
                                   fontWeight: FontWeight.w800,
                                   fontSize: 15,
@@ -93,6 +95,7 @@ CustomerReviewDialog(context) async {
                               const Text(
                                 strWonderfulExperience,
                                 style: TextStyle(
+                                  fontFamily: 'NunitoSans',
                                   color: colorDark,
                                   fontWeight: FontWeight.w600,
                                   fontSize: 10,
@@ -128,12 +131,13 @@ CustomerReviewDialog(context) async {
                                   const Text(
                                     str27July,
                                     style: TextStyle(
+                                      fontFamily: 'NunitoSans',
                                       color: colorDark,
                                       fontWeight: FontWeight.w400,
                                       fontSize: 10,
                                     ),
                                   ),
-                                  SizedBox()
+                                  const SizedBox()
                                 ],
                               ),
                             ],

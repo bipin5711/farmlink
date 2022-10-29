@@ -17,7 +17,6 @@ class Favorite extends StatefulWidget {
 }
 
 class _FavoriteState extends State<Favorite> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -110,8 +109,9 @@ class _FavoriteState extends State<Favorite> {
                                                       style: TextStyle(
                                                           color: colorDark2,
                                                           fontSize: 16,
+                                                          fontFamily: 'NunitoSans',
                                                           fontWeight:
-                                                              FontWeight.w600),
+                                                              FontWeight.w700),
                                                     ),
                                                     const SizedBox(
                                                       height: 4,

@@ -84,13 +84,14 @@ class _LoginState extends State<Login> {
                                         fit: BoxFit.cover,
                                       ),
                                       SizedBox(
-                                        height: 18,
+                                        height: 16,
                                       ),
                                       const Text(
                                         strWelcome,
                                         textAlign: TextAlign.center,
                                         style: TextStyle(
                                             color: colorTitleGreen,
+                                            fontFamily: 'Inter',
                                             fontSize: 32,
                                             fontWeight: FontWeight.w800),
                                       ),
@@ -143,6 +144,7 @@ class _LoginState extends State<Login> {
                                           textAlign: TextAlign.end,
                                           style: TextStyle(
                                               color: colorTextPrimary,
+                                              fontFamily: 'Inter',
                                               fontSize: 14,
                                               fontWeight: FontWeight.w500),
                                         ),
@@ -167,6 +169,7 @@ class _LoginState extends State<Login> {
                                           strByContining,
                                           textAlign: TextAlign.center,
                                           style: TextStyle(
+                                              fontFamily: 'Inter',
                                               color: colorTextMain,
                                               fontSize: 13),
                                         ),
@@ -210,8 +213,9 @@ class _LoginState extends State<Login> {
                                             const TextSpan(
                                                 text: strDontAccount + ' ',
                                                 style: TextStyle(
+                                                    fontFamily: 'Inter',
                                                     color: colorTextSecondary,
-                                                    fontSize: 15)),
+                                                    fontSize: 14)),
                                             TextSpan(
                                                 text: strSignup,
                                                 style: const TextStyle(

@@ -54,7 +54,7 @@ class _DetailState extends State<Detail> {
                       width: double.infinity,
                       alignment: Alignment.center,
                       margin: const EdgeInsets.only(top: 8),
-                      padding: const EdgeInsets.only(top: 9, bottom: 7),
+                      padding: const EdgeInsets.only(top: 4, bottom: 5),
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(16),
                           color: colorLight),
@@ -65,12 +65,14 @@ class _DetailState extends State<Detail> {
                             strRiverlandsRanch,
                             style: TextStyle(
                                 fontSize: 21,
+                                fontFamily: 'Poppins',
                                 fontWeight: FontWeight.w400,
                                 color: colorDark2),
                           ),
                           const Text(
                             strHouston,
                             style: TextStyle(
+                                fontFamily: 'Poppins',
                                 fontSize: 16,
                                 fontWeight: FontWeight.w300,
                                 color: colorDark2),
@@ -99,7 +101,6 @@ class _DetailState extends State<Detail> {
                                 width: double.infinity,
                               ),
                             ),
-                       
                             Container(
                               width: double.infinity,
                               padding: const EdgeInsets.symmetric(
@@ -119,6 +120,7 @@ class _DetailState extends State<Detail> {
                                         children: [
                                           const Text(strRiverlandsRanch,
                                               style: TextStyle(
+                                                  fontFamily: 'Poppins',
                                                   fontSize: 21,
                                                   fontWeight: FontWeight.w400,
                                                   color: colorDark2)),
@@ -137,8 +139,8 @@ class _DetailState extends State<Detail> {
                                                       starIndex < 4
                                                           ? star
                                                           : starUnfilled,
-                                                      height: 16,
-                                                      width: 16,
+                                                      height: 14,
+                                                      width: 14,
                                                     ))),
                                           ),
                                           const SizedBox(
@@ -152,6 +154,7 @@ class _DetailState extends State<Detail> {
                                                 style: TextStyle(
                                                     decoration: TextDecoration
                                                         .underline,
+                                                    fontFamily: 'Poppins',
                                                     fontSize: 12,
                                                     fontWeight: FontWeight.w400,
                                                     color:
@@ -174,9 +177,10 @@ class _DetailState extends State<Detail> {
                                           const Text(
                                             '6.5 mi.',
                                             style: TextStyle(
-                                                fontSize: 13,
+                                                fontSize: 12,
+                                                fontFamily: 'Poppins',
                                                 color: colorDark,
-                                                fontWeight: FontWeight.bold),
+                                                fontWeight: FontWeight.w500),
                                           ),
                                           const SizedBox(
                                             height: 4,
@@ -187,24 +191,26 @@ class _DetailState extends State<Detail> {
                                                 decoration:
                                                     TextDecoration.underline,
                                                 fontSize: 12,
+                                                fontFamily: 'Poppins',
                                                 color: colorDark,
-                                                fontWeight: FontWeight.bold),
+                                                fontWeight: FontWeight.w600),
                                           )
                                         ],
                                       )
                                     ],
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 8,
                                   ),
                                   const Text(
                                     strPaymentOptions + ':',
                                     style: TextStyle(
+                                        fontFamily: 'Poppins',
                                         fontSize: 13,
                                         fontWeight: FontWeight.w700,
                                         color: colorGreyDark),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 6,
                                   ),
                                   Row(
@@ -233,8 +239,9 @@ class _DetailState extends State<Detail> {
                                                           paymentIndex]['name'],
                                                       textAlign:
                                                           TextAlign.center,
-                                                      style: TextStyle(
-                                                          fontSize: 13,
+                                                      style: const TextStyle(
+                                                          fontSize: 12,
+                                                          fontFamily: 'Poppins',
                                                           fontWeight:
                                                               FontWeight.w300,
                                                           color:
@@ -243,7 +250,7 @@ class _DetailState extends State<Detail> {
                                                   ],
                                                 ),
                                               ))),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 6,
                                   ),
                                   // ignore: prefer_const_constructors
@@ -253,6 +260,7 @@ class _DetailState extends State<Detail> {
                                     child: const Text(
                                       strDescription,
                                       style: TextStyle(
+                                          fontFamily: 'Inter',
                                           fontSize: 20,
                                           fontWeight: FontWeight.w500,
                                           color: colorBackgroundDark),
@@ -262,6 +270,7 @@ class _DetailState extends State<Detail> {
                                     strLorem,
                                     style: TextStyle(
                                         fontSize: 15,
+                                        fontFamily: 'Poppins',
                                         height: 1.5,
                                         fontWeight: FontWeight.w300,
                                         color: colorGreyDark),

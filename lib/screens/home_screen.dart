@@ -107,6 +107,7 @@ class _HomeState extends State<Home> {
                                   style: TextStyle(
                                       color: colorDark2,
                                       fontSize: 16,
+                                      fontFamily: 'Poppins',
                                       fontWeight: FontWeight.w500),
                                 )
                               : Row(
@@ -116,6 +117,7 @@ class _HomeState extends State<Home> {
                                       style: TextStyle(
                                           color: colorDark2,
                                           fontSize: 16,
+                                          fontFamily: 'Poppins',
                                           fontWeight: FontWeight.w500),
                                     ),
                                     const SizedBox(
@@ -149,6 +151,7 @@ class _HomeState extends State<Home> {
                                       style: TextStyle(
                                           color: colorDark2,
                                           fontSize: 16,
+                                          fontFamily: 'Poppins',
                                           fontWeight: FontWeight.w500),
                                     )
                                   : const SizedBox(),
@@ -275,7 +278,10 @@ class _HomeState extends State<Home> {
           Text(
             filterData[index],
             style: const TextStyle(
-                fontSize: 14, fontWeight: FontWeight.w600, color: colorDark2),
+                fontFamily: 'Poppins',
+                fontSize: 14,
+                fontWeight: FontWeight.w600,
+                color: colorDark2),
           ),
           filterData[index] == strLivestock
               ? Column(
@@ -380,8 +386,9 @@ class _HomeState extends State<Home> {
                                           const Text(strCow,
                                               style: TextStyle(
                                                   color: colorDark2,
+                                                  fontFamily: 'Poppins',
                                                   fontSize: 15,
-                                                  fontWeight: FontWeight.w400)),
+                                                  fontWeight: FontWeight.w600)),
                                           const SizedBox(
                                             width: 2,
                                           ),
@@ -398,8 +405,9 @@ class _HomeState extends State<Home> {
                                           const Text(strGoat,
                                               style: TextStyle(
                                                   color: colorDark2,
+                                                  fontFamily: 'Poppins',
                                                   fontSize: 15,
-                                                  fontWeight: FontWeight.w400)),
+                                                  fontWeight: FontWeight.w600)),
                                           const SizedBox(
                                             width: 2,
                                           ),
@@ -504,7 +512,8 @@ class _HomeState extends State<Home> {
           child: Text(title,
               style: const TextStyle(
                   color: colorDark2,
-                  fontSize: 15,
+                  fontFamily: 'Poppins',
+                  fontSize: 14,
                   fontWeight: FontWeight.w400)),
         ),
         SizedBox(child: image != null ? Image.asset(image) : null)
@@ -529,8 +538,8 @@ class _HomeState extends State<Home> {
                   borderRadius: BorderRadius.circular(7),
                   child: Image.asset(
                     homeData[index]['image'],
-                    height: 90,
-                    width: 90,
+                    height: 92,
+                    width: 92,
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -546,21 +555,20 @@ class _HomeState extends State<Home> {
                         style: TextStyle(
                             color: colorDark2,
                             fontSize: 15,
+                            fontFamily: 'Poppins',
                             fontWeight: FontWeight.w600),
                       ),
                       const Text(
-                        strRiverlandsRanch,
+                        strHouston,
                         style: TextStyle(
                             color: colorDark2,
+                            fontFamily: 'Poppins',
                             fontSize: 13,
                             fontWeight: FontWeight.w400),
                       ),
-                      const SizedBox(
-                        height: 6,
-                      ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Row(
                             crossAxisAlignment: CrossAxisAlignment.center,
@@ -575,17 +583,40 @@ class _HomeState extends State<Home> {
                                       width: 28,
                                     ))),
                           ),
-                          Row(
+                          Column(
                             children: [
-                              Image.asset(
-                                halal,
-                                height: 24,
-                                width: 24,
-                              ),
-                              Image.asset(
-                                rectangle,
-                                height: 24,
-                                width: 24,
+                              Column(
+                                children: [
+                                  Row(
+                                    children: [
+                                      Image.asset(
+                                        halal,
+                                        height: 20,
+                                        width: 20,
+                                      ),
+                                      const SizedBox(
+                                        width: 4,
+                                      ),
+                                      Image.asset(
+                                        rectangle,
+                                        height: 20,
+                                        width: 20,
+                                      ),
+                                    ],
+                                  ),
+                                  // ignore: prefer_const_constructors
+                                  SizedBox(
+                                    height: 1,
+                                  ),
+                                  const Text(
+                                    '6.5 mi.',
+                                    style: TextStyle(
+                                        fontSize: 11,
+                                        fontFamily: 'Poppins',
+                                        color: colorDark,
+                                        fontWeight: FontWeight.w500),
+                                  ),
+                                ],
                               ),
                             ],
                           ),
@@ -606,29 +637,21 @@ class _HomeState extends State<Home> {
                                         starIndex < homeData[index]['rating']
                                             ? star
                                             : starUnfilled,
-                                        height: 16,
-                                        width: 16,
+                                        height: 14,
+                                        width: 14,
                                       ),
                                     )),
                           ),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.end,
+                            // ignore: prefer_const_literals_to_create_immutables
                             children: [
-                              const Text(
-                                '6.5 mi.',
-                                style: TextStyle(
-                                    fontSize: 13,
-                                    color: colorDark,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                              const SizedBox(
-                                height: 4,
-                              ),
                               const Text(
                                 strViewDirections,
                                 style: TextStyle(
                                     decoration: TextDecoration.underline,
-                                    fontSize: 10,
+                                    fontSize: 9,
+                                    fontFamily: 'Poppins',
                                     color: colorDark,
                                     fontWeight: FontWeight.bold),
                               )
@@ -663,6 +686,7 @@ class _HomeState extends State<Home> {
                         textAlign: TextAlign.center,
                         style: TextStyle(
                             color: colorLight,
+                            fontFamily: 'Poppins',
                             fontSize: 14,
                             fontWeight: FontWeight.w400)),
                   ),
@@ -681,6 +705,7 @@ class _HomeState extends State<Home> {
                     child: const Text(strViewInventory,
                         textAlign: TextAlign.center,
                         style: TextStyle(
+                            fontFamily: 'Poppins',
                             color: colorGreenDark,
                             fontSize: 14,
                             fontWeight: FontWeight.w400)),

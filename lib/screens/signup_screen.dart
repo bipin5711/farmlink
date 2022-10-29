@@ -93,6 +93,7 @@ class _SignupState extends State<Signup> {
                                           strSignup,
                                           textAlign: TextAlign.center,
                                           style: TextStyle(
+                                              fontFamily: 'Inter',
                                               color: colorTitleGreen,
                                               fontWeight: FontWeight.bold,
                                               fontSize: 32),
@@ -100,12 +101,13 @@ class _SignupState extends State<Signup> {
                                         const SizedBox(
                                           height: 2,
                                         ),
-                                        const Text(
-                                          strSignupToContinueCaps,
+                                        Text(
+                                          strSignupToContinueCaps.toUpperCase(),
                                           textAlign: TextAlign.center,
-                                          style: TextStyle(
+                                          style: const TextStyle(
                                             color: colorTextSecondary,
                                             fontWeight: FontWeight.bold,
+                                            fontFamily: 'Inter',
                                             fontSize: 13,
                                           ),
                                         ),

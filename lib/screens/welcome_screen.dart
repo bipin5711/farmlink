@@ -79,8 +79,9 @@ class _WelcomeState extends State<Welcome> {
                                       strWelcome,
                                       textAlign: TextAlign.center,
                                       style: TextStyle(
+                                          fontFamily: 'Inter',
                                           color: colorTitleGreen,
-                                          fontWeight: FontWeight.bold,
+                                          fontWeight: FontWeight.w800,
                                           fontSize: 32),
                                     ),
                                   ),

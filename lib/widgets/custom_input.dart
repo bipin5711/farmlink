@@ -8,6 +8,7 @@ class CustomInput extends StatefulWidget {
   final TextInputType textInputType;
   final Color labelColor;
   final double height;
+  final String fontFamily;
   final String labelText;
   final bool obscureText;
   final TextInputAction textInputAction;
@@ -42,6 +43,7 @@ class CustomInput extends StatefulWidget {
     this.floatLabel = false,
     this.showLabel = false,
     this.maxLines = 1,
+    this.fontFamily = 'Inter',
   });
 
   @override
@@ -60,6 +62,7 @@ class _CustomInputState extends State<CustomInput> {
                 child: Text(
                   widget.labelText,
                   style: TextStyle(
+                      fontFamily: widget.fontFamily,
                       color: widget.labelColor,
                       fontSize: 14,
                       fontWeight: FontWeight.w500),
@@ -80,6 +83,7 @@ class _CustomInputState extends State<CustomInput> {
             maxLines: widget.maxLines,
             style: TextStyle(
                 fontSize: 15,
+                fontFamily: widget.fontFamily,
                 color: widget.inputColor,
                 fontWeight: FontWeight.w500),
             decoration: widget.prefixIcon != '' && widget.suffixIcon != ''
@@ -122,6 +126,7 @@ class _CustomInputState extends State<CustomInput> {
         //     borderRadius: const BorderRadius.all(Radius.circular(2))),
         labelStyle: TextStyle(
             color: widget.labelColor,
+            fontFamily: widget.fontFamily,
             fontSize: 15,
             fontWeight: FontWeight.w500,
             fontStyle: FontStyle.normal),
@@ -140,7 +145,7 @@ class _CustomInputState extends State<CustomInput> {
         contentPadding:
             const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
         // border: OutlineInputBorder(
-           
+
         //     borderRadius: BorderRadius.circular(widget.borderRadius)),
         disabledBorder: OutlineInputBorder(
             borderSide: BorderSide(color: widget.borderColor, width: 1),
@@ -157,6 +162,7 @@ class _CustomInputState extends State<CustomInput> {
         //     borderRadius: const BorderRadius.all(Radius.circular(2))),
         labelStyle: TextStyle(
             color: widget.labelColor,
+            fontFamily: widget.fontFamily,
             fontSize: 15,
             fontWeight: FontWeight.w500,
             fontStyle: FontStyle.normal),
@@ -189,6 +195,7 @@ class _CustomInputState extends State<CustomInput> {
         //     borderRadius: const BorderRadius.all(Radius.circular(2))),
         labelStyle: TextStyle(
             color: widget.labelColor,
+            fontFamily: widget.fontFamily,
             fontSize: 15,
             fontWeight: FontWeight.w500,
             fontStyle: FontStyle.normal),
@@ -221,6 +228,7 @@ class _CustomInputState extends State<CustomInput> {
         labelStyle: TextStyle(
             color: widget.labelColor,
             fontSize: 15,
+            fontFamily: widget.fontFamily,
             fontWeight: FontWeight.w500,
             fontStyle: FontStyle.normal),
         labelText: widget.labelText);

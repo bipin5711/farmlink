@@ -8,6 +8,7 @@ class Header extends StatefulWidget {
   final bool isInnerPage;
   final bool hideSearch;
   final String title;
+  final String fontFamily;
   final String searchPlaceholder;
   const Header({
     Key? key,
@@ -15,6 +16,7 @@ class Header extends StatefulWidget {
     this.title = '',
     this.hideSearch = false,
     this.searchPlaceholder = '',
+    this.fontFamily = 'Poppins',
   }) : super(key: key);
 
   @override
@@ -50,7 +52,8 @@ class _HeaderState extends State<Header> {
                         widget.title,
                         style: const TextStyle(
                             fontSize: 21,
-                            fontWeight: FontWeight.w400,
+                            fontFamily: 'Poppins',
+                            fontWeight: FontWeight.w600,
                             color: colorLight),
                       ),
                     ],
@@ -60,8 +63,8 @@ class _HeaderState extends State<Header> {
                   children: [
                     Image.asset(
                       placeholder,
-                      height: 56,
-                      width: 56,
+                      height: 54,
+                      width: 54,
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 24.0),
@@ -72,6 +75,7 @@ class _HeaderState extends State<Header> {
                             text: strHi,
                             style: TextStyle(
                               color: colorLight,
+                              fontFamily: 'Poppins',
                               fontSize: 21,
                             ),
                           ),
@@ -84,6 +88,7 @@ class _HeaderState extends State<Header> {
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 color: colorLight,
+                                fontFamily: 'Poppins',
                                 fontSize: 21),
                           ),
                         ]),
@@ -101,10 +106,12 @@ class _HeaderState extends State<Header> {
                     labelText: widget.searchPlaceholder,
                     fillColor: colorLight,
                     floatLabel: true,
+                    labelColor: colorSearchPlaceholder,
+                    fontFamily: widget.fontFamily,
                     prefixIcon: Image.asset(
                       search,
-                      height: 24,
-                      width: 24,
+                      height: 22,
+                      width: 22,
                     ),
                     borderRadius: 30,
                     underlineColor: colorTransparent,

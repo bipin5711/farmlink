@@ -54,7 +54,7 @@ class _InventoryDetailState extends State<InventoryDetail> {
                       width: double.infinity,
                       alignment: Alignment.center,
                       margin: const EdgeInsets.only(top: 8),
-                      padding: const EdgeInsets.only(top: 9, bottom: 7),
+                      padding: const EdgeInsets.only(top: 4, bottom: 5),
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(16),
                           color: colorLight),
@@ -64,6 +64,7 @@ class _InventoryDetailState extends State<InventoryDetail> {
                           const Text(
                             strRiverlandsRanch,
                             style: TextStyle(
+                                fontFamily: 'Poppins',
                                 fontSize: 21,
                                 fontWeight: FontWeight.w400,
                                 color: colorDark2),
@@ -71,6 +72,7 @@ class _InventoryDetailState extends State<InventoryDetail> {
                           const Text(
                             strHouston,
                             style: TextStyle(
+                                fontFamily: 'Poppins',
                                 fontSize: 16,
                                 fontWeight: FontWeight.w300,
                                 color: colorDark2),
@@ -109,6 +111,7 @@ class _InventoryDetailState extends State<InventoryDetail> {
                                         child: const Text(
                                           strPoultry,
                                           style: TextStyle(
+                                              fontFamily: 'Poppins',
                                               fontSize: 22,
                                               fontWeight: FontWeight.w500,
                                               color: colorLight),
@@ -139,6 +142,7 @@ class _InventoryDetailState extends State<InventoryDetail> {
                                           child: const Text(
                                             strInStock + ':',
                                             style: TextStyle(
+                                                fontFamily: 'Poppins',
                                                 fontSize: 16,
                                                 fontWeight: FontWeight.w500,
                                                 color: colorGreyDark),
@@ -147,7 +151,8 @@ class _InventoryDetailState extends State<InventoryDetail> {
                                         const Text(
                                           ' 5',
                                           style: TextStyle(
-                                              fontSize: 24,
+                                              fontFamily: 'Poppins',
+                                              fontSize: 22,
                                               fontWeight: FontWeight.w400,
                                               color: colorBackgroundDark),
                                         ),
@@ -166,6 +171,7 @@ class _InventoryDetailState extends State<InventoryDetail> {
                                           child: const Text(
                                             strAvailability + ':',
                                             style: TextStyle(
+                                                fontFamily: 'Poppins',
                                                 fontSize: 16,
                                                 fontWeight: FontWeight.w500,
                                                 color: colorGreyDark),
@@ -174,7 +180,8 @@ class _InventoryDetailState extends State<InventoryDetail> {
                                         const Text(
                                           ' ' + strAfterWeek,
                                           style: TextStyle(
-                                              fontSize: 22,
+                                              fontFamily: 'Poppins',
+                                              fontSize: 21,
                                               fontWeight: FontWeight.w400,
                                               color: colorBackgroundDark),
                                         ),
@@ -192,6 +199,7 @@ class _InventoryDetailState extends State<InventoryDetail> {
                                     child: const Text(
                                       strDescription,
                                       style: TextStyle(
+                                          fontFamily: 'Inter',
                                           fontSize: 20,
                                           fontWeight: FontWeight.w500,
                                           color: colorBackgroundDark),
@@ -204,6 +212,7 @@ class _InventoryDetailState extends State<InventoryDetail> {
                                       strLorem,
                                       style: TextStyle(
                                           fontSize: 15,
+                                          fontFamily: 'Poppins',
                                           height: 1.5,
                                           fontWeight: FontWeight.w300,
                                           color: colorGreyDark),

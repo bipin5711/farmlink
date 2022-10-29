@@ -63,7 +63,7 @@ class _SplashState extends State<Splash> {
                     fit: BoxFit.cover,
                     height: MediaQuery.of(context).size.height * 0.46,
                   )),
-                  Positioned(
+              Positioned(
                   bottom: -124,
                   left: 0,
                   right: 0,

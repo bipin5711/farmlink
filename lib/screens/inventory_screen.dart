@@ -100,7 +100,8 @@ class _InventoryState extends State<Inventory> {
                                                   textAlign: TextAlign.end,
                                                   style: const TextStyle(
                                                       color: colorDark2,
-                                                      fontSize: 16,
+                                                      fontSize: 15,
+                                                      fontFamily: 'NunitoSans',
                                                       fontWeight:
                                                           FontWeight.w700),
                                                 ),
