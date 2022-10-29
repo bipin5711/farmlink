@@ -100,3 +100,5 @@ List inventoryList = [
   {'name': strRabbit, 'image': rabbitInventory},
   {'name': strWildExotic, 'image': wildInventory},
 ];
+
+List messagesList = [strLiketoPurchase, strYourTotal];

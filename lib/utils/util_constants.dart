@@ -68,6 +68,7 @@ const String strRabbit = 'Rabbit';
 const String strWildExotic = 'Wild/Exotic';
 const String strTypeMeat = 'Type of Meat';
 const String strHalal = 'Halal';
+const String strTypeMessage = 'Type message here...';
 const String strKosher = 'Kosher';
 const String strGrassFed = 'Grass Fed';
 const String strGrainFed = 'Grain Fed';

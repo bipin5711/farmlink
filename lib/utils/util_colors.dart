@@ -27,7 +27,8 @@ const Color colorBackgroundLight = Color(0xffD9D9D9);
 const Color colorBackgroundDark = Color(0xff163e2b);
 const Color colorBackgroundGrey = Color(0xffF4FAF7);
 const Color colorBackgroundCard = Color(0xffE0E0E0);
-
+const Color colorBackgroundMessage = Color(0xffF8F8F8);
+const Color colorBackgroundMessageInput = Color(0xffF2F2F2);
 //switch
 const Color colorSwitchBackground = Color(0xff08321E);
 const Color colorSwitchBackground2 = Color(0xff807D7D);

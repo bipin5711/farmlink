@@ -219,14 +219,26 @@ class _HomeState extends State<Home> {
                                               const SizedBox(
                                                 height: 10,
                                               ),
-                                              CustomButton(
-                                                onPressed: handleApply,
-                                                buttonColor: colorGreenDark,
-                                                text: strApply,
-                                                verticalPadding: 0,
-                                                horizontalPadding: 64,
-                                                textSize: 16,
-                                              )
+                                              Container(
+                                                padding:
+                                                    const EdgeInsets.symmetric(
+                                                        horizontal: 48,
+                                                        vertical: 4),
+                                                decoration: BoxDecoration(
+                                                    color: colorBackgroundDark,
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            9)),
+                                                child: const Text(
+                                                  strApply,
+                                                  style: TextStyle(
+                                                      fontFamily: 'Poppins',
+                                                      fontSize: 16,
+                                                      fontWeight:
+                                                          FontWeight.w600,
+                                                      color: colorLight),
+                                                ),
+                                              ),
                                             ],
                                           ),
                                         ),
