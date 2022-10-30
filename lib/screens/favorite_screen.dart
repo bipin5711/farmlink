@@ -51,7 +51,7 @@ class _FavoriteState extends State<Favorite> {
                     ),
                   ),
                   const SizedBox(
-                    height: 0,
+                    height: 12,
                   ),
                   Expanded(
                     child: Container(

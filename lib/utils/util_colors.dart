@@ -38,3 +38,4 @@ const Color colorCheckboxBorder = Color(0xffB7B6B7);
 
 // Messgae
 const Color colorGreen = Color(0xff36AAB9);
+const Color colorGreenLight = Color(0xff1C4230);
