@@ -38,10 +38,15 @@ class _MessageDetailState extends State<MessageDetail> {
   orderAccepted() async {
     return OrderAcceptedDialog(context, orderDeclined);
   }
-orderDeclined() async {
-    return OrderDeclinedDialog(context);
 
-}
+  orderDeclined() async {
+    return OrderDeclinedDialog(context, feedback);
+  }
+
+  feedback() {
+    Navigator.pushNamed(context, routeFeedbackScreen);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -543,7 +543,7 @@ OrderAcceptedDialog(context, orderDeclined) async {
       });
 }
 
-OrderDeclinedDialog(context) async {
+OrderDeclinedDialog(context, feedback) async {
   return showDialog(
       context: context,
       builder: (context) {
@@ -598,6 +598,7 @@ OrderDeclinedDialog(context) async {
                     CustomButton(
                       onPressed: () {
                         Navigator.pop(context);
+                        feedback();
                       },
                       buttonColor: colorBackgroundDark,
                       text: strFindAnotherFarm,

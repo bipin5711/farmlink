@@ -97,24 +97,90 @@ class _HeaderState extends State<Header> {
                   ],
                 ),
           widget.hideSearch == false
-              ? Container(
-                  padding: const EdgeInsets.symmetric(vertical: 4),
+              ?
+              // Container(
+              //     decoration:
+              //         BoxDecoration(borderRadius: BorderRadius.circular(20)),
+              //     padding: const EdgeInsets.symmetric(vertical: 4),
+              //     margin: const EdgeInsets.symmetric(vertical: 14),
+              //     child: CustomInput(
+              //       height: 60,
+              //       textController: cityController,
+              //       labelText: widget.searchPlaceholder,
+              //       fillColor: colorLight,
+              //       floatLabel: true,
+              //       labelColor: colorSearchPlaceholder,
+              //       fontFamily: widget.fontFamily,
+              //       prefixIcon: Image.asset(
+              //         search,
+              //         height: 22,
+              //         width: 22,
+              //       ),
+              //       borderRadius: 30,
+              //       underlineColor: colorTransparent,
+              //     ),
+              //   )
+              Container(
+                  // margin: const EdgeInsets.only(left: 8),
                   margin: const EdgeInsets.symmetric(vertical: 14),
-                  child: CustomInput(
-                    height: 60,
-                    textController: cityController,
-                    labelText: widget.searchPlaceholder,
-                    fillColor: colorLight,
-                    floatLabel: true,
-                    labelColor: colorSearchPlaceholder,
-                    fontFamily: widget.fontFamily,
-                    prefixIcon: Image.asset(
-                      search,
-                      height: 22,
-                      width: 22,
-                    ),
-                    borderRadius: 30,
-                    underlineColor: colorTransparent,
+                  padding: const EdgeInsets.only(right: 12, left: 8,top: 3,bottom: 1),
+                  decoration: BoxDecoration(
+                    color: colorLight,
+                    border: Border.all(color: colorTransparent),
+                    borderRadius: BorderRadius.circular(25),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      const SizedBox(
+                        width: 8,
+                      ),
+                      Image.asset(
+                        search,
+                        height: 22,
+                        width: 22,
+                      ),
+                      Expanded(
+                        child: TextFormField(
+                          controller: cityController,
+                          keyboardType: TextInputType.text,
+                          autovalidateMode: AutovalidateMode.disabled,
+                          minLines: 1,
+                          maxLines: 1,
+                          // validator: (value) {
+                          //   {
+                          //     if (value != null && value.isEmpty) {
+                          //       return 'Message is required';
+                          //     } else {
+                          //       return null;
+                          //     }
+                          //   }
+                          // },
+                          cursorColor: colorDark,
+                          decoration: InputDecoration(
+                              focusedBorder: const OutlineInputBorder(
+                                  borderSide:
+                                      BorderSide(color: colorTransparent),
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(0))),
+                              enabledBorder: const OutlineInputBorder(
+                                  borderSide:
+                                      BorderSide(color: colorTransparent),
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(0))),
+                              floatingLabelBehavior:
+                                  FloatingLabelBehavior.never,
+                              contentPadding: const EdgeInsets.symmetric(
+                                  horizontal: 12, vertical: 4),
+                              labelStyle: TextStyle(
+                                fontSize: 15,
+                                fontFamily: widget.fontFamily,
+                                color: colorSearchPlaceholder,
+                              ),
+                              labelText: widget.searchPlaceholder),
+                        ),
+                      ),
+                    ],
                   ),
                 )
               : Container(),
