@@ -28,11 +28,20 @@ class _MessageDetailState extends State<MessageDetail> {
   }
 
   openSendOfferDialog(BuildContext context) async {
-    return SendOfferDialog(context, basket);
+    return SendOfferDialog(context, basket, orderPlaced);
   }
 
+  orderPlaced() async {
+    return OrderPlacedDialog(context, orderAccepted);
+  }
 
+  orderAccepted() async {
+    return OrderAcceptedDialog(context, orderDeclined);
+  }
+orderDeclined() async {
+    return OrderDeclinedDialog(context);
 
+}
   @override
   Widget build(BuildContext context) {
     return Scaffold(

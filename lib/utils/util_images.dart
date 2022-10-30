@@ -80,3 +80,4 @@ const String bottom2 = "$imageRoute/bottom2.jpeg";
 const String bottom3 = "$imageRoute/bottom3.png";
 const String bottom4 = "$imageRoute/bottom4.png";
 const String arrowDown = "$imageRoute/arrow-down.png";
+const String cancel = "$imageRoute/cancel.png";

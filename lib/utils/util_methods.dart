@@ -158,7 +158,7 @@ CustomerReviewDialog(
       });
 }
 
-SendOfferDialog(context, basket) async {
+SendOfferDialog(context, basket, sendOffer) async {
   String selectedValue = products[0];
   return showDialog(
       context: context,
@@ -357,7 +357,10 @@ SendOfferDialog(context, basket) async {
                   Padding(
                     padding: const EdgeInsets.only(top: 12.0),
                     child: CustomButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pop(context);
+                        sendOffer();
+                      },
                       buttonColor: colorBackgroundDark,
                       text: strSendOffer,
                       verticalPadding: 8,
@@ -373,5 +376,243 @@ SendOfferDialog(context, basket) async {
             ),
           );
         });
+      });
+}
+
+OrderPlacedDialog(context, orderAccepted) async {
+  return showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(24.0)),
+          contentPadding: const EdgeInsets.all(0),
+          titlePadding: const EdgeInsets.all(0),
+          title: Padding(
+            padding:
+                const EdgeInsets.symmetric(horizontal: 24.0, vertical: 24.0),
+            child: Column(
+              children: [
+                Container(
+                  width: double.infinity,
+                  alignment: Alignment.topRight,
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.pop(context);
+                      orderAccepted();
+                    },
+                    child: Image.asset(
+                      closeGrey,
+                      height: 22,
+                      alignment: Alignment.centerRight,
+                      width: 22,
+                    ),
+                  ),
+                ),
+                Column(
+                  children: [
+                    Container(
+                      margin: const EdgeInsets.only(top: 32, bottom: 16),
+                      padding: const EdgeInsets.all(5),
+                      decoration: BoxDecoration(
+                          color: colorBackgroundDark,
+                          borderRadius: BorderRadius.circular(30)),
+                      child: Image.asset(
+                        check,
+                        height: 25,
+                        width: 25,
+                      ),
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.symmetric(vertical: 8),
+                      child: Text(
+                        strOrderPlaced,
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontFamily: 'NunitoSans',
+                          color: colorBackgroundDark,
+                          fontWeight: FontWeight.w800,
+                          fontSize: 24,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 16,
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [],
+          ),
+        );
+      });
+}
+
+OrderAcceptedDialog(context, orderDeclined) async {
+  return showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(24.0)),
+          contentPadding: const EdgeInsets.all(0),
+          titlePadding: const EdgeInsets.all(0),
+          title: Padding(
+            padding:
+                const EdgeInsets.symmetric(horizontal: 24.0, vertical: 24.0),
+            child: Column(
+              children: [
+                Container(
+                  width: double.infinity,
+                  alignment: Alignment.topRight,
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                    child: Image.asset(
+                      closeGrey,
+                      height: 22,
+                      alignment: Alignment.centerRight,
+                      width: 22,
+                    ),
+                  ),
+                ),
+                Column(
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.all(5),
+                      decoration: BoxDecoration(
+                          color: colorBackgroundDark,
+                          borderRadius: BorderRadius.circular(30)),
+                      child: Image.asset(
+                        check,
+                        height: 25,
+                        width: 25,
+                      ),
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.symmetric(vertical: 8),
+                      child: Text(
+                        strOrderAccepted,
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontFamily: 'NunitoSans',
+                          color: colorBackgroundDark,
+                          fontWeight: FontWeight.w800,
+                          fontSize: 24,
+                        ),
+                      ),
+                    ),
+                    const Text(
+                      strOrder + ' #4545',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontFamily: 'NunitoSans',
+                        color: colorBackgroundDark,
+                        fontWeight: FontWeight.w400,
+                        fontSize: 21,
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 12,
+                    ),
+                    CustomButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                        orderDeclined();
+                      },
+                      buttonColor: colorBackgroundDark,
+                      text: strConnectwithButcher,
+                      verticalPadding: 8,
+                      horizontalPadding: 16,
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [],
+          ),
+        );
+      });
+}
+
+OrderDeclinedDialog(context) async {
+  return showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(24.0)),
+          contentPadding: const EdgeInsets.all(0),
+          titlePadding: const EdgeInsets.all(0),
+          title: Padding(
+            padding:
+                const EdgeInsets.symmetric(horizontal: 24.0, vertical: 24.0),
+            child: Column(
+              children: [
+                Container(
+                  width: double.infinity,
+                  alignment: Alignment.topRight,
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                    child: Image.asset(
+                      closeGrey,
+                      height: 22,
+                      alignment: Alignment.centerRight,
+                      width: 22,
+                    ),
+                  ),
+                ),
+                Column(
+                  children: [
+                    Image.asset(
+                      cancel,
+                      height: 36,
+                      width: 36,
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.symmetric(vertical: 8),
+                      child: Text(
+                        strOrderDeclined,
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontFamily: 'NunitoSans',
+                          color: colorBackgroundDark,
+                          fontWeight: FontWeight.w800,
+                          fontSize: 24,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 12,
+                    ),
+                    CustomButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      buttonColor: colorBackgroundDark,
+                      text: strFindAnotherFarm,
+                      verticalPadding: 8,
+                      horizontalPadding: 16,
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [],
+          ),
+        );
       });
 }
