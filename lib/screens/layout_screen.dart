@@ -18,7 +18,7 @@ class Layout extends StatefulWidget {
 
 class _LayoutState extends State<Layout> {
   List<BottomNavigation> iconsList = bottomNavigationData;
-  int currentIndex = 0;
+  int currentIndex = 2;
   bool showMenu = false;
   bool notificationSwitch = false;
   dynamic nestedMenu = {'title': '', 'route': []};
@@ -136,7 +136,8 @@ class _LayoutState extends State<Layout> {
                                   : currentIndex == 1 && index == 1
                                       ? MediaQuery.of(context).size.height *
                                           0.06
-                                      : MediaQuery.of(context).size.height * 0.05),
+                                      : MediaQuery.of(context).size.height *
+                                          0.05),
                 ),
               ],
             ),

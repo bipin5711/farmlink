@@ -17,6 +17,10 @@ class OrderFeedback extends StatefulWidget {
 
 class _OrderFeedbackState extends State<OrderFeedback> {
   TextEditingController commentController = TextEditingController();
+  handleMessage() {
+    Navigator.pushNamed(context, routeLayoutScreen);
+    // Navigator.pushNamed(context, routeMessageScreen);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -283,7 +287,9 @@ class _OrderFeedbackState extends State<OrderFeedback> {
                                         right: 16),
                                     child: SizedBox(
                                       child: CustomButton(
-                                        onPressed: () {},
+                                        onPressed: () {
+                                          handleMessage();
+                                        },
                                         horizontalPadding: 36,
                                         verticalPadding: 12,
                                         borderRadius: 5,
