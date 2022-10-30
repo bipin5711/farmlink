@@ -2,6 +2,7 @@ import 'package:farmlink/utils/util_colors.dart';
 import 'package:farmlink/utils/util_constants.dart';
 import 'package:farmlink/utils/util_helpers.dart';
 import 'package:farmlink/utils/util_images.dart';
+import 'package:farmlink/utils/util_methods.dart';
 import 'package:farmlink/utils/util_routes.dart';
 import 'package:farmlink/widgets/ui-widgets/header.dart';
 import 'package:flutter/material.dart';
@@ -19,10 +20,18 @@ class MessageDetail extends StatefulWidget {
 class _MessageDetailState extends State<MessageDetail> {
   final _formKey = GlobalKey<FormState>();
   TextEditingController chatController = TextEditingController();
-
+  List basket = [
+    {'title': strGoat, 'qty': 1}
+  ];
   navigateToInventoryDetail() {
     Navigator.pushNamed(context, routeInventoryDetailScreen);
   }
+
+  openSendOfferDialog(BuildContext context) async {
+    return SendOfferDialog(context, basket);
+  }
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -103,19 +112,24 @@ class _MessageDetailState extends State<MessageDetail> {
                                   color: colorDark2),
                             ),
                           ),
-                          Container(
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 7, vertical: 8),
-                            decoration: BoxDecoration(
-                                color: colorBackgroundDark,
-                                borderRadius: BorderRadius.circular(5)),
-                            child: const Text(
-                              strSendOffer,
-                              style: TextStyle(
-                                  fontFamily: 'Poppins',
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.w600,
-                                  color: colorLight),
+                          InkWell(
+                            onTap: () {
+                              openSendOfferDialog(context);
+                            },
+                            child: Container(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 7, vertical: 8),
+                              decoration: BoxDecoration(
+                                  color: colorBackgroundDark,
+                                  borderRadius: BorderRadius.circular(5)),
+                              child: const Text(
+                                strSendOffer,
+                                style: TextStyle(
+                                    fontFamily: 'Poppins',
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.w600,
+                                    color: colorLight),
+                              ),
                             ),
                           ),
                         ],

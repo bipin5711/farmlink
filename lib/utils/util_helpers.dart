@@ -102,3 +102,14 @@ List inventoryList = [
 ];
 
 List messagesList = [strLiketoPurchase, strYourTotal];
+
+List products = [
+  strGoat,
+  strCow,
+  strBeef,
+  strMilk,
+  strSheep,
+  strPoultry,
+  strFowl,
+  strRabbit
+];
