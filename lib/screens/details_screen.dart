@@ -44,7 +44,7 @@ class _DetailState extends State<Detail> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const SizedBox(
-                    height: 18,
+                    height: 30,
                   ),
                   const Header(
                     isInnerPage: true,
