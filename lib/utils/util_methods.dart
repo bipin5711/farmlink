@@ -754,47 +754,116 @@ UpdateProfileDialog(
                     const SizedBox(
                       height: 16,
                     ),
-                    Container(
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                          color: colorRedDark,
-                          borderRadius: BorderRadius.circular(5)),
-                      padding: const EdgeInsets.symmetric(
-                          vertical: 8, horizontal: 24),
-                      child: const Text(
-                        strShareNewJob,
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontFamily: 'Poppins',
-                          color: colorLight,
-                          fontWeight: FontWeight.w800,
-                          fontSize: 15,
-                        ),
+                    const Text(
+                      strUpdateProfilePicture,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontFamily: 'Poppins',
+                        color: colorText,
+                        fontWeight: FontWeight.w800,
+                        fontSize: 17,
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 18,
+                    ),
+                    const Text(
+                      strRecentPhotostook,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontFamily: 'Poppins',
+                        color: colorGreyDark,
+                        fontWeight: FontWeight.w400,
+                        fontSize: 14,
                       ),
                     ),
                     const SizedBox(
                       height: 12,
                     ),
-                    Container(
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                          color: colorRedDark,
-                          borderRadius: BorderRadius.circular(5)),
-                      padding: const EdgeInsets.symmetric(
-                          vertical: 8, horizontal: 24),
-                      child: const Text(
-                        strShareExistingJob,
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontFamily: 'Poppins',
-                          color: colorLight,
-                          fontWeight: FontWeight.w800,
-                          fontSize: 15,
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Expanded(
+                          child: InkWell(
+                            onTap: () {},
+                            child: Container(
+                              margin: const EdgeInsets.only(
+                                  top: 8, bottom: 8, right: 8, left: 0),
+                              decoration: BoxDecoration(
+                                  color: colorBackgroundCard,
+                                  borderRadius: BorderRadius.circular(16)),
+                              height: 120,
+                              // child: Container(),
+                            ),
+                          ),
                         ),
-                      ),
+                        Expanded(
+                          child: InkWell(
+                            onTap: () {},
+                            child: Container(
+                              margin: const EdgeInsets.only(
+                                  top: 8, bottom: 8, right: 0, left: 8),
+                              decoration: BoxDecoration(
+                                  color: colorBackgroundCard,
+                                  borderRadius: BorderRadius.circular(16)),
+                              height: 120, // child: Container(),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                   
+                     Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Expanded(
+                          child: InkWell(
+                            onTap: () {},
+                            child: Container(
+                              margin: const EdgeInsets.only(
+                                  top: 8, bottom: 8, right: 8, left: 0),
+                              decoration: BoxDecoration(
+                                  color: colorBackgroundCard,
+                                  borderRadius: BorderRadius.circular(16)),
+                              height: 120,
+                              // child: Container(),
+                            ),
+                          ),
+                        ),
+                        Expanded(
+                          child: InkWell(
+                            onTap: () {},
+                            child: Container(
+                              margin: const EdgeInsets.only(
+                                  top: 8, bottom: 8, right: 0, left: 8),
+                              decoration: BoxDecoration(
+                                  color: colorBackgroundCard,
+                                  borderRadius: BorderRadius.circular(16)),
+                              height: 120, // child: Container(),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                     const SizedBox(
                       height: 12,
+                    ),
+                    Container(
+                      margin: const EdgeInsets.only(top: 32),
+                      padding: const EdgeInsets.symmetric(vertical: 12),
+                      alignment: Alignment.center,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(30),
+                          color: colorBackgroundDark),
+                      width: double.infinity,
+                      child: const Text(
+                        strSetPicture,
+                        style: TextStyle(
+                            color: colorLight,
+                            fontSize: 15,
+                            fontWeight: FontWeight.w600,
+                            fontFamily: 'Poppins'),
+                      ),
                     ),
                   ],
                 ),

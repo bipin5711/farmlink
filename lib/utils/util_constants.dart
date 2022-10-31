@@ -100,6 +100,7 @@ const String strFavorites = 'Favorites';
 const String strOrderPlaced = 'Order Placed';
 const String strOrderAccepted = 'Your order has been accepted';
 const String strOrder = 'Order';
+const String strSetPicture = 'Set as Profile Picture';
 const String strConnectwithFarmer = 'Connect with a Farmer';
 const String strConnectwithButcher = 'Connect with Butcher';
 const String strOrderDeclined = 'Your order has been declined';
