@@ -113,3 +113,10 @@ List products = [
   strFowl,
   strRabbit
 ];
+
+List profileList = [
+  {'title': strEditProfile, 'image': edit},
+  {'title': strOrderHistory, 'image': orderhistory},
+  {'title': strGeneral, 'image': general},
+  {'title': strLogout, 'image': logout},
+];

@@ -57,6 +57,7 @@ const String cheque = "$imageRoute/cheque.png";
 const String creditcard = "$imageRoute/creditcard.png";
 const String crypto = "$imageRoute/crypto.png";
 const String general = "$imageRoute/general.png";
+const String edit = "$imageRoute/edit.png";
 const String zelle = "$imageRoute/zelle.png";
 const String logout = "$imageRoute/logout.png";
 const String meats = "$imageRoute/meats.png";

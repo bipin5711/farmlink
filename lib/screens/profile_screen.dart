@@ -1,3 +1,8 @@
+import 'package:farmlink/utils/util_colors.dart';
+import 'package:farmlink/utils/util_constants.dart';
+import 'package:farmlink/utils/util_helpers.dart';
+import 'package:farmlink/utils/util_images.dart';
+import 'package:farmlink/widgets/ui-widgets/footer.dart';
 import 'package:flutter/material.dart';
 
 class Profile extends StatefulWidget {
@@ -10,6 +15,119 @@ class Profile extends StatefulWidget {
 class _ProfileState extends State<Profile> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+        resizeToAvoidBottomInset: false,
+        backgroundColor: colorLight,
+        body: SafeArea(
+            child: GestureDetector(
+                onTap: () {
+                  FocusScope.of(context).requestFocus(FocusNode());
+                },
+                child: Container(
+                    decoration: const BoxDecoration(
+                        image: DecorationImage(
+                            alignment: Alignment.center,
+                            image: AssetImage(lightBackground),
+                            fit: BoxFit.cover)),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 16),
+                      child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Column(
+                                // ignore: prefer_const_literals_to_create_immutables
+                                children: [
+                                  SizedBox(
+                                    height: MediaQuery.of(context).size.height *
+                                        0.09,
+                                  ),
+                                  Image.asset(
+                                    placeholder,
+                                    width: 110,
+                                    height: 110,
+                                    fit: BoxFit.cover,
+                                  ),
+                                  const SizedBox(
+                                    height: 16,
+                                  ),
+                                  const Text(
+                                    strJonatha,
+                                    style: TextStyle(
+                                        color: colorText,
+                                        fontFamily: 'Poppins',
+                                        fontSize: 21,
+                                        fontWeight: FontWeight.w600),
+                                  ),
+
+                                  const SizedBox(
+                                    height: 12,
+                                  ),
+                                  Container(
+                                    padding: const EdgeInsets.symmetric(
+                                        vertical: 10, horizontal: 24),
+                                    decoration: BoxDecoration(
+                                        color: colorLight,
+                                        borderRadius:
+                                            BorderRadius.circular(20)),
+                                    child: const Text(
+                                      strJanathaGmail,
+                                      style: TextStyle(
+                                          color: colorText,
+                                          fontFamily: 'Poppins',
+                                          fontSize: 12,
+                                          fontWeight: FontWeight.w400),
+                                    ),
+                                  ),
+                                  const SizedBox(
+                                    height: 16,
+                                  ),
+                                  Column(
+                                      children: List.generate(
+                                    profileList.length,
+                                    (index) => Container(
+                                      margin: const EdgeInsets.symmetric(
+                                          vertical: 8),
+                                      width: double.infinity,
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: 14, horizontal: 24),
+                                      decoration: BoxDecoration(
+                                          color: colorLight,
+                                          borderRadius:
+                                              BorderRadius.circular(30)),
+                                      child: Row(
+                                        children: [
+                                          Image.asset(
+                                            profileList[index]['image'],
+                                            height: 20,
+                                            width: 20,
+                                          ),
+                                          const SizedBox(
+                                            width: 12,
+                                          ),
+                                          Text(
+                                            profileList[index]['title'],
+                                            style: const TextStyle(
+                                                color: colorText,
+                                                fontFamily: 'Poppins',
+                                                fontSize: 16,
+                                                fontWeight: FontWeight.w500),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ))
+                                  // ignore: prefer_const_constructors
+                                ]),
+                            Padding(
+                              padding: const EdgeInsets.only(bottom: 16.0),
+                              child: Center(
+                                  child: Footer(
+                                textColor: colorBackgroundDark,
+                              )),
+                            )
+                          ]),
+                    )))));
   }
 }

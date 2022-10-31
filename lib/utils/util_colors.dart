@@ -22,6 +22,7 @@ const Color colorTitleGreen = Color(0xff49B848);
 const Color colorLinkGreen = Color(0xff0f7f40);
 const Color colorDark2 = Color(0xff151515);
 const Color colorGreyDark = Color(0xff878787);
+const Color colorText = Color(0xff2C4364);
 //card background
 const Color colorBackgroundLight = Color(0xffD9D9D9);
 const Color colorBackgroundDark = Color(0xff163e2b);
