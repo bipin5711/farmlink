@@ -1,3 +1,5 @@
+import 'package:farmlink/screens/butcher_detail_screen.dart';
+import 'package:farmlink/screens/butcher_home_screen.dart';
 import 'package:farmlink/screens/cart_screen.dart';
 import 'package:farmlink/screens/details_screen.dart';
 import 'package:farmlink/screens/edit_profile.dart';
@@ -83,7 +85,11 @@ class MyApp extends StatelessWidget {
                   const OrderFeedback(),
               routeGeneralScreen: (BuildContext context) => const General(),
               routeEditProfileScreen: (BuildContext context) =>
-                  const EditProfile()
+                  const EditProfile(),
+              routeButcherHomeScreen: (BuildContext context) =>
+                  const ButcherHome(),
+              routeButcherDetailScreen: (BuildContext context) =>
+                  const ButcherDetail()
             }));
   }
 }

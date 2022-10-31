@@ -38,6 +38,7 @@ dependencies:
   pin_code_fields: ^7.0.0
   flutter_switch: ^0.3.2
   google_maps_flutter: ^2.2.1
+  shared_preferences: ^2.0.15
 
 
 dev_dependencies:
