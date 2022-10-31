@@ -2,6 +2,7 @@ import 'package:farmlink/utils/util_colors.dart';
 import 'package:farmlink/utils/util_constants.dart';
 import 'package:farmlink/utils/util_helpers.dart';
 import 'package:farmlink/utils/util_images.dart';
+import 'package:farmlink/utils/util_routes.dart';
 import 'package:farmlink/widgets/ui-widgets/footer.dart';
 import 'package:flutter/material.dart';
 
@@ -13,6 +14,14 @@ class Profile extends StatefulWidget {
 }
 
 class _ProfileState extends State<Profile> {
+  logout() {
+    Navigator.pushNamed(context, routeLoginScreen);
+  }
+
+  orderHistory() {
+    Navigator.pushNamed(context, routeCartScreen);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,7 +59,7 @@ class _ProfileState extends State<Profile> {
                                     fit: BoxFit.cover,
                                   ),
                                   const SizedBox(
-                                    height: 16,
+                                    height: 14,
                                   ),
                                   const Text(
                                     strJonatha,
@@ -91,7 +100,7 @@ class _ProfileState extends State<Profile> {
                                           vertical: 8),
                                       width: double.infinity,
                                       padding: const EdgeInsets.symmetric(
-                                          vertical: 14, horizontal: 24),
+                                          vertical: 18, horizontal: 22),
                                       decoration: BoxDecoration(
                                           color: colorLight,
                                           borderRadius:
