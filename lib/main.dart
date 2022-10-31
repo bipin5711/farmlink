@@ -2,6 +2,7 @@ import 'package:farmlink/screens/cart_screen.dart';
 import 'package:farmlink/screens/details_screen.dart';
 import 'package:farmlink/screens/favorite_screen.dart';
 import 'package:farmlink/screens/feedback_screen.dart';
+import 'package:farmlink/screens/general_screen.dart';
 import 'package:farmlink/screens/home_screen.dart';
 import 'package:farmlink/screens/inventory_detail_screen.dart';
 import 'package:farmlink/screens/inventory_screen.dart';
@@ -78,7 +79,8 @@ class MyApp extends StatelessWidget {
               routeMessageDetailScreen: (BuildContext context) =>
                   const MessageDetail(),
               routeFeedbackScreen: (BuildContext context) =>
-                  const OrderFeedback()
+                  const OrderFeedback(),
+              routeGeneralScreen: (BuildContext context) => const General()
             }));
   }
 }

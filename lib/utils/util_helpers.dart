@@ -120,3 +120,10 @@ List profileList = [
   {'title': strGeneral, 'image': general},
   {'title': strLogout, 'image': logout},
 ];
+
+List generalList = [
+  strFrequentlyAskedQuestions,
+  strPrivacyPolicy,
+  strTermsService,
+  strYourFeedback
+];

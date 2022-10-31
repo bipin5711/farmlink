@@ -22,6 +22,10 @@ class _ProfileState extends State<Profile> {
     Navigator.pushNamed(context, routeCartScreen);
   }
 
+  general() {
+    Navigator.pushNamed(context, routeGeneralScreen);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -95,35 +99,46 @@ class _ProfileState extends State<Profile> {
                                   Column(
                                       children: List.generate(
                                     profileList.length,
-                                    (index) => Container(
-                                      margin: const EdgeInsets.symmetric(
-                                          vertical: 8),
-                                      width: double.infinity,
-                                      padding: const EdgeInsets.symmetric(
-                                          vertical: 18, horizontal: 22),
-                                      decoration: BoxDecoration(
-                                          color: colorLight,
-                                          borderRadius:
-                                              BorderRadius.circular(30)),
-                                      child: Row(
-                                        children: [
-                                          Image.asset(
-                                            profileList[index]['image'],
-                                            height: 20,
-                                            width: 20,
-                                          ),
-                                          const SizedBox(
-                                            width: 12,
-                                          ),
-                                          Text(
-                                            profileList[index]['title'],
-                                            style: const TextStyle(
-                                                color: colorText,
-                                                fontFamily: 'Poppins',
-                                                fontSize: 16,
-                                                fontWeight: FontWeight.w500),
-                                          ),
-                                        ],
+                                    (index) => InkWell(
+                                      onTap: () {
+                                        index == 1
+                                            ? orderHistory()
+                                            : index == 2
+                                                ? general()
+                                                : index == 3
+                                                    ? logout()
+                                                    : '';
+                                      },
+                                      child: Container(
+                                        margin: const EdgeInsets.symmetric(
+                                            vertical: 8),
+                                        width: double.infinity,
+                                        padding: const EdgeInsets.symmetric(
+                                            vertical: 18, horizontal: 22),
+                                        decoration: BoxDecoration(
+                                            color: colorLight,
+                                            borderRadius:
+                                                BorderRadius.circular(30)),
+                                        child: Row(
+                                          children: [
+                                            Image.asset(
+                                              profileList[index]['image'],
+                                              height: 20,
+                                              width: 20,
+                                            ),
+                                            const SizedBox(
+                                              width: 12,
+                                            ),
+                                            Text(
+                                              profileList[index]['title'],
+                                              style: const TextStyle(
+                                                  color: colorText,
+                                                  fontFamily: 'Poppins',
+                                                  fontSize: 16,
+                                                  fontWeight: FontWeight.w500),
+                                            ),
+                                          ],
+                                        ),
                                       ),
                                     ),
                                   ))

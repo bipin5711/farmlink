@@ -14,3 +14,4 @@ const String routeInventoryScreen = '/inventory';
 const String routeInventoryDetailScreen = '/inventory-detail';
 const String routeMessageDetailScreen = '/message-detail';
 const String routeFeedbackScreen = '/feedback';
+const String routeGeneralScreen = '/general';
