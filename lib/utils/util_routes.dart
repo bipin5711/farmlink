@@ -16,3 +16,5 @@ const String routeMessageDetailScreen = '/message-detail';
 const String routeFeedbackScreen = '/feedback';
 const String routeGeneralScreen = '/general';
 const String routeEditProfileScreen = '/edit-profile';
+const String routeButcherHomeScreen = '/butcher-home';
+const String routeButcherDetailScreen = '/butcher-detail';

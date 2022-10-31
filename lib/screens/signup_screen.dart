@@ -106,8 +106,8 @@ class _SignupState extends State<Signup> {
                                           textAlign: TextAlign.center,
                                           style: const TextStyle(
                                             color: colorTextSecondary,
-                                            fontWeight: FontWeight.bold,
-                                            fontFamily: 'Inter',
+                                            fontWeight: FontWeight.w700,
+                                            fontFamily: 'NunitoSans',
                                             fontSize: 13,
                                           ),
                                         ),
@@ -236,6 +236,7 @@ class _SignupState extends State<Signup> {
                                             width: double.infinity,
                                             child: CustomButton(
                                               onPressed: handleSignup,
+                                              textSize: 20,
                                               buttonColor: colorSecondary,
                                               text: strSignup.toUpperCase(),
                                             ),

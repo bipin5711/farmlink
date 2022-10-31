@@ -127,7 +127,7 @@ const String strCertification = 'Certification';
 const String strStateUSDACertified = 'State USDA Certified';
 const String strCustomExempt = 'Custom Exempt';
 const String strFederalUSDACertified = 'Federal USDA Certified';
-const String str7407Spencer = '7407 Spencer Hwy Ste 160 Pasadena, TX 77505';
+const String str7407Spencer = '7407 Spencer Hwy Ste 160\nPasadena, TX 77505';
 const String strWeekdays = 'Weekdays';
 const String strWeekends = 'Weekends';
 const String strLinkwithButcher = 'Link with a Butcher';
@@ -149,7 +149,7 @@ const String strHowExperienceWithButchers =
     'How was your experience with 1836 Butchers?';
 const String strAdditonalComments = 'Additonal Comments...';
 const String strSubmit = 'Submit';
-
+const String strCart = 'Cart';
 // Flow 8
 const String strJonatha = 'Jonatha';
 const String strJanathaGmail = 'Janatha@gmail.com';
@@ -171,3 +171,4 @@ const String strFrequentlyAskedQuestions = 'Frequently Asked Questions';
 const String strPrivacyPolicy = 'Privacy Policy';
 const String strTermsService = 'Terms of Service';
 const String strYourFeedback = 'Your Feedback';
+const String strUserType = 'USERTYPE';

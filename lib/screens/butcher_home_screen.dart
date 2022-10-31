@@ -56,17 +56,13 @@ class _ButcherHomeState extends State<ButcherHome> {
 
   handleApply() {}
   navigateToDetail() {
-    Navigator.pushNamed(context, routeDetailScreen);
-  }
-
-  navigateToInventory() {
-    Navigator.pushNamed(context, routeInventoryScreen);
+    Navigator.pushNamed(context, routeButcherDetailScreen);
   }
 
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-      statusBarColor: colorSecondary,
+      statusBarColor: colorRedDark,
       statusBarBrightness: Brightness.dark,
     ));
     return LayoutBuilder(
@@ -560,7 +556,7 @@ class _ButcherHomeState extends State<ButcherHome> {
                   onTap: () => navigateToDetail(),
                   child: Container(
                     decoration: BoxDecoration(
-                      color: colorSecondary,
+                      color: colorRedDark,
                       borderRadius: const BorderRadius.only(
                           bottomLeft: const Radius.circular(8)),
                       border: Border.all(color: colorSecondary, width: 1),

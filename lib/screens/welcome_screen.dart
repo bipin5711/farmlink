@@ -1,3 +1,4 @@
+import 'package:farmlink/utils/preference_helper.dart';
 import 'package:farmlink/utils/util_colors.dart';
 import 'package:farmlink/utils/util_constants.dart';
 import 'package:farmlink/utils/util_images.dart';
@@ -14,7 +15,15 @@ class Welcome extends StatefulWidget {
 }
 
 class _WelcomeState extends State<Welcome> {
-  handleFarmer() {
+  handleFarmer() async {
+    await PreferencesHelper.setString(strUserType, strFarmer);
+
+    Navigator.pushNamed(context, routeLayoutScreen);
+  }
+
+  handleButcher() async {
+    await PreferencesHelper.setString(strUserType, strButcher);
+
     Navigator.pushNamed(context, routeLayoutScreen);
   }
 
@@ -126,7 +135,7 @@ class _WelcomeState extends State<Welcome> {
                                   ),
 
                                   InkWell(
-                                    onTap: handleFarmer,
+                                    onTap: handleButcher,
                                     child: Container(
                                       margin: const EdgeInsets.only(
                                           bottom: 130, top: 12),

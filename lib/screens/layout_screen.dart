@@ -1,10 +1,13 @@
 import 'package:farmlink/models/bottom_navigation.dart';
+import 'package:farmlink/screens/butcher_home_screen.dart';
 import 'package:farmlink/screens/cart_screen.dart';
 import 'package:farmlink/screens/favorite_screen.dart';
 import 'package:farmlink/screens/home_screen.dart';
 import 'package:farmlink/screens/message_screen.dart';
 import 'package:farmlink/screens/profile_screen.dart';
+import 'package:farmlink/utils/preference_helper.dart';
 import 'package:farmlink/utils/util_colors.dart';
+import 'package:farmlink/utils/util_constants.dart';
 import 'package:farmlink/utils/util_helpers.dart';
 import 'package:farmlink/utils/util_routes.dart';
 import 'package:flutter/material.dart';
@@ -20,8 +23,20 @@ class _LayoutState extends State<Layout> {
   List<BottomNavigation> iconsList = bottomNavigationData;
   int currentIndex = 2;
   bool showMenu = false;
+  String usertype = '';
   bool notificationSwitch = false;
   dynamic nestedMenu = {'title': '', 'route': []};
+  getUserType() async {
+    usertype = await PreferencesHelper.getString(strUserType);
+    setState(() {});
+  }
+
+  @override
+  void initState() {
+    super.initState();
+
+    getUserType();
+  }
 
   Widget getBody(int index) {
     // 0 -> Favorite
@@ -37,7 +52,9 @@ class _LayoutState extends State<Layout> {
             : index == 1
                 ? const Message()
                 : index == 2
-                    ? const Home()
+                    ? usertype == strButcher
+                        ? ButcherHome()
+                        : Home()
                     : index == 3
                         ? const Cart()
                         : index == 4
@@ -69,6 +86,11 @@ class _LayoutState extends State<Layout> {
 
   @override
   Widget build(BuildContext context) {
+    print(usertype);
+    SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+      statusBarColor: colorBackgroundDark,
+      statusBarBrightness: Brightness.dark,
+    ));
     return WillPopScope(
         onWillPop: () {
           bool allowBack = true;
