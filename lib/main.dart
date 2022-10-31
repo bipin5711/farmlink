@@ -1,5 +1,6 @@
 import 'package:farmlink/screens/cart_screen.dart';
 import 'package:farmlink/screens/details_screen.dart';
+import 'package:farmlink/screens/edit_profile.dart';
 import 'package:farmlink/screens/favorite_screen.dart';
 import 'package:farmlink/screens/feedback_screen.dart';
 import 'package:farmlink/screens/general_screen.dart';
@@ -80,7 +81,9 @@ class MyApp extends StatelessWidget {
                   const MessageDetail(),
               routeFeedbackScreen: (BuildContext context) =>
                   const OrderFeedback(),
-              routeGeneralScreen: (BuildContext context) => const General()
+              routeGeneralScreen: (BuildContext context) => const General(),
+              routeEditProfileScreen: (BuildContext context) =>
+                  const EditProfile()
             }));
   }
 }

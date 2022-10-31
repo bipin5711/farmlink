@@ -31,6 +31,7 @@ const Color colorBackgroundCard = Color(0xffE0E0E0);
 const Color colorBackgroundMessage = Color(0xffF8F8F8);
 const Color colorBackgroundMessageInput = Color(0xffF2F2F2);
 const Color colorBackgroundFeedback = Color(0xffd6e9e1);
+const Color colorBackgroundEditProfile = Color(0xffFDFDFE);
 //switch
 const Color colorSwitchBackground = Color(0xff08321E);
 const Color colorSwitchBackground2 = Color(0xff807D7D);
@@ -41,3 +42,6 @@ const Color colorCheckboxBorder = Color(0xffB7B6B7);
 // Messgae
 const Color colorGreen = Color(0xff36AAB9);
 const Color colorGreenLight = Color(0xff1C4230);
+
+//Opacity
+const Color colorOpacity = Color(0xff8d9baa);

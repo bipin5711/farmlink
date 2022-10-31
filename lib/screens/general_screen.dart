@@ -19,35 +19,6 @@ class General extends StatefulWidget {
 }
 
 class _GeneralState extends State<General> {
-  final _formKey = GlobalKey<FormState>();
-  TextEditingController chatController = TextEditingController();
-  List basket = [
-    {'title': strGoat, 'qty': 1}
-  ];
-  navigateToInventoryDetail() {
-    Navigator.pushNamed(context, routeInventoryDetailScreen);
-  }
-
-  openSendOfferDialog(BuildContext context) async {
-    return SendOfferDialog(context, basket, orderPlaced);
-  }
-
-  orderPlaced() async {
-    return OrderPlacedDialog(context, orderAccepted);
-  }
-
-  orderAccepted() async {
-    return OrderAcceptedDialog(context, orderDeclined);
-  }
-
-  orderDeclined() async {
-    return OrderDeclinedDialog(context, feedback);
-  }
-
-  feedback() {
-    Navigator.pushNamed(context, routeFeedbackScreen);
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -136,8 +107,7 @@ class _GeneralState extends State<General> {
                                                 color: colorText,
                                                 fontFamily: 'Poppins',
                                                 fontSize: 16,
-                                                fontWeight:
-                                                    FontWeight.w500),
+                                                fontWeight: FontWeight.w500),
                                           ),
                                         ],
                                       ),

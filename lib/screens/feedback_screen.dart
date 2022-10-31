@@ -35,12 +35,11 @@ class _OrderFeedbackState extends State<OrderFeedback> {
           child: Container(
               width: double.infinity,
               decoration: const BoxDecoration(
-                color: colorBackgroundFeedback,
-                // image: DecorationImage(
-                //     alignment: Alignment.center,
-                //     image: AssetImage(bgHomeGreen2),
-                //     fit: BoxFit.cover)
-              ),
+                  color: colorLight,
+                  image: DecorationImage(
+                      alignment: Alignment.center,
+                      image: AssetImage(background2),
+                      fit: BoxFit.cover)),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -55,6 +54,7 @@ class _OrderFeedbackState extends State<OrderFeedback> {
                         child: Column(
                           children: [
                             Container(
+                              width: double.infinity,
                               padding: const EdgeInsets.only(
                                   top: 42, right: 20, left: 20, bottom: 72),
                               decoration: const BoxDecoration(

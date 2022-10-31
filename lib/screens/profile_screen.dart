@@ -26,6 +26,10 @@ class _ProfileState extends State<Profile> {
     Navigator.pushNamed(context, routeGeneralScreen);
   }
 
+  editProfile() {
+    Navigator.pushNamed(context, routeEditProfileScreen);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,8 +43,8 @@ class _ProfileState extends State<Profile> {
                 child: Container(
                     decoration: const BoxDecoration(
                         image: DecorationImage(
-                            alignment: Alignment.center,
-                            image: AssetImage(lightBackground),
+                            // alignment: Alignment.center,
+                            image: AssetImage(background3),
                             fit: BoxFit.cover)),
                     child: Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -56,11 +60,18 @@ class _ProfileState extends State<Profile> {
                                     height: MediaQuery.of(context).size.height *
                                         0.09,
                                   ),
-                                  Image.asset(
-                                    placeholder,
-                                    width: 110,
-                                    height: 110,
-                                    fit: BoxFit.cover,
+                                  Container(
+                                    padding: const EdgeInsets.all(3),
+                                    decoration: BoxDecoration(
+                                        color: colorLight,
+                                        borderRadius:
+                                            BorderRadius.circular(60)),
+                                    child: Image.asset(
+                                      placeholder,
+                                      width: 110,
+                                      height: 110,
+                                      fit: BoxFit.cover,
+                                    ),
                                   ),
                                   const SizedBox(
                                     height: 14,
@@ -101,13 +112,15 @@ class _ProfileState extends State<Profile> {
                                     profileList.length,
                                     (index) => InkWell(
                                       onTap: () {
-                                        index == 1
-                                            ? orderHistory()
-                                            : index == 2
-                                                ? general()
-                                                : index == 3
-                                                    ? logout()
-                                                    : '';
+                                        index == 0
+                                            ? editProfile()
+                                            : index == 1
+                                                ? orderHistory()
+                                                : index == 2
+                                                    ? general()
+                                                    : index == 3
+                                                        ? logout()
+                                                        : '';
                                       },
                                       child: Container(
                                         margin: const EdgeInsets.symmetric(

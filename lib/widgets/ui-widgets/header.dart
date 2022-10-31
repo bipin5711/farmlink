@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 class Header extends StatefulWidget {
   final bool isInnerPage;
   final bool hideSearch;
+  final bool isDarkArrow;
   final String title;
   final String fontFamily;
   final String searchPlaceholder;
@@ -17,6 +18,7 @@ class Header extends StatefulWidget {
     this.hideSearch = false,
     this.searchPlaceholder = '',
     this.fontFamily = 'Poppins',
+    this.isDarkArrow = false,
   }) : super(key: key);
 
   @override
@@ -41,7 +43,7 @@ class _HeaderState extends State<Header> {
                   child: Row(
                     children: [
                       Image.asset(
-                        back,
+                        widget.isDarkArrow ? backArrowDark : back,
                         height: 28,
                         width: 30,
                       ),
@@ -123,7 +125,8 @@ class _HeaderState extends State<Header> {
               Container(
                   // margin: const EdgeInsets.only(left: 8),
                   margin: const EdgeInsets.symmetric(vertical: 14),
-                  padding: const EdgeInsets.only(right: 12, left: 8,top: 3,bottom: 1),
+                  padding: const EdgeInsets.only(
+                      right: 12, left: 8, top: 3, bottom: 1),
                   decoration: BoxDecoration(
                     color: colorLight,
                     border: Border.all(color: colorTransparent),

@@ -82,3 +82,6 @@ const String bottom3 = "$imageRoute/bottom3.png";
 const String bottom4 = "$imageRoute/bottom4.png";
 const String arrowDown = "$imageRoute/arrow-down.png";
 const String cancel = "$imageRoute/cancel.png";
+const String backArrowDark = "$imageRoute/back-dark.png";
+const String background2 = "$imageRoute/background2.jpg";
+const String background3 = "$imageRoute/background3.jpg";
