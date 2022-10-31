@@ -8,6 +8,7 @@ const Color colorPrimary = Color(0xff41B540);
 const Color colorSecondary = Color(0xffBF1E2E);
 const Color colorGreenDark = Color(0xff173F2B);
 const Color colorRedDark = Color(0xffA01120);
+const Color colorDialogbg = Color(0xffF3F6F8);
 //input
 const Color colorInputPrimary = Color(0xff35463F);
 const Color colorSearchPlaceholder = Color(0xff9CA6AE);
@@ -46,3 +47,6 @@ const Color colorGreenLight = Color(0xff1C4230);
 
 //Opacity
 const Color colorOpacity = Color(0xff8d9baa);
+
+// barrier
+const Color colorBarrier = Color(0xff2c3964);

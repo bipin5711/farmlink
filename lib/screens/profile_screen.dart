@@ -2,6 +2,7 @@ import 'package:farmlink/utils/util_colors.dart';
 import 'package:farmlink/utils/util_constants.dart';
 import 'package:farmlink/utils/util_helpers.dart';
 import 'package:farmlink/utils/util_images.dart';
+import 'package:farmlink/utils/util_methods.dart';
 import 'package:farmlink/utils/util_routes.dart';
 import 'package:farmlink/widgets/ui-widgets/footer.dart';
 import 'package:flutter/material.dart';
@@ -28,6 +29,10 @@ class _ProfileState extends State<Profile> {
 
   editProfile() {
     Navigator.pushNamed(context, routeEditProfileScreen);
+  }
+
+  editProfilePicture() {
+    UpdateProfileDialog(context);
   }
 
   @override
@@ -78,17 +83,21 @@ class _ProfileState extends State<Profile> {
                                       Positioned(
                                           bottom: 12,
                                           left: 40,
-                                          child: Container(
-                                            padding: EdgeInsets.all(6),
-                                            decoration: BoxDecoration(
-                                                color: colorLight
-                                                    .withOpacity(0.55),
-                                                borderRadius:
-                                                    BorderRadius.circular(30)),
-                                            child: Image.asset(
-                                              pencil,
-                                              height: 18,
-                                              width: 18,
+                                          child: InkWell(
+                                            onTap: editProfilePicture,
+                                            child: Container(
+                                              padding: EdgeInsets.all(6),
+                                              decoration: BoxDecoration(
+                                                  color: colorLight
+                                                      .withOpacity(0.55),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          30)),
+                                              child: Image.asset(
+                                                pencil,
+                                                height: 18,
+                                                width: 18,
+                                              ),
                                             ),
                                           )),
                                     ],
