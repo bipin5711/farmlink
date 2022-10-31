@@ -85,3 +85,5 @@ const String cancel = "$imageRoute/cancel.png";
 const String backArrowDark = "$imageRoute/back-dark.png";
 const String background2 = "$imageRoute/background2.jpg";
 const String background3 = "$imageRoute/background3.jpg";
+const String pencil = "$imageRoute/pencil.png";
+const String circle = "$imageRoute/circle.png";

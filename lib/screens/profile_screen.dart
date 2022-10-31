@@ -60,18 +60,38 @@ class _ProfileState extends State<Profile> {
                                     height: MediaQuery.of(context).size.height *
                                         0.09,
                                   ),
-                                  Container(
-                                    padding: const EdgeInsets.all(3),
-                                    decoration: BoxDecoration(
-                                        color: colorLight,
-                                        borderRadius:
-                                            BorderRadius.circular(60)),
-                                    child: Image.asset(
-                                      placeholder,
-                                      width: 110,
-                                      height: 110,
-                                      fit: BoxFit.cover,
-                                    ),
+                                  Stack(
+                                    children: [
+                                      Container(
+                                        padding: const EdgeInsets.all(3),
+                                        decoration: BoxDecoration(
+                                            color: colorLight,
+                                            borderRadius:
+                                                BorderRadius.circular(60)),
+                                        child: Image.asset(
+                                          placeholder,
+                                          width: 110,
+                                          height: 110,
+                                          fit: BoxFit.cover,
+                                        ),
+                                      ),
+                                      Positioned(
+                                          bottom: 12,
+                                          left: 40,
+                                          child: Container(
+                                            padding: EdgeInsets.all(6),
+                                            decoration: BoxDecoration(
+                                                color: colorLight
+                                                    .withOpacity(0.55),
+                                                borderRadius:
+                                                    BorderRadius.circular(30)),
+                                            child: Image.asset(
+                                              pencil,
+                                              height: 18,
+                                              width: 18,
+                                            ),
+                                          )),
+                                    ],
                                   ),
                                   const SizedBox(
                                     height: 14,
