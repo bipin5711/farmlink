@@ -72,7 +72,38 @@ List homeData = [
     'types': [sheep, pig, duck]
   },
 ];
-
+List butcherHomeData = [
+  {
+    'name': '1836 Butchers',
+    'city': 'Houston',
+    'rating': 3,
+    'image': meats,
+  },
+  {
+    'name': '1836 Butchers',
+    'city': 'Houston',
+    'rating': 3,
+    'image': meats,
+  },
+  {
+    'name': '1836 Butchers',
+    'city': 'Houston',
+    'rating': 5,
+    'image': meats,
+  },
+  {
+    'name': '1836 Butchers',
+    'city': 'Houston',
+    'rating': 3,
+    'image': meats,
+  },
+  {
+    'name': '1836 Butchers',
+    'city': 'Houston',
+    'rating': 3,
+    'image': meats,
+  },
+];
 List filterData = [
   strLivestock,
   strTypeMeat,
