@@ -15,7 +15,10 @@ class ButcherDetail extends StatefulWidget {
 }
 
 class _ButcherDetailState extends State<ButcherDetail> {
-  handleLink() {}
+  handleLink() {
+    ConnectButcherDialog(context);
+  }
+
   openCustomerReviewDialog(BuildContext context) async {
     return CustomerReviewDialog(context);
   }
