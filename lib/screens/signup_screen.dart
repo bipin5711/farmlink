@@ -116,7 +116,7 @@ class _SignupState extends State<Signup> {
                                         ),
                                         Padding(
                                           padding: const EdgeInsets.symmetric(
-                                              vertical: 6),
+                                              vertical: 7),
                                           child: CustomInput(
                                             height: 52,
                                             textController: fullNameController,
@@ -128,7 +128,7 @@ class _SignupState extends State<Signup> {
                                         ),
                                         Padding(
                                           padding: const EdgeInsets.symmetric(
-                                              vertical: 6),
+                                              vertical: 7),
                                           child: CustomInput(
                                             height: 52,
                                             textController: emailController,
@@ -140,7 +140,7 @@ class _SignupState extends State<Signup> {
                                         ),
                                         Padding(
                                           padding: const EdgeInsets.symmetric(
-                                              vertical: 6),
+                                              vertical: 7),
                                           child: CustomInput(
                                             height: 52,
                                             textController: passwordController,
@@ -152,7 +152,7 @@ class _SignupState extends State<Signup> {
                                         ),
                                         Padding(
                                           padding: const EdgeInsets.symmetric(
-                                              vertical: 6),
+                                              vertical: 7),
                                           child: CustomInput(
                                             height: 52,
                                             textController:
@@ -165,7 +165,7 @@ class _SignupState extends State<Signup> {
                                         ),
                                         Padding(
                                           padding: const EdgeInsets.symmetric(
-                                              vertical: 6),
+                                              vertical: 7),
                                           child: CustomInput(
                                             height: 52,
                                             textController: phoneController,
@@ -177,7 +177,7 @@ class _SignupState extends State<Signup> {
                                         ),
                                         Padding(
                                           padding: const EdgeInsets.symmetric(
-                                              vertical: 6),
+                                              vertical: 7),
                                           child: CustomInput(
                                             height: 52,
                                             textController: cityController,
@@ -189,7 +189,7 @@ class _SignupState extends State<Signup> {
                                         ),
                                         Padding(
                                           padding: const EdgeInsets.symmetric(
-                                              vertical: 6),
+                                              vertical: 7),
                                           child: Row(
                                             children: [
                                               Expanded(
@@ -206,7 +206,7 @@ class _SignupState extends State<Signup> {
                                                 ),
                                               ),
                                               const SizedBox(
-                                                width: 8,
+                                                width: 7,
                                               ),
                                               Expanded(
                                                 child: CustomInput(
@@ -225,7 +225,7 @@ class _SignupState extends State<Signup> {
                                           ),
                                         ),
                                         const SizedBox(
-                                          height: 6,
+                                          height: 7,
                                         ),
                                         Padding(
                                           padding: const EdgeInsets.only(

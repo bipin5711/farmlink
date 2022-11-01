@@ -135,7 +135,7 @@ class _LoginState extends State<Login> {
                                         ),
                                       ),
                                       const SizedBox(
-                                        height: 4,
+                                        height: 6,
                                       ),
                                       const SizedBox(
                                         width: double.infinity,
