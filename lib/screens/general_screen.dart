@@ -92,7 +92,7 @@ class _GeneralState extends State<General> {
                                     generalList.length,
                                     (index) => Container(
                                       margin: const EdgeInsets.symmetric(
-                                          vertical: 8, horizontal: 20),
+                                          vertical: 12, horizontal: 20),
                                       width: double.infinity,
                                       padding: const EdgeInsets.symmetric(
                                           vertical: 18, horizontal: 24),
