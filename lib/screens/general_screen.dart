@@ -120,7 +120,7 @@ class _GeneralState extends State<General> {
                           ),
                         ),
                         Container(
-                          color: colorBackgroundMessage,
+                          color: colorBackgroundDark.withOpacity(0.17),
                           padding: const EdgeInsets.only(bottom: 16.0),
                           child: Center(
                               child: Footer(
