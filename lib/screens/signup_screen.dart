@@ -76,7 +76,7 @@ class _SignupState extends State<Signup> {
                                   Positioned(
                                     top: -40,
                                     child: Image.asset(
-                                      logo,
+                                      logo4,
                                       height: 120,
                                     ),
                                   ),
@@ -238,7 +238,7 @@ class _SignupState extends State<Signup> {
                                               onPressed: handleSignup,
                                               textSize: 20,
                                               buttonColor: colorSecondary,
-                                              text: strSignup.toUpperCase(),
+                                              text: strSignup,
                                             ),
                                           ),
                                         ),

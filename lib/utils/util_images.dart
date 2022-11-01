@@ -87,3 +87,5 @@ const String background2 = "$imageRoute/background2.jpg";
 const String background3 = "$imageRoute/background3.jpg";
 const String pencil = "$imageRoute/pencil.png";
 const String circle = "$imageRoute/circle.png";
+const String logo4 = "$imageRoute/logo4.png";
+const String rectangle2 = "$imageRoute/rectangle2.png";

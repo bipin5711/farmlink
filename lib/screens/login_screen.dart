@@ -78,9 +78,9 @@ class _LoginState extends State<Login> {
                                                 0.075,
                                       ),
                                       Image.asset(
-                                        logo,
-                                        width: 220,
-                                        height: 220,
+                                        logo4,
+                                        width: 225,
+                                        height: 225,
                                         fit: BoxFit.cover,
                                       ),
                                       SizedBox(

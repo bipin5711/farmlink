@@ -790,10 +790,10 @@ UpdateProfileDialog(
                               margin: const EdgeInsets.only(
                                   top: 8, bottom: 8, right: 8, left: 0),
                               decoration: BoxDecoration(
-                                  color: colorBackgroundCard,
+                                  // color: colorBackgroundCard,
                                   borderRadius: BorderRadius.circular(16)),
                               height: 120,
-                              // child: Container(),
+                              child: Image.asset(rectangle2, fit: BoxFit.cover),
                             ),
                           ),
                         ),
@@ -804,16 +804,17 @@ UpdateProfileDialog(
                               margin: const EdgeInsets.only(
                                   top: 8, bottom: 8, right: 0, left: 8),
                               decoration: BoxDecoration(
-                                  color: colorBackgroundCard,
+                                  // color: colorBackgroundCard,
                                   borderRadius: BorderRadius.circular(16)),
-                              height: 120, // child: Container(),
+                              height: 120,
+                              child: Image.asset(rectangle2, fit: BoxFit.cover),
+                              // child: Container(),
                             ),
                           ),
                         ),
                       ],
                     ),
-                   
-                     Row(
+                    Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Expanded(
@@ -823,9 +824,11 @@ UpdateProfileDialog(
                               margin: const EdgeInsets.only(
                                   top: 8, bottom: 8, right: 8, left: 0),
                               decoration: BoxDecoration(
-                                  color: colorBackgroundCard,
+                                  // color: colorBackgroundCard,
                                   borderRadius: BorderRadius.circular(16)),
                               height: 120,
+                              child: Image.asset(rectangle2, fit: BoxFit.cover),
+
                               // child: Container(),
                             ),
                           ),
@@ -837,9 +840,12 @@ UpdateProfileDialog(
                               margin: const EdgeInsets.only(
                                   top: 8, bottom: 8, right: 0, left: 8),
                               decoration: BoxDecoration(
-                                  color: colorBackgroundCard,
+                                  // color: colorBackgroundCard,
                                   borderRadius: BorderRadius.circular(16)),
-                              height: 120, // child: Container(),
+                              height: 120,
+                              child: Image.asset(rectangle2, fit: BoxFit.cover),
+
+                              // child: Container(),
                             ),
                           ),
                         ),

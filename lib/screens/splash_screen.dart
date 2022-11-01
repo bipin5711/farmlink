@@ -78,9 +78,9 @@ class _SplashState extends State<Splash> {
                 children: [
                   SizedBox(),
                   Image.asset(
-                    logo2,
-                    width: 240,
-                    height: 240,
+                    logo4,
+                    width: 290,
+                    height: 290,
                     fit: BoxFit.cover,
                   ),
                   Padding(

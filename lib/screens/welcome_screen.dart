@@ -70,7 +70,7 @@ class _WelcomeState extends State<Welcome> {
                             Positioned(
                               top: -40,
                               child: Image.asset(
-                                logo,
+                                logo4,
                                 height: 120,
                               ),
                             ),
@@ -115,13 +115,13 @@ class _WelcomeState extends State<Welcome> {
                                       margin: const EdgeInsets.only(
                                           top: 40, bottom: 12),
                                       width: MediaQuery.of(context).size.width *
-                                          0.4,
+                                          0.46,
                                       decoration: BoxDecoration(
                                           borderRadius:
                                               BorderRadius.circular(4),
                                           color: colorBackgroundDark),
                                       padding: const EdgeInsets.symmetric(
-                                          vertical: 20),
+                                          vertical: 16),
                                       child: const Text(
                                         strFarmer,
                                         textAlign: TextAlign.center,
@@ -140,13 +140,13 @@ class _WelcomeState extends State<Welcome> {
                                       margin: const EdgeInsets.only(
                                           bottom: 130, top: 12),
                                       width: MediaQuery.of(context).size.width *
-                                          0.4,
+                                          0.46,
                                       decoration: BoxDecoration(
                                           borderRadius:
                                               BorderRadius.circular(4),
                                           color: colorSecondary),
                                       padding: const EdgeInsets.symmetric(
-                                          vertical: 20),
+                                          vertical: 16),
                                       child: const Text(
                                         strButcher,
                                         textAlign: TextAlign.center,
