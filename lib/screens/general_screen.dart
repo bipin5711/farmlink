@@ -35,7 +35,7 @@ class _GeneralState extends State<General> {
                   color: colorInputBackground,
                   image: DecorationImage(
                       alignment: Alignment.center,
-                      image: AssetImage(bgHomeGreen2),
+                      image: AssetImage(background3),
                       fit: BoxFit.cover)),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -49,6 +49,7 @@ class _GeneralState extends State<General> {
                     child: Header(
                       isInnerPage: true,
                       hideSearch: true,
+                      isDarkArrow: true,
                     ),
                   ),
                   const SizedBox(
@@ -76,11 +77,11 @@ class _GeneralState extends State<General> {
                           child: Container(
                             width: double.infinity,
                             // padding: const EdgeInsets.symmetric(horizontal: 20),
-                            decoration: const BoxDecoration(
-                                borderRadius: BorderRadius.only(
+                            decoration: BoxDecoration(
+                                borderRadius: const BorderRadius.only(
                                     topLeft: Radius.circular(28),
                                     topRight: Radius.circular(28)),
-                                color: colorBackgroundMessage),
+                                color: colorBackgroundDark.withOpacity(0.17)),
                             child: Column(
                               children: [
                                 const SizedBox(
