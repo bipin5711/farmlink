@@ -25,6 +25,7 @@ class _OtpVerificationState extends State<OtpVerification> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: Container(
           decoration: const BoxDecoration(
@@ -80,8 +81,9 @@ class _OtpVerificationState extends State<OtpVerification> {
                                 autoDisposeControllers: false,
                                 appContext: context,
                                 textStyle: const TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold),
+                                    color: colorDark,
+                                    fontSize: 30,
+                                    fontWeight: FontWeight.w500),
                                 length: 4,
                                 obscureText: false,
                                 obscuringCharacter: '*',

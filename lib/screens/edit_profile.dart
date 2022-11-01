@@ -84,8 +84,7 @@ class _EditProfileState extends State<EditProfile> {
                       children: [
                         Container(
                           width: double.infinity,
-                          padding:
-                              const EdgeInsets.symmetric(horizontal: 20),
+                          padding: const EdgeInsets.symmetric(horizontal: 20),
                           decoration: const BoxDecoration(
                               borderRadius: BorderRadius.only(
                                   topLeft: Radius.circular(28),
@@ -106,23 +105,27 @@ class _EditProfileState extends State<EditProfile> {
                                     passwordController, strPassword),
                                 CustomTextField(cityController, strCity),
                                 CustomTextField(stateController, strState),
-                                Container(
-                                  margin: const EdgeInsets.only(top: 32),
-                                  padding: const EdgeInsets.symmetric(
-                                      vertical: 12),
-                                  alignment: Alignment.center,
-                                  decoration: BoxDecoration(
-                                      borderRadius:
-                                          BorderRadius.circular(30),
-                                      color: colorBackgroundDark),
-                                  width: double.infinity,
-                                  child: const Text(
-                                    strSaveChanges,
-                                    style: TextStyle(
-                                        color: colorLight,
-                                        fontSize: 15,
-                                        fontWeight: FontWeight.w600,
-                                        fontFamily: 'Poppins'),
+                                InkWell(
+                                  onTap: () {
+                                    Navigator.pop(context);
+                                  },
+                                  child: Container(
+                                    margin: const EdgeInsets.only(top: 32),
+                                    padding: const EdgeInsets.symmetric(
+                                        vertical: 12),
+                                    alignment: Alignment.center,
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(30),
+                                        color: colorBackgroundDark),
+                                    width: double.infinity,
+                                    child: const Text(
+                                      strSaveChanges,
+                                      style: TextStyle(
+                                          color: colorLight,
+                                          fontSize: 15,
+                                          fontWeight: FontWeight.w600,
+                                          fontFamily: 'Poppins'),
+                                    ),
                                   ),
                                 ),
                               ]),
