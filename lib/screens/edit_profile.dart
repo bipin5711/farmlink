@@ -42,112 +42,113 @@ class _EditProfileState extends State<EditProfile> {
           onTap: () {
             FocusScope.of(context).requestFocus(FocusNode());
           },
-          child: SingleChildScrollView(
-            child: Container(
-                width: double.infinity,
-                decoration: const BoxDecoration(
-                  color: colorBackgroundEditProfile,
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const SizedBox(
-                      height: 30,
+          child: Container(
+              width: double.infinity,
+              decoration: const BoxDecoration(
+                color: colorBackgroundEditProfile,
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 20),
+                    child: Header(
+                        isInnerPage: true, hideSearch: true, isDarkArrow: true),
+                  ),
+                  const SizedBox(
+                    height: 8,
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 20.0),
+                    child: Text(
+                      strEditProfile,
+                      style: TextStyle(
+                          fontFamily: 'Poppins',
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
+                          color: colorText),
                     ),
-                    const Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 20),
-                      child: Header(
-                          isInnerPage: true,
-                          hideSearch: true,
-                          isDarkArrow: true),
-                    ),
-                    const SizedBox(
-                      height: 8,
-                    ),
-                    const Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 20.0),
-                      child: Text(
-                        strEditProfile,
-                        style: TextStyle(
-                            fontFamily: 'Poppins',
-                            fontSize: 18,
-                            fontWeight: FontWeight.w600,
-                            color: colorText),
+                  ),
+                  const SizedBox(
+                    height: 24,
+                  ),
+                  Expanded(
+                    child: Container(
+                      child: SingleChildScrollView(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Container(
+                              width: double.infinity,
+                              padding: const EdgeInsets.symmetric(horizontal: 20),
+                              decoration: const BoxDecoration(
+                                  borderRadius: BorderRadius.only(
+                                      topLeft: Radius.circular(28),
+                                      topRight: Radius.circular(28)),
+                                  color: colorBackgroundEditProfile),
+                              child: Column(
+                                children: [
+                                  const SizedBox(
+                                    height: 24,
+                                  ),
+                                  Column(children: [
+                                    CustomTextField(usernameController, strUsername),
+                                    CustomTextField(emailController, strEmail),
+                                    CustomTextField(
+                                        phoneController, strPhoneNumber),
+                                    CustomTextField(
+                                        passwordController, strPassword),
+                                    CustomTextField(cityController, strCity),
+                                    CustomTextField(stateController, strState),
+                                    InkWell(
+                                      onTap: () {
+                                        Navigator.pop(context);
+                                      },
+                                      child: Container(
+                                        margin: const EdgeInsets.only(top: 32),
+                                        padding:
+                                            const EdgeInsets.symmetric(vertical: 12),
+                                        alignment: Alignment.center,
+                                        decoration: BoxDecoration(
+                                            borderRadius: BorderRadius.circular(30),
+                                            color: colorBackgroundDark),
+                                        width: double.infinity,
+                                        child: const Text(
+                                          strSaveChanges,
+                                          style: TextStyle(
+                                              color: colorLight,
+                                              fontSize: 15,
+                                              fontWeight: FontWeight.w600,
+                                              fontFamily: 'Poppins'),
+                                        ),
+                                      ),
+                                    ),
+                                  ]),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
-                    const SizedBox(
-                      height: 24,
-                    ),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Container(
-                          width: double.infinity,
-                          padding: const EdgeInsets.symmetric(horizontal: 20),
-                          decoration: const BoxDecoration(
-                              borderRadius: BorderRadius.only(
-                                  topLeft: Radius.circular(28),
-                                  topRight: Radius.circular(28)),
-                              color: colorBackgroundEditProfile),
-                          child: Column(
-                            children: [
-                              const SizedBox(
-                                height: 24,
-                              ),
-                              Column(children: [
-                                CustomTextField(
-                                    usernameController, strUsername),
-                                CustomTextField(emailController, strEmail),
-                                CustomTextField(
-                                    phoneController, strPhoneNumber),
-                                CustomTextField(
-                                    passwordController, strPassword),
-                                CustomTextField(cityController, strCity),
-                                CustomTextField(stateController, strState),
-                                InkWell(
-                                  onTap: () {
-                                    Navigator.pop(context);
-                                  },
-                                  child: Container(
-                                    margin: const EdgeInsets.only(top: 32),
-                                    padding: const EdgeInsets.symmetric(
-                                        vertical: 12),
-                                    alignment: Alignment.center,
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(30),
-                                        color: colorBackgroundDark),
-                                    width: double.infinity,
-                                    child: const Text(
-                                      strSaveChanges,
-                                      style: TextStyle(
-                                          color: colorLight,
-                                          fontSize: 15,
-                                          fontWeight: FontWeight.w600,
-                                          fontFamily: 'Poppins'),
-                                    ),
-                                  ),
-                                ),
-                              ]),
-                            ],
-                          ),
-                        ),
-                        const SizedBox(
-                          height: 12,
-                        ),
-                        Container(
-                          color: colorBackgroundMessage,
-                          padding: const EdgeInsets.only(bottom: 16.0),
-                          child: Center(
-                              child: Footer(
-                            textColor: colorBackgroundDark,
-                          )),
-                        )
-                      ],
-                    )
-                  ],
-                )),
-          ),
+                  ),
+                  const SizedBox(
+                    height: 12,
+                  ),
+                  Container(
+                    color: colorBackgroundMessage,
+                    padding: const EdgeInsets.only(bottom: 16.0),
+                    child: Center(
+                        child: Footer(
+                      textColor: colorBackgroundDark,
+                    )),
+                  )
+                ],
+              )),
         ),
       ),
     );
